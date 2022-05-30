@@ -71,6 +71,30 @@ class NavDrawer extends StatelessWidget {
               Navigator.pushReplacementNamed(context, '/calendar');
             },
           ),
+          ListTile(
+            title: const Text(
+              'Event',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/event');
+            },
+          ),
+          ListTile(
+            title: const Text(
+              'Social',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/social');
+            },
+          ),
         ],
       ),
     );

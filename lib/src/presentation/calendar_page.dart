@@ -14,6 +14,87 @@ class CalendarPage extends StatefulWidget {
 class _CalendarPageState extends State<CalendarPage> {
   DateTime _focusedDay = DateTime.now();
   DateTime _selectedDay = DateTime.now();
+  final FocusNode _focusNode = FocusNode();
+  final TextEditingController _controller = TextEditingController();
+
+  void _clearText() {
+    _controller.clear();
+    _focusNode.requestFocus();
+  }
+
+  Widget _buildPopupDialog(BuildContext context) {
+    return AlertDialog(
+      title: const Text(
+        'Filter by tag',
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      content: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 100.0,
+                child: TextField(
+                  focusNode: _focusNode,
+                  controller: _controller,
+                  onTap: _clearText,
+                  style: const TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.black,
+                  ),
+                  decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.all(10.0),
+                    hintText: 'Input a tag...',
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
+                    border: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  cursorColor: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: const Text(
+            'Close',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +113,14 @@ class _CalendarPageState extends State<CalendarPage> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(
-              Icons.upload,
+              Icons.filter_alt_outlined,
               color: Colors.white,
             ),
             onPressed: () {
-              Navigator.pushNamed(context, '/uploader');
+              showDialog<Widget>(
+                context: context,
+                builder: (BuildContext context) => _buildPopupDialog(context),
+              );
             },
           ),
         ],
@@ -135,6 +219,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 height: 175.0,
                 child: ListView.builder(
                   shrinkWrap: true,
+                  itemCount: 5,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -165,7 +250,7 @@ class _CalendarPageState extends State<CalendarPage> {
                         ),
                       ),
                     );
-                  }
+                  },
                 ),
               ),
             ),

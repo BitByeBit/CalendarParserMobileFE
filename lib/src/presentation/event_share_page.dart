@@ -1,14 +1,15 @@
-import 'package:calendar_parser_acs/src/presentation/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 
-class AccountPage extends StatefulWidget {
-  const AccountPage({Key? key}) : super(key: key);
+import 'navigation_drawer.dart';
+
+class EventSharePage extends StatefulWidget {
+  const EventSharePage({Key? key}) : super(key: key);
 
   @override
-  State<AccountPage> createState() => _AccountPageState();
+  State<EventSharePage> createState() => _EventSharePageState();
 }
 
-class _AccountPageState extends State<AccountPage> {
+class _EventSharePageState extends State<EventSharePage> {
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _controller = TextEditingController();
 
@@ -29,7 +30,7 @@ class _AccountPageState extends State<AccountPage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Account Page',
+          'Social Page',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -48,87 +49,10 @@ class _AccountPageState extends State<AccountPage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: CircleAvatar(
-                radius: 60.0,
-                backgroundColor: Colors.white,
-                foregroundImage: NetworkImage(
-                    'https://imgs.search.brave.com/yAcnzKhMMjGKoyuvuhYQgu8GDLj80dC7iWgHO7fven0/rs:fit:1000:1000:1/g:ce/aHR0cHM6Ly9tb29u/dmlsbGFnZWFzc29j/aWF0aW9uLm9yZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOC8w/Ni9kZWZhdWx0LXBy/b2ZpbGUtcGljdHVy/ZTEuanBn'),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                'Name',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24.0,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                'Username',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24.0,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                'Group/Subgroup/Year/Semester',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24.0,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: SizedBox(
-                height: 41,
-                width: 163,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Connect Moodle Account',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
-                    ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(249, 37, 97, 1)),
-                  ),
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Center(
-                child: Text(
-                  'Add a friend',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24.0,
-                  ),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -153,7 +77,7 @@ class _AccountPageState extends State<AccountPage> {
                           ),
                           decoration: const InputDecoration(
                             contentPadding: EdgeInsets.all(10.0),
-                            hintText: 'Search for a user...',
+                            hintText: 'Search for an event...',
                             hintStyle: TextStyle(
                               color: Colors.white,
                             ),
@@ -183,12 +107,10 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: SizedBox(
-                height: 150.0,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
                 child: ListView.builder(
-                  shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
@@ -207,7 +129,7 @@ class _AccountPageState extends State<AccountPage> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  'User ' + index.toString(),
+                                  'Event ' + index.toString(),
                                   style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
@@ -217,11 +139,11 @@ class _AccountPageState extends State<AccountPage> {
                               ),
                               IconButton(
                                 icon: const Icon(
-                                  Icons.share,
+                                  Icons.add,
                                   color: Colors.black,
                                 ),
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/event_share');
+                                  Navigator.pop(context);
                                 },
                               ),
                             ],

@@ -1,9 +1,11 @@
 import 'package:calendar_parser_acs/src/presentation/account_page.dart';
 import 'package:calendar_parser_acs/src/presentation/calendar_page.dart';
 import 'package:calendar_parser_acs/src/presentation/event_page.dart';
+import 'package:calendar_parser_acs/src/presentation/event_share_page.dart';
 import 'package:calendar_parser_acs/src/presentation/home_page.dart';
 import 'package:calendar_parser_acs/src/presentation/login_page.dart';
 import 'package:calendar_parser_acs/src/presentation/register_page.dart';
+import 'package:calendar_parser_acs/src/presentation/social_page.dart';
 import 'package:calendar_parser_acs/src/presentation/uploader_page.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +29,8 @@ class CalendarParser extends StatelessWidget {
         '/event': (BuildContext context) => const EventPage(),
         '/login': (BuildContext context) => const LoginPage(),
         '/register': (BuildContext context) => const RegisterPage(),
+        '/social': (BuildContext context) => const SocialPage(),
+        '/event_share': (BuildContext context) => const EventSharePage(),
       },
       debugShowCheckedModeBanner: false,
     );
