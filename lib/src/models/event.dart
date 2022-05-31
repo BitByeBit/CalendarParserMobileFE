@@ -1,27 +1,12 @@
 part of models;
 
 abstract class Event implements Built<Event, EventBuilder> {
-  factory Event(
-      {required String name,
-      required String type,
-      required String timeslot,
-      required String weekday,
-      required int parity,
-      String? extra}) {
-    return _$Event((EventBuilder b) {
-      b
-        ..name = name
-        ..type = type
-        ..timeslot = timeslot
-        ..weekday = weekday
-        ..parity = parity
-        ..extra = extra ?? '';
-    });
-  }
-
+  factory Event([void Function(EventBuilder b) updates]) = _$Event;
   factory Event.fromJson(dynamic json) => serializers.deserializeWith(serializer, json)!;
 
   Event._();
+
+  String get id;
 
   String get name;
 

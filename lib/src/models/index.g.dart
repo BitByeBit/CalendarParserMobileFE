@@ -100,6 +100,11 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
   Iterable<Object?> serialize(Serializers serializers, AppUser object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
+      'uid',
+      serializers.serialize(object.uid, specifiedType: const FullType(String)),
+      'email',
+      serializers.serialize(object.email,
+          specifiedType: const FullType(String)),
       'username',
       serializers.serialize(object.username,
           specifiedType: const FullType(String)),
@@ -114,14 +119,19 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       'subgroup',
       serializers.serialize(object.subgroup,
           specifiedType: const FullType(String)),
+      'year',
+      serializers.serialize(object.year, specifiedType: const FullType(String)),
+      'semester',
+      serializers.serialize(object.semester,
+          specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.calendar;
+    value = object.photoUrl;
     if (value != null) {
       result
-        ..add('calendar')
+        ..add('photoUrl')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Calendar)));
+            specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -137,6 +147,14 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'uid':
+          result.uid = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'email':
+          result.email = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
         case 'username':
           result.username = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
@@ -157,9 +175,17 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
           result.subgroup = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'calendar':
-          result.calendar.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Calendar))! as Calendar);
+        case 'year':
+          result.year = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'semester':
+          result.semester = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'photoUrl':
+          result.photoUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -178,6 +204,8 @@ class _$CalendarSerializer implements StructuredSerializer<Calendar> {
   Iterable<Object?> serialize(Serializers serializers, Calendar object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'year',
       serializers.serialize(object.year, specifiedType: const FullType(int)),
       'series',
@@ -210,6 +238,10 @@ class _$CalendarSerializer implements StructuredSerializer<Calendar> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
         case 'year':
           result.year = serializers.deserialize(value,
               specifiedType: const FullType(int))! as int;
@@ -245,6 +277,8 @@ class _$EventSerializer implements StructuredSerializer<Event> {
   Iterable<Object?> serialize(Serializers serializers, Event object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'type',
@@ -276,6 +310,10 @@ class _$EventSerializer implements StructuredSerializer<Event> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
@@ -329,9 +367,9 @@ class _$AppState extends AppState {
       required this.isLoading,
       this.error})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(calendars, 'AppState', 'calendars');
-    BuiltValueNullFieldError.checkNotNull(events, 'AppState', 'events');
-    BuiltValueNullFieldError.checkNotNull(isLoading, 'AppState', 'isLoading');
+    BuiltValueNullFieldError.checkNotNull(calendars, r'AppState', 'calendars');
+    BuiltValueNullFieldError.checkNotNull(events, r'AppState', 'events');
+    BuiltValueNullFieldError.checkNotNull(isLoading, r'AppState', 'isLoading');
   }
 
   @override
@@ -364,7 +402,7 @@ class _$AppState extends AppState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppState')
+    return (newBuiltValueToStringHelper(r'AppState')
           ..add('user', user)
           ..add('calendars', calendars)
           ..add('events', events)
@@ -435,7 +473,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
               calendars: calendars.build(),
               events: events.build(),
               isLoading: BuiltValueNullFieldError.checkNotNull(
-                  isLoading, 'AppState', 'isLoading'),
+                  isLoading, r'AppState', 'isLoading'),
               error: error);
     } catch (_) {
       late String _$failedField;
@@ -448,7 +486,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         events.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+            r'AppState', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -458,6 +496,10 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
 }
 
 class _$AppUser extends AppUser {
+  @override
+  final String uid;
+  @override
+  final String email;
   @override
   final String username;
   @override
@@ -469,24 +511,36 @@ class _$AppUser extends AppUser {
   @override
   final String subgroup;
   @override
-  final Calendar? calendar;
+  final String year;
+  @override
+  final String semester;
+  @override
+  final String? photoUrl;
 
   factory _$AppUser([void Function(AppUserBuilder)? updates]) =>
       (new AppUserBuilder()..update(updates))._build();
 
   _$AppUser._(
-      {required this.username,
+      {required this.uid,
+      required this.email,
+      required this.username,
       required this.name,
       required this.series,
       required this.group,
       required this.subgroup,
-      this.calendar})
+      required this.year,
+      required this.semester,
+      this.photoUrl})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username');
-    BuiltValueNullFieldError.checkNotNull(name, 'AppUser', 'name');
-    BuiltValueNullFieldError.checkNotNull(series, 'AppUser', 'series');
-    BuiltValueNullFieldError.checkNotNull(group, 'AppUser', 'group');
-    BuiltValueNullFieldError.checkNotNull(subgroup, 'AppUser', 'subgroup');
+    BuiltValueNullFieldError.checkNotNull(uid, r'AppUser', 'uid');
+    BuiltValueNullFieldError.checkNotNull(email, r'AppUser', 'email');
+    BuiltValueNullFieldError.checkNotNull(username, r'AppUser', 'username');
+    BuiltValueNullFieldError.checkNotNull(name, r'AppUser', 'name');
+    BuiltValueNullFieldError.checkNotNull(series, r'AppUser', 'series');
+    BuiltValueNullFieldError.checkNotNull(group, r'AppUser', 'group');
+    BuiltValueNullFieldError.checkNotNull(subgroup, r'AppUser', 'subgroup');
+    BuiltValueNullFieldError.checkNotNull(year, r'AppUser', 'year');
+    BuiltValueNullFieldError.checkNotNull(semester, r'AppUser', 'semester');
   }
 
   @override
@@ -500,12 +554,16 @@ class _$AppUser extends AppUser {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AppUser &&
+        uid == other.uid &&
+        email == other.email &&
         username == other.username &&
         name == other.name &&
         series == other.series &&
         group == other.group &&
         subgroup == other.subgroup &&
-        calendar == other.calendar;
+        year == other.year &&
+        semester == other.semester &&
+        photoUrl == other.photoUrl;
   }
 
   @override
@@ -513,28 +571,48 @@ class _$AppUser extends AppUser {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, username.hashCode), name.hashCode),
-                    series.hashCode),
-                group.hashCode),
-            subgroup.hashCode),
-        calendar.hashCode));
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc($jc(0, uid.hashCode), email.hashCode),
+                                    username.hashCode),
+                                name.hashCode),
+                            series.hashCode),
+                        group.hashCode),
+                    subgroup.hashCode),
+                year.hashCode),
+            semester.hashCode),
+        photoUrl.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppUser')
+    return (newBuiltValueToStringHelper(r'AppUser')
+          ..add('uid', uid)
+          ..add('email', email)
           ..add('username', username)
           ..add('name', name)
           ..add('series', series)
           ..add('group', group)
           ..add('subgroup', subgroup)
-          ..add('calendar', calendar))
+          ..add('year', year)
+          ..add('semester', semester)
+          ..add('photoUrl', photoUrl))
         .toString();
   }
 }
 
 class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   _$AppUser? _$v;
+
+  String? _uid;
+  String? get uid => _$this._uid;
+  set uid(String? uid) => _$this._uid = uid;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   String? _username;
   String? get username => _$this._username;
@@ -556,21 +634,33 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   String? get subgroup => _$this._subgroup;
   set subgroup(String? subgroup) => _$this._subgroup = subgroup;
 
-  CalendarBuilder? _calendar;
-  CalendarBuilder get calendar => _$this._calendar ??= new CalendarBuilder();
-  set calendar(CalendarBuilder? calendar) => _$this._calendar = calendar;
+  String? _year;
+  String? get year => _$this._year;
+  set year(String? year) => _$this._year = year;
+
+  String? _semester;
+  String? get semester => _$this._semester;
+  set semester(String? semester) => _$this._semester = semester;
+
+  String? _photoUrl;
+  String? get photoUrl => _$this._photoUrl;
+  set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
 
   AppUserBuilder();
 
   AppUserBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _uid = $v.uid;
+      _email = $v.email;
       _username = $v.username;
       _name = $v.name;
       _series = $v.series;
       _group = $v.group;
       _subgroup = $v.subgroup;
-      _calendar = $v.calendar?.toBuilder();
+      _year = $v.year;
+      _semester = $v.semester;
+      _photoUrl = $v.photoUrl;
       _$v = null;
     }
     return this;
@@ -591,38 +681,34 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   AppUser build() => _build();
 
   _$AppUser _build() {
-    _$AppUser _$result;
-    try {
-      _$result = _$v ??
-          new _$AppUser._(
-              username: BuiltValueNullFieldError.checkNotNull(
-                  username, 'AppUser', 'username'),
-              name: BuiltValueNullFieldError.checkNotNull(
-                  name, 'AppUser', 'name'),
-              series: BuiltValueNullFieldError.checkNotNull(
-                  series, 'AppUser', 'series'),
-              group: BuiltValueNullFieldError.checkNotNull(
-                  group, 'AppUser', 'group'),
-              subgroup: BuiltValueNullFieldError.checkNotNull(
-                  subgroup, 'AppUser', 'subgroup'),
-              calendar: _calendar?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'calendar';
-        _calendar?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppUser', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$AppUser._(
+            uid: BuiltValueNullFieldError.checkNotNull(uid, r'AppUser', 'uid'),
+            email: BuiltValueNullFieldError.checkNotNull(
+                email, r'AppUser', 'email'),
+            username: BuiltValueNullFieldError.checkNotNull(
+                username, r'AppUser', 'username'),
+            name:
+                BuiltValueNullFieldError.checkNotNull(name, r'AppUser', 'name'),
+            series: BuiltValueNullFieldError.checkNotNull(
+                series, r'AppUser', 'series'),
+            group: BuiltValueNullFieldError.checkNotNull(
+                group, r'AppUser', 'group'),
+            subgroup: BuiltValueNullFieldError.checkNotNull(
+                subgroup, r'AppUser', 'subgroup'),
+            year:
+                BuiltValueNullFieldError.checkNotNull(year, r'AppUser', 'year'),
+            semester: BuiltValueNullFieldError.checkNotNull(
+                semester, r'AppUser', 'semester'),
+            photoUrl: photoUrl);
     replace(_$result);
     return _$result;
   }
 }
 
 class _$Calendar extends Calendar {
+  @override
+  final String id;
   @override
   final int year;
   @override
@@ -636,14 +722,16 @@ class _$Calendar extends Calendar {
       (new CalendarBuilder()..update(updates))._build();
 
   _$Calendar._(
-      {required this.year,
+      {required this.id,
+      required this.year,
       required this.series,
       required this.semester,
       this.events})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(year, 'Calendar', 'year');
-    BuiltValueNullFieldError.checkNotNull(series, 'Calendar', 'series');
-    BuiltValueNullFieldError.checkNotNull(semester, 'Calendar', 'semester');
+    BuiltValueNullFieldError.checkNotNull(id, r'Calendar', 'id');
+    BuiltValueNullFieldError.checkNotNull(year, r'Calendar', 'year');
+    BuiltValueNullFieldError.checkNotNull(series, r'Calendar', 'series');
+    BuiltValueNullFieldError.checkNotNull(semester, r'Calendar', 'semester');
   }
 
   @override
@@ -657,6 +745,7 @@ class _$Calendar extends Calendar {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Calendar &&
+        id == other.id &&
         year == other.year &&
         series == other.series &&
         semester == other.semester &&
@@ -666,13 +755,15 @@ class _$Calendar extends Calendar {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, year.hashCode), series.hashCode), semester.hashCode),
+        $jc($jc($jc($jc(0, id.hashCode), year.hashCode), series.hashCode),
+            semester.hashCode),
         events.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Calendar')
+    return (newBuiltValueToStringHelper(r'Calendar')
+          ..add('id', id)
           ..add('year', year)
           ..add('series', series)
           ..add('semester', semester)
@@ -683,6 +774,10 @@ class _$Calendar extends Calendar {
 
 class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
   _$Calendar? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   int? _year;
   int? get year => _$this._year;
@@ -705,6 +800,7 @@ class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
   CalendarBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _year = $v.year;
       _series = $v.series;
       _semester = $v.semester;
@@ -733,12 +829,13 @@ class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
     try {
       _$result = _$v ??
           new _$Calendar._(
+              id: BuiltValueNullFieldError.checkNotNull(id, r'Calendar', 'id'),
               year: BuiltValueNullFieldError.checkNotNull(
-                  year, 'Calendar', 'year'),
+                  year, r'Calendar', 'year'),
               series: BuiltValueNullFieldError.checkNotNull(
-                  series, 'Calendar', 'series'),
+                  series, r'Calendar', 'series'),
               semester: BuiltValueNullFieldError.checkNotNull(
-                  semester, 'Calendar', 'semester'),
+                  semester, r'Calendar', 'semester'),
               events: _events?.build());
     } catch (_) {
       late String _$failedField;
@@ -747,7 +844,7 @@ class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
         _events?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Calendar', _$failedField, e.toString());
+            r'Calendar', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -757,6 +854,8 @@ class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
 }
 
 class _$Event extends Event {
+  @override
+  final String id;
   @override
   final String name;
   @override
@@ -774,19 +873,21 @@ class _$Event extends Event {
       (new EventBuilder()..update(updates))._build();
 
   _$Event._(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.type,
       required this.timeslot,
       required this.weekday,
       required this.parity,
       required this.extra})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, 'Event', 'name');
-    BuiltValueNullFieldError.checkNotNull(type, 'Event', 'type');
-    BuiltValueNullFieldError.checkNotNull(timeslot, 'Event', 'timeslot');
-    BuiltValueNullFieldError.checkNotNull(weekday, 'Event', 'weekday');
-    BuiltValueNullFieldError.checkNotNull(parity, 'Event', 'parity');
-    BuiltValueNullFieldError.checkNotNull(extra, 'Event', 'extra');
+    BuiltValueNullFieldError.checkNotNull(id, r'Event', 'id');
+    BuiltValueNullFieldError.checkNotNull(name, r'Event', 'name');
+    BuiltValueNullFieldError.checkNotNull(type, r'Event', 'type');
+    BuiltValueNullFieldError.checkNotNull(timeslot, r'Event', 'timeslot');
+    BuiltValueNullFieldError.checkNotNull(weekday, r'Event', 'weekday');
+    BuiltValueNullFieldError.checkNotNull(parity, r'Event', 'parity');
+    BuiltValueNullFieldError.checkNotNull(extra, r'Event', 'extra');
   }
 
   @override
@@ -800,6 +901,7 @@ class _$Event extends Event {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Event &&
+        id == other.id &&
         name == other.name &&
         type == other.type &&
         timeslot == other.timeslot &&
@@ -813,7 +915,7 @@ class _$Event extends Event {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, name.hashCode), type.hashCode),
+                $jc($jc($jc($jc(0, id.hashCode), name.hashCode), type.hashCode),
                     timeslot.hashCode),
                 weekday.hashCode),
             parity.hashCode),
@@ -822,7 +924,8 @@ class _$Event extends Event {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Event')
+    return (newBuiltValueToStringHelper(r'Event')
+          ..add('id', id)
           ..add('name', name)
           ..add('type', type)
           ..add('timeslot', timeslot)
@@ -835,6 +938,10 @@ class _$Event extends Event {
 
 class EventBuilder implements Builder<Event, EventBuilder> {
   _$Event? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _name;
   String? get name => _$this._name;
@@ -865,6 +972,7 @@ class EventBuilder implements Builder<Event, EventBuilder> {
   EventBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _name = $v.name;
       _type = $v.type;
       _timeslot = $v.timeslot;
@@ -893,19 +1001,20 @@ class EventBuilder implements Builder<Event, EventBuilder> {
   _$Event _build() {
     final _$result = _$v ??
         new _$Event._(
-            name: BuiltValueNullFieldError.checkNotNull(name, 'Event', 'name'),
-            type: BuiltValueNullFieldError.checkNotNull(type, 'Event', 'type'),
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Event', 'id'),
+            name: BuiltValueNullFieldError.checkNotNull(name, r'Event', 'name'),
+            type: BuiltValueNullFieldError.checkNotNull(type, r'Event', 'type'),
             timeslot: BuiltValueNullFieldError.checkNotNull(
-                timeslot, 'Event', 'timeslot'),
+                timeslot, r'Event', 'timeslot'),
             weekday: BuiltValueNullFieldError.checkNotNull(
-                weekday, 'Event', 'weekday'),
+                weekday, r'Event', 'weekday'),
             parity: BuiltValueNullFieldError.checkNotNull(
-                parity, 'Event', 'parity'),
-            extra:
-                BuiltValueNullFieldError.checkNotNull(extra, 'Event', 'extra'));
+                parity, r'Event', 'parity'),
+            extra: BuiltValueNullFieldError.checkNotNull(
+                extra, r'Event', 'extra'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
