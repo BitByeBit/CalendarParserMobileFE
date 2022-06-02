@@ -49,7 +49,8 @@ class AuthApi {
         ..subgroup = subgroup
         ..year = year
         ..semester = semester
-        ..photoUrl = result.user!.photoURL;
+        ..photoUrl = result.user!.photoURL
+        ..hasCalendar = false;
     });
 
     await _firestore //
@@ -68,7 +69,7 @@ class AuthApi {
     return user!;
   }
 
-  Future<void> signOut() async {
+  Future<void> logout() async {
     await _auth.signOut();
   }
 
@@ -88,17 +89,79 @@ class AuthApi {
     return url;
   }
 
-  Future<List<AppUser>> getUsers(List<String> uids) async {
-    final List<AppUser> users = <AppUser>[];
+  Future<bool> updateHasCalendar(String uid, bool hasCalendar) async {
+    await _firestore //
+        .doc('users/$uid')
+        .update(<String, dynamic>{'hasCalendar': hasCalendar});
 
-    for (final String uid in uids) {
-      final DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore //
-          .doc('users/$uid')
-          .get();
+    return hasCalendar;
+  }
 
-      users.add(AppUser.fromJson(snapshot.data()));
-    }
+  Future<List<AppUser>> getUsers() async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore //
+        .collection('users')
+        .get();
 
-    return users;
+    return snapshot.docs //
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
+        .toList();
+  }
+
+  Future<List<Connection>> getFriends(String uid) async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore //
+        .collection('connections/$uid/friends')
+        .get();
+
+    return snapshot.docs //
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Connection.fromJson(doc.data()))
+        .toList();
+  }
+
+  Future<Connection> addFriend(String srcUid, String dstUid) async {
+    final DocumentSnapshot<Map<String, dynamic>> srcSnap = await _firestore //
+        .doc('users/$srcUid')
+        .get();
+    final AppUser srcUser = AppUser.fromJson(srcSnap.data());
+
+    final DocumentSnapshot<Map<String, dynamic>> dstSnap = await _firestore //
+        .doc('users/$dstUid')
+        .get();
+    final AppUser dstUser = AppUser.fromJson(dstSnap.data());
+
+    final Connection srcConnection = Connection((ConnectionBuilder b) {
+      b
+        ..ownerUid = srcUid
+        ..friendUid = dstUid
+        ..friendEmail = dstUser.email
+        ..friendName = dstUser.name;
+    });
+
+    final Connection dstConnection = Connection((ConnectionBuilder b) {
+      b
+        ..ownerUid = dstUid
+        ..friendUid = srcUid
+        ..friendEmail = srcUser.email
+        ..friendName = srcUser.name;
+    });
+
+    await _firestore //
+        .doc('connections/$srcUid/friends/$dstUid')
+        .set(srcConnection.json);
+
+    await _firestore //
+        .doc('connections/$dstUid/friends/$srcUid')
+        .set(dstConnection.json);
+
+    return srcConnection;
+  }
+
+  Future<void> removeFriend(String srcUid, String dstUid) async {
+    await _firestore //
+        .doc('connections/$srcUid/friends/$dstUid')
+        .delete();
+
+    await _firestore //
+        .doc('connections/$dstUid/friends/$srcUid')
+        .delete();
   }
 }

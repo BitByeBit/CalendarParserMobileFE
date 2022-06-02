@@ -1,4 +1,10 @@
+import 'package:calendar_parser_acs/src/actions/index.dart';
+import 'package:calendar_parser_acs/src/container/user_container.dart';
+import 'package:calendar_parser_acs/src/models/index.dart';
+import 'package:calendar_parser_acs/src/presentation/custom_app_bar.dart';
+import 'package:calendar_parser_acs/src/presentation/user_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 import 'navigation_drawer.dart';
 
@@ -14,27 +20,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavDrawer(),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Home Page',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: const Color.fromRGBO(249, 37, 97, 1),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.upload,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/uploader');
-            },
-          ),
-        ],
+      appBar: const CustomAppBar(
+        pageTitle: 'Home Page',
+        enableButton: true,
       ),
       body: Center(
         child: Column(
@@ -42,44 +30,56 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             const Padding(
               padding: EdgeInsets.all(30.0),
-              child: CircleAvatar(
-                radius: 75.0,
-                backgroundColor: Colors.white,
-                foregroundImage: NetworkImage(
-                    'https://imgs.search.brave.com/yAcnzKhMMjGKoyuvuhYQgu8GDLj80dC7iWgHO7fven0/rs:fit:1000:1000:1/g:ce/aHR0cHM6Ly9tb29u/dmlsbGFnZWFzc29j/aWF0aW9uLm9yZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAxOC8w/Ni9kZWZhdWx0LXBy/b2ZpbGUtcGljdHVy/ZTEuanBn'),
+              child: UserAvatar(
+                size: 75.0,
+                profilePhotoUpload: false,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Text(
-                'You are not logged in!',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24.0,
-                ),
-              ),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: UserContainer(builder: (BuildContext context, AppUser? user) {
+                return Text(
+                  user == null ? 'You are not logged in!' : 'Welcome back, ${user.name}!',
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24.0,
+                  ),
+                  textAlign: TextAlign.center,
+                );
+              }),
             ),
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: SizedBox(
                 height: 63,
                 width: 250,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/login');
+                child: UserContainer(
+                  builder: (BuildContext context, AppUser? user) {
+                    return TextButton(
+                      onPressed: () {
+                        if (user == null) {
+                          Navigator.pushNamed(context, '/login');
+                        } else if (user.hasCalendar) {
+                          StoreProvider.of<AppState>(context).dispatch(const GetCalendar());
+                          Navigator.pushNamed(context, '/calendar');
+                        } else {
+                          Navigator.pushNamed(context, '/uploader');
+                        }
+                      },
+                      child: Text(
+                        user == null ? 'Log In' : user.hasCalendar ? 'View Calendar' : 'Upload Calendar',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(249, 37, 97, 1)),
+                      ),
+                    );
                   },
-                  child: const Text(
-                    'Log In',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(249, 37, 97, 1)),
-                  ),
                 ),
               ),
             ),

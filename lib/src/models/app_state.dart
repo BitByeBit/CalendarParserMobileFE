@@ -3,7 +3,9 @@ part of models;
 abstract class AppState implements Built<AppState, AppStateBuilder> {
   factory AppState() {
     return _$AppState((AppStateBuilder b) {
-      b.isLoading = false;
+      b
+        ..isLoading = false
+        ..selectedDay = DateTime.now();
     });
   }
 
@@ -12,10 +14,16 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   AppState._();
 
   AppUser? get user;
-  
-  Calendar get calendars;
 
-  BuiltList<Event> get events;
+  BuiltMap<String, AppUser> get users;
+
+  BuiltMap<String, Connection> get connections;
+
+  Calendar? get calendar;
+
+  DateTime get selectedDay;
+
+  Event? get selectedEvent;
 
   bool get isLoading;
 

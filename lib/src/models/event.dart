@@ -6,7 +6,7 @@ abstract class Event implements Built<Event, EventBuilder> {
 
   Event._();
 
-  String get id;
+  int get eventId;
 
   String get name;
 
@@ -19,6 +19,8 @@ abstract class Event implements Built<Event, EventBuilder> {
   int get parity;
 
   String get extra;
+
+  String get tag;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 

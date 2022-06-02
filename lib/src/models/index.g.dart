@@ -10,6 +10,7 @@ Serializer<AppState> _$appStateSerializer = new _$AppStateSerializer();
 Serializer<AppUser> _$appUserSerializer = new _$AppUserSerializer();
 Serializer<Calendar> _$calendarSerializer = new _$CalendarSerializer();
 Serializer<Event> _$eventSerializer = new _$EventSerializer();
+Serializer<Connection> _$connectionSerializer = new _$ConnectionSerializer();
 
 class _$AppStateSerializer implements StructuredSerializer<AppState> {
   @override
@@ -21,13 +22,17 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
   Iterable<Object?> serialize(Serializers serializers, AppState object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'calendars',
-      serializers.serialize(object.calendars,
-          specifiedType: const FullType(Calendar)),
-      'events',
-      serializers.serialize(object.events,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Event)])),
+      'users',
+      serializers.serialize(object.users,
+          specifiedType: const FullType(BuiltMap,
+              const [const FullType(String), const FullType(AppUser)])),
+      'connections',
+      serializers.serialize(object.connections,
+          specifiedType: const FullType(BuiltMap,
+              const [const FullType(String), const FullType(Connection)])),
+      'selectedDay',
+      serializers.serialize(object.selectedDay,
+          specifiedType: const FullType(DateTime)),
       'isLoading',
       serializers.serialize(object.isLoading,
           specifiedType: const FullType(bool)),
@@ -39,6 +44,20 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
         ..add('user')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(AppUser)));
+    }
+    value = object.calendar;
+    if (value != null) {
+      result
+        ..add('calendar')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Calendar)));
+    }
+    value = object.selectedEvent;
+    if (value != null) {
+      result
+        ..add('selectedEvent')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Event)));
     }
     value = object.error;
     if (value != null) {
@@ -65,15 +84,29 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
           result.user.replace(serializers.deserialize(value,
               specifiedType: const FullType(AppUser))! as AppUser);
           break;
-        case 'calendars':
-          result.calendars.replace(serializers.deserialize(value,
+        case 'users':
+          result.users.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap,
+                  const [const FullType(String), const FullType(AppUser)]))!);
+          break;
+        case 'connections':
+          result.connections.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [
+                const FullType(String),
+                const FullType(Connection)
+              ]))!);
+          break;
+        case 'calendar':
+          result.calendar.replace(serializers.deserialize(value,
               specifiedType: const FullType(Calendar))! as Calendar);
           break;
-        case 'events':
-          result.events.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Event)]))!
-              as BuiltList<Object?>);
+        case 'selectedDay':
+          result.selectedDay = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime))! as DateTime;
+          break;
+        case 'selectedEvent':
+          result.selectedEvent.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Event))! as Event);
           break;
         case 'isLoading':
           result.isLoading = serializers.deserialize(value,
@@ -124,6 +157,9 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       'semester',
       serializers.serialize(object.semester,
           specifiedType: const FullType(String)),
+      'hasCalendar',
+      serializers.serialize(object.hasCalendar,
+          specifiedType: const FullType(bool)),
     ];
     Object? value;
     value = object.photoUrl;
@@ -187,6 +223,10 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
           result.photoUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'hasCalendar':
+          result.hasCalendar = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
       }
     }
 
@@ -204,26 +244,23 @@ class _$CalendarSerializer implements StructuredSerializer<Calendar> {
   Iterable<Object?> serialize(Serializers serializers, Calendar object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'userUid',
+      serializers.serialize(object.userUid,
+          specifiedType: const FullType(String)),
       'year',
-      serializers.serialize(object.year, specifiedType: const FullType(int)),
+      serializers.serialize(object.year, specifiedType: const FullType(String)),
       'series',
       serializers.serialize(object.series,
           specifiedType: const FullType(String)),
       'semester',
       serializers.serialize(object.semester,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(String)),
+      'events',
+      serializers.serialize(object.events,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(Event)])),
     ];
-    Object? value;
-    value = object.events;
-    if (value != null) {
-      result
-        ..add('events')
-        ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(BuiltList, const [const FullType(Event)])));
-    }
+
     return result;
   }
 
@@ -238,13 +275,13 @@ class _$CalendarSerializer implements StructuredSerializer<Calendar> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'id':
-          result.id = serializers.deserialize(value,
+        case 'userUid':
+          result.userUid = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
         case 'year':
           result.year = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'series':
           result.series = serializers.deserialize(value,
@@ -252,7 +289,7 @@ class _$CalendarSerializer implements StructuredSerializer<Calendar> {
           break;
         case 'semester':
           result.semester = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'events':
           result.events.replace(serializers.deserialize(value,
@@ -277,8 +314,8 @@ class _$EventSerializer implements StructuredSerializer<Event> {
   Iterable<Object?> serialize(Serializers serializers, Event object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'eventId',
+      serializers.serialize(object.eventId, specifiedType: const FullType(int)),
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'type',
@@ -294,6 +331,8 @@ class _$EventSerializer implements StructuredSerializer<Event> {
       'extra',
       serializers.serialize(object.extra,
           specifiedType: const FullType(String)),
+      'tag',
+      serializers.serialize(object.tag, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -310,9 +349,9 @@ class _$EventSerializer implements StructuredSerializer<Event> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'eventId':
+          result.eventId = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
           break;
         case 'name':
           result.name = serializers.deserialize(value,
@@ -338,6 +377,71 @@ class _$EventSerializer implements StructuredSerializer<Event> {
           result.extra = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
+        case 'tag':
+          result.tag = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ConnectionSerializer implements StructuredSerializer<Connection> {
+  @override
+  final Iterable<Type> types = const [Connection, _$Connection];
+  @override
+  final String wireName = 'Connection';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Connection object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ownerUid',
+      serializers.serialize(object.ownerUid,
+          specifiedType: const FullType(String)),
+      'friendUid',
+      serializers.serialize(object.friendUid,
+          specifiedType: const FullType(String)),
+      'friendEmail',
+      serializers.serialize(object.friendEmail,
+          specifiedType: const FullType(String)),
+      'friendName',
+      serializers.serialize(object.friendName,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Connection deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new ConnectionBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ownerUid':
+          result.ownerUid = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'friendUid':
+          result.friendUid = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'friendEmail':
+          result.friendEmail = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'friendName':
+          result.friendName = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
       }
     }
 
@@ -349,9 +453,15 @@ class _$AppState extends AppState {
   @override
   final AppUser? user;
   @override
-  final Calendar calendars;
+  final BuiltMap<String, AppUser> users;
   @override
-  final BuiltList<Event> events;
+  final BuiltMap<String, Connection> connections;
+  @override
+  final Calendar? calendar;
+  @override
+  final DateTime selectedDay;
+  @override
+  final Event? selectedEvent;
   @override
   final bool isLoading;
   @override
@@ -362,13 +472,19 @@ class _$AppState extends AppState {
 
   _$AppState._(
       {this.user,
-      required this.calendars,
-      required this.events,
+      required this.users,
+      required this.connections,
+      this.calendar,
+      required this.selectedDay,
+      this.selectedEvent,
       required this.isLoading,
       this.error})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(calendars, r'AppState', 'calendars');
-    BuiltValueNullFieldError.checkNotNull(events, r'AppState', 'events');
+    BuiltValueNullFieldError.checkNotNull(users, r'AppState', 'users');
+    BuiltValueNullFieldError.checkNotNull(
+        connections, r'AppState', 'connections');
+    BuiltValueNullFieldError.checkNotNull(
+        selectedDay, r'AppState', 'selectedDay');
     BuiltValueNullFieldError.checkNotNull(isLoading, r'AppState', 'isLoading');
   }
 
@@ -384,8 +500,11 @@ class _$AppState extends AppState {
     if (identical(other, this)) return true;
     return other is AppState &&
         user == other.user &&
-        calendars == other.calendars &&
-        events == other.events &&
+        users == other.users &&
+        connections == other.connections &&
+        calendar == other.calendar &&
+        selectedDay == other.selectedDay &&
+        selectedEvent == other.selectedEvent &&
         isLoading == other.isLoading &&
         error == other.error;
   }
@@ -394,8 +513,14 @@ class _$AppState extends AppState {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, user.hashCode), calendars.hashCode),
-                events.hashCode),
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, user.hashCode), users.hashCode),
+                            connections.hashCode),
+                        calendar.hashCode),
+                    selectedDay.hashCode),
+                selectedEvent.hashCode),
             isLoading.hashCode),
         error.hashCode));
   }
@@ -404,8 +529,11 @@ class _$AppState extends AppState {
   String toString() {
     return (newBuiltValueToStringHelper(r'AppState')
           ..add('user', user)
-          ..add('calendars', calendars)
-          ..add('events', events)
+          ..add('users', users)
+          ..add('connections', connections)
+          ..add('calendar', calendar)
+          ..add('selectedDay', selectedDay)
+          ..add('selectedEvent', selectedEvent)
           ..add('isLoading', isLoading)
           ..add('error', error))
         .toString();
@@ -419,13 +547,30 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   AppUserBuilder get user => _$this._user ??= new AppUserBuilder();
   set user(AppUserBuilder? user) => _$this._user = user;
 
-  CalendarBuilder? _calendars;
-  CalendarBuilder get calendars => _$this._calendars ??= new CalendarBuilder();
-  set calendars(CalendarBuilder? calendars) => _$this._calendars = calendars;
+  MapBuilder<String, AppUser>? _users;
+  MapBuilder<String, AppUser> get users =>
+      _$this._users ??= new MapBuilder<String, AppUser>();
+  set users(MapBuilder<String, AppUser>? users) => _$this._users = users;
 
-  ListBuilder<Event>? _events;
-  ListBuilder<Event> get events => _$this._events ??= new ListBuilder<Event>();
-  set events(ListBuilder<Event>? events) => _$this._events = events;
+  MapBuilder<String, Connection>? _connections;
+  MapBuilder<String, Connection> get connections =>
+      _$this._connections ??= new MapBuilder<String, Connection>();
+  set connections(MapBuilder<String, Connection>? connections) =>
+      _$this._connections = connections;
+
+  CalendarBuilder? _calendar;
+  CalendarBuilder get calendar => _$this._calendar ??= new CalendarBuilder();
+  set calendar(CalendarBuilder? calendar) => _$this._calendar = calendar;
+
+  DateTime? _selectedDay;
+  DateTime? get selectedDay => _$this._selectedDay;
+  set selectedDay(DateTime? selectedDay) => _$this._selectedDay = selectedDay;
+
+  EventBuilder? _selectedEvent;
+  EventBuilder get selectedEvent =>
+      _$this._selectedEvent ??= new EventBuilder();
+  set selectedEvent(EventBuilder? selectedEvent) =>
+      _$this._selectedEvent = selectedEvent;
 
   bool? _isLoading;
   bool? get isLoading => _$this._isLoading;
@@ -441,8 +586,11 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     final $v = _$v;
     if ($v != null) {
       _user = $v.user?.toBuilder();
-      _calendars = $v.calendars.toBuilder();
-      _events = $v.events.toBuilder();
+      _users = $v.users.toBuilder();
+      _connections = $v.connections.toBuilder();
+      _calendar = $v.calendar?.toBuilder();
+      _selectedDay = $v.selectedDay;
+      _selectedEvent = $v.selectedEvent?.toBuilder();
       _isLoading = $v.isLoading;
       _error = $v.error;
       _$v = null;
@@ -470,8 +618,12 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _$result = _$v ??
           new _$AppState._(
               user: _user?.build(),
-              calendars: calendars.build(),
-              events: events.build(),
+              users: users.build(),
+              connections: connections.build(),
+              calendar: _calendar?.build(),
+              selectedDay: BuiltValueNullFieldError.checkNotNull(
+                  selectedDay, r'AppState', 'selectedDay'),
+              selectedEvent: _selectedEvent?.build(),
               isLoading: BuiltValueNullFieldError.checkNotNull(
                   isLoading, r'AppState', 'isLoading'),
               error: error);
@@ -480,10 +632,15 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       try {
         _$failedField = 'user';
         _user?.build();
-        _$failedField = 'calendars';
-        calendars.build();
-        _$failedField = 'events';
-        events.build();
+        _$failedField = 'users';
+        users.build();
+        _$failedField = 'connections';
+        connections.build();
+        _$failedField = 'calendar';
+        _calendar?.build();
+
+        _$failedField = 'selectedEvent';
+        _selectedEvent?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'AppState', _$failedField, e.toString());
@@ -516,6 +673,8 @@ class _$AppUser extends AppUser {
   final String semester;
   @override
   final String? photoUrl;
+  @override
+  final bool hasCalendar;
 
   factory _$AppUser([void Function(AppUserBuilder)? updates]) =>
       (new AppUserBuilder()..update(updates))._build();
@@ -530,7 +689,8 @@ class _$AppUser extends AppUser {
       required this.subgroup,
       required this.year,
       required this.semester,
-      this.photoUrl})
+      this.photoUrl,
+      required this.hasCalendar})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, r'AppUser', 'uid');
     BuiltValueNullFieldError.checkNotNull(email, r'AppUser', 'email');
@@ -541,6 +701,8 @@ class _$AppUser extends AppUser {
     BuiltValueNullFieldError.checkNotNull(subgroup, r'AppUser', 'subgroup');
     BuiltValueNullFieldError.checkNotNull(year, r'AppUser', 'year');
     BuiltValueNullFieldError.checkNotNull(semester, r'AppUser', 'semester');
+    BuiltValueNullFieldError.checkNotNull(
+        hasCalendar, r'AppUser', 'hasCalendar');
   }
 
   @override
@@ -563,7 +725,8 @@ class _$AppUser extends AppUser {
         subgroup == other.subgroup &&
         year == other.year &&
         semester == other.semester &&
-        photoUrl == other.photoUrl;
+        photoUrl == other.photoUrl &&
+        hasCalendar == other.hasCalendar;
   }
 
   @override
@@ -575,15 +738,19 @@ class _$AppUser extends AppUser {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc($jc(0, uid.hashCode), email.hashCode),
-                                    username.hashCode),
-                                name.hashCode),
-                            series.hashCode),
-                        group.hashCode),
-                    subgroup.hashCode),
-                year.hashCode),
-            semester.hashCode),
-        photoUrl.hashCode));
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, uid.hashCode),
+                                            email.hashCode),
+                                        username.hashCode),
+                                    name.hashCode),
+                                series.hashCode),
+                            group.hashCode),
+                        subgroup.hashCode),
+                    year.hashCode),
+                semester.hashCode),
+            photoUrl.hashCode),
+        hasCalendar.hashCode));
   }
 
   @override
@@ -598,7 +765,8 @@ class _$AppUser extends AppUser {
           ..add('subgroup', subgroup)
           ..add('year', year)
           ..add('semester', semester)
-          ..add('photoUrl', photoUrl))
+          ..add('photoUrl', photoUrl)
+          ..add('hasCalendar', hasCalendar))
         .toString();
   }
 }
@@ -646,6 +814,10 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   String? get photoUrl => _$this._photoUrl;
   set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
 
+  bool? _hasCalendar;
+  bool? get hasCalendar => _$this._hasCalendar;
+  set hasCalendar(bool? hasCalendar) => _$this._hasCalendar = hasCalendar;
+
   AppUserBuilder();
 
   AppUserBuilder get _$this {
@@ -661,6 +833,7 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
       _year = $v.year;
       _semester = $v.semester;
       _photoUrl = $v.photoUrl;
+      _hasCalendar = $v.hasCalendar;
       _$v = null;
     }
     return this;
@@ -700,7 +873,9 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
                 BuiltValueNullFieldError.checkNotNull(year, r'AppUser', 'year'),
             semester: BuiltValueNullFieldError.checkNotNull(
                 semester, r'AppUser', 'semester'),
-            photoUrl: photoUrl);
+            photoUrl: photoUrl,
+            hasCalendar: BuiltValueNullFieldError.checkNotNull(
+                hasCalendar, r'AppUser', 'hasCalendar'));
     replace(_$result);
     return _$result;
   }
@@ -708,30 +883,31 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
 
 class _$Calendar extends Calendar {
   @override
-  final String id;
+  final String userUid;
   @override
-  final int year;
+  final String year;
   @override
   final String series;
   @override
-  final int semester;
+  final String semester;
   @override
-  final BuiltList<Event>? events;
+  final BuiltList<Event> events;
 
   factory _$Calendar([void Function(CalendarBuilder)? updates]) =>
       (new CalendarBuilder()..update(updates))._build();
 
   _$Calendar._(
-      {required this.id,
+      {required this.userUid,
       required this.year,
       required this.series,
       required this.semester,
-      this.events})
+      required this.events})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'Calendar', 'id');
+    BuiltValueNullFieldError.checkNotNull(userUid, r'Calendar', 'userUid');
     BuiltValueNullFieldError.checkNotNull(year, r'Calendar', 'year');
     BuiltValueNullFieldError.checkNotNull(series, r'Calendar', 'series');
     BuiltValueNullFieldError.checkNotNull(semester, r'Calendar', 'semester');
+    BuiltValueNullFieldError.checkNotNull(events, r'Calendar', 'events');
   }
 
   @override
@@ -745,7 +921,7 @@ class _$Calendar extends Calendar {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Calendar &&
-        id == other.id &&
+        userUid == other.userUid &&
         year == other.year &&
         series == other.series &&
         semester == other.semester &&
@@ -755,7 +931,7 @@ class _$Calendar extends Calendar {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc(0, id.hashCode), year.hashCode), series.hashCode),
+        $jc($jc($jc($jc(0, userUid.hashCode), year.hashCode), series.hashCode),
             semester.hashCode),
         events.hashCode));
   }
@@ -763,7 +939,7 @@ class _$Calendar extends Calendar {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Calendar')
-          ..add('id', id)
+          ..add('userUid', userUid)
           ..add('year', year)
           ..add('series', series)
           ..add('semester', semester)
@@ -775,21 +951,21 @@ class _$Calendar extends Calendar {
 class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
   _$Calendar? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  String? _userUid;
+  String? get userUid => _$this._userUid;
+  set userUid(String? userUid) => _$this._userUid = userUid;
 
-  int? _year;
-  int? get year => _$this._year;
-  set year(int? year) => _$this._year = year;
+  String? _year;
+  String? get year => _$this._year;
+  set year(String? year) => _$this._year = year;
 
   String? _series;
   String? get series => _$this._series;
   set series(String? series) => _$this._series = series;
 
-  int? _semester;
-  int? get semester => _$this._semester;
-  set semester(int? semester) => _$this._semester = semester;
+  String? _semester;
+  String? get semester => _$this._semester;
+  set semester(String? semester) => _$this._semester = semester;
 
   ListBuilder<Event>? _events;
   ListBuilder<Event> get events => _$this._events ??= new ListBuilder<Event>();
@@ -800,11 +976,11 @@ class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
   CalendarBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
+      _userUid = $v.userUid;
       _year = $v.year;
       _series = $v.series;
       _semester = $v.semester;
-      _events = $v.events?.toBuilder();
+      _events = $v.events.toBuilder();
       _$v = null;
     }
     return this;
@@ -829,19 +1005,20 @@ class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
     try {
       _$result = _$v ??
           new _$Calendar._(
-              id: BuiltValueNullFieldError.checkNotNull(id, r'Calendar', 'id'),
+              userUid: BuiltValueNullFieldError.checkNotNull(
+                  userUid, r'Calendar', 'userUid'),
               year: BuiltValueNullFieldError.checkNotNull(
                   year, r'Calendar', 'year'),
               series: BuiltValueNullFieldError.checkNotNull(
                   series, r'Calendar', 'series'),
               semester: BuiltValueNullFieldError.checkNotNull(
                   semester, r'Calendar', 'semester'),
-              events: _events?.build());
+              events: events.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'events';
-        _events?.build();
+        events.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Calendar', _$failedField, e.toString());
@@ -855,7 +1032,7 @@ class CalendarBuilder implements Builder<Calendar, CalendarBuilder> {
 
 class _$Event extends Event {
   @override
-  final String id;
+  final int eventId;
   @override
   final String name;
   @override
@@ -868,26 +1045,30 @@ class _$Event extends Event {
   final int parity;
   @override
   final String extra;
+  @override
+  final String tag;
 
   factory _$Event([void Function(EventBuilder)? updates]) =>
       (new EventBuilder()..update(updates))._build();
 
   _$Event._(
-      {required this.id,
+      {required this.eventId,
       required this.name,
       required this.type,
       required this.timeslot,
       required this.weekday,
       required this.parity,
-      required this.extra})
+      required this.extra,
+      required this.tag})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'Event', 'id');
+    BuiltValueNullFieldError.checkNotNull(eventId, r'Event', 'eventId');
     BuiltValueNullFieldError.checkNotNull(name, r'Event', 'name');
     BuiltValueNullFieldError.checkNotNull(type, r'Event', 'type');
     BuiltValueNullFieldError.checkNotNull(timeslot, r'Event', 'timeslot');
     BuiltValueNullFieldError.checkNotNull(weekday, r'Event', 'weekday');
     BuiltValueNullFieldError.checkNotNull(parity, r'Event', 'parity');
     BuiltValueNullFieldError.checkNotNull(extra, r'Event', 'extra');
+    BuiltValueNullFieldError.checkNotNull(tag, r'Event', 'tag');
   }
 
   @override
@@ -901,13 +1082,14 @@ class _$Event extends Event {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Event &&
-        id == other.id &&
+        eventId == other.eventId &&
         name == other.name &&
         type == other.type &&
         timeslot == other.timeslot &&
         weekday == other.weekday &&
         parity == other.parity &&
-        extra == other.extra;
+        extra == other.extra &&
+        tag == other.tag;
   }
 
   @override
@@ -915,23 +1097,28 @@ class _$Event extends Event {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc($jc(0, id.hashCode), name.hashCode), type.hashCode),
-                    timeslot.hashCode),
-                weekday.hashCode),
-            parity.hashCode),
-        extra.hashCode));
+                $jc(
+                    $jc(
+                        $jc($jc($jc(0, eventId.hashCode), name.hashCode),
+                            type.hashCode),
+                        timeslot.hashCode),
+                    weekday.hashCode),
+                parity.hashCode),
+            extra.hashCode),
+        tag.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Event')
-          ..add('id', id)
+          ..add('eventId', eventId)
           ..add('name', name)
           ..add('type', type)
           ..add('timeslot', timeslot)
           ..add('weekday', weekday)
           ..add('parity', parity)
-          ..add('extra', extra))
+          ..add('extra', extra)
+          ..add('tag', tag))
         .toString();
   }
 }
@@ -939,9 +1126,9 @@ class _$Event extends Event {
 class EventBuilder implements Builder<Event, EventBuilder> {
   _$Event? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  int? _eventId;
+  int? get eventId => _$this._eventId;
+  set eventId(int? eventId) => _$this._eventId = eventId;
 
   String? _name;
   String? get name => _$this._name;
@@ -967,18 +1154,23 @@ class EventBuilder implements Builder<Event, EventBuilder> {
   String? get extra => _$this._extra;
   set extra(String? extra) => _$this._extra = extra;
 
+  String? _tag;
+  String? get tag => _$this._tag;
+  set tag(String? tag) => _$this._tag = tag;
+
   EventBuilder();
 
   EventBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
+      _eventId = $v.eventId;
       _name = $v.name;
       _type = $v.type;
       _timeslot = $v.timeslot;
       _weekday = $v.weekday;
       _parity = $v.parity;
       _extra = $v.extra;
+      _tag = $v.tag;
       _$v = null;
     }
     return this;
@@ -1001,7 +1193,8 @@ class EventBuilder implements Builder<Event, EventBuilder> {
   _$Event _build() {
     final _$result = _$v ??
         new _$Event._(
-            id: BuiltValueNullFieldError.checkNotNull(id, r'Event', 'id'),
+            eventId: BuiltValueNullFieldError.checkNotNull(
+                eventId, r'Event', 'eventId'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'Event', 'name'),
             type: BuiltValueNullFieldError.checkNotNull(type, r'Event', 'type'),
             timeslot: BuiltValueNullFieldError.checkNotNull(
@@ -1010,8 +1203,136 @@ class EventBuilder implements Builder<Event, EventBuilder> {
                 weekday, r'Event', 'weekday'),
             parity: BuiltValueNullFieldError.checkNotNull(
                 parity, r'Event', 'parity'),
-            extra: BuiltValueNullFieldError.checkNotNull(
-                extra, r'Event', 'extra'));
+            extra:
+                BuiltValueNullFieldError.checkNotNull(extra, r'Event', 'extra'),
+            tag: BuiltValueNullFieldError.checkNotNull(tag, r'Event', 'tag'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Connection extends Connection {
+  @override
+  final String ownerUid;
+  @override
+  final String friendUid;
+  @override
+  final String friendEmail;
+  @override
+  final String friendName;
+
+  factory _$Connection([void Function(ConnectionBuilder)? updates]) =>
+      (new ConnectionBuilder()..update(updates))._build();
+
+  _$Connection._(
+      {required this.ownerUid,
+      required this.friendUid,
+      required this.friendEmail,
+      required this.friendName})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(ownerUid, r'Connection', 'ownerUid');
+    BuiltValueNullFieldError.checkNotNull(
+        friendUid, r'Connection', 'friendUid');
+    BuiltValueNullFieldError.checkNotNull(
+        friendEmail, r'Connection', 'friendEmail');
+    BuiltValueNullFieldError.checkNotNull(
+        friendName, r'Connection', 'friendName');
+  }
+
+  @override
+  Connection rebuild(void Function(ConnectionBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ConnectionBuilder toBuilder() => new ConnectionBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Connection &&
+        ownerUid == other.ownerUid &&
+        friendUid == other.friendUid &&
+        friendEmail == other.friendEmail &&
+        friendName == other.friendName;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, ownerUid.hashCode), friendUid.hashCode),
+            friendEmail.hashCode),
+        friendName.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Connection')
+          ..add('ownerUid', ownerUid)
+          ..add('friendUid', friendUid)
+          ..add('friendEmail', friendEmail)
+          ..add('friendName', friendName))
+        .toString();
+  }
+}
+
+class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
+  _$Connection? _$v;
+
+  String? _ownerUid;
+  String? get ownerUid => _$this._ownerUid;
+  set ownerUid(String? ownerUid) => _$this._ownerUid = ownerUid;
+
+  String? _friendUid;
+  String? get friendUid => _$this._friendUid;
+  set friendUid(String? friendUid) => _$this._friendUid = friendUid;
+
+  String? _friendEmail;
+  String? get friendEmail => _$this._friendEmail;
+  set friendEmail(String? friendEmail) => _$this._friendEmail = friendEmail;
+
+  String? _friendName;
+  String? get friendName => _$this._friendName;
+  set friendName(String? friendName) => _$this._friendName = friendName;
+
+  ConnectionBuilder();
+
+  ConnectionBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ownerUid = $v.ownerUid;
+      _friendUid = $v.friendUid;
+      _friendEmail = $v.friendEmail;
+      _friendName = $v.friendName;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Connection other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Connection;
+  }
+
+  @override
+  void update(void Function(ConnectionBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Connection build() => _build();
+
+  _$Connection _build() {
+    final _$result = _$v ??
+        new _$Connection._(
+            ownerUid: BuiltValueNullFieldError.checkNotNull(
+                ownerUid, r'Connection', 'ownerUid'),
+            friendUid: BuiltValueNullFieldError.checkNotNull(
+                friendUid, r'Connection', 'friendUid'),
+            friendEmail: BuiltValueNullFieldError.checkNotNull(
+                friendEmail, r'Connection', 'friendEmail'),
+            friendName: BuiltValueNullFieldError.checkNotNull(
+                friendName, r'Connection', 'friendName'));
     replace(_$result);
     return _$result;
   }

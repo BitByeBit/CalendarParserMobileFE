@@ -6,15 +6,15 @@ abstract class Calendar implements Built<Calendar, CalendarBuilder> {
 
   Calendar._();
 
-  String get id;
+  String get userUid;
 
-  int get year;
+  String get year;
 
   String get series;
 
-  int get semester;
+  String get semester;
 
-  BuiltList<Event>? get events;
+  BuiltList<Event> get events;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 

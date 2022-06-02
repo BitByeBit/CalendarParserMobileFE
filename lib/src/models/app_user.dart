@@ -26,6 +26,8 @@ abstract class AppUser implements Built<AppUser, AppUserBuilder> {
 
   String? get photoUrl;
 
+  bool get hasCalendar;
+
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 
   static Serializer<AppUser> get serializer => _$appUserSerializer;
