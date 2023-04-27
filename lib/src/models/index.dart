@@ -9,4 +9,5 @@ part 'app_state.dart';
 part 'app_user.dart';
 part 'calendar.dart';
 part 'event.dart';
+part 'connection.dart';
 part 'index.g.dart';

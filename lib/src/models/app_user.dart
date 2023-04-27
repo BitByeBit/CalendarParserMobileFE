@@ -1,27 +1,14 @@
 part of models;
 
 abstract class AppUser implements Built<AppUser, AppUserBuilder> {
-  factory AppUser(
-      {required String username,
-      required String name,
-      required String series,
-      required String group,
-      required String subgroup,
-      Calendar? calendar}) {
-    return _$AppUser((AppUserBuilder b) {
-      b
-        ..username = username
-        ..name = name
-        ..series = series
-        ..group = group
-        ..subgroup = subgroup
-        ..calendar = calendar as CalendarBuilder?;
-    });
-  }
-
+  factory AppUser([void Function(AppUserBuilder b) updates]) = _$AppUser;
   factory AppUser.fromJson(dynamic json) => serializers.deserializeWith(serializer, json)!;
 
   AppUser._();
+
+  String get uid;
+
+  String get email;
 
   String get username;
 
@@ -33,7 +20,13 @@ abstract class AppUser implements Built<AppUser, AppUserBuilder> {
 
   String get subgroup;
 
-  Calendar? get calendar;
+  String get year;
+
+  String get semester;
+
+  String? get photoUrl;
+
+  bool get hasCalendar;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 

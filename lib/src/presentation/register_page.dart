@@ -1,5 +1,10 @@
+import 'package:calendar_parser_acs/src/actions/index.dart';
+import 'package:calendar_parser_acs/src/container/is_loading_container.dart';
+import 'package:calendar_parser_acs/src/models/index.dart';
+import 'package:calendar_parser_acs/src/presentation/custom_app_bar.dart';
 import 'package:calendar_parser_acs/src/presentation/navigation_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -10,42 +15,31 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _name = TextEditingController();
-  final TextEditingController _username = TextEditingController();
+  final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _group = TextEditingController();
-  final TextEditingController _semiGroup = TextEditingController();
+  final TextEditingController _subgroup = TextEditingController();
   final TextEditingController _series = TextEditingController();
   final TextEditingController _year = TextEditingController();
   final TextEditingController _semester = TextEditingController();
 
-  bool _isLoading = false;
   bool _obscureText = true;
+
+  void _onResult(AppAction action) {
+    if (action is ErrorAction) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${action.error}')));
+    } else {
+      Navigator.pushNamed(context, '/account');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavDrawer(),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Register Page',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: const Color.fromRGBO(249, 37, 97, 1),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.upload,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/uploader');
-            },
-          ),
-        ],
+      appBar: const CustomAppBar(
+        pageTitle: 'Register Page',
+        enableButton: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -77,9 +71,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
                 TextFormField(
-                  controller: _username,
+                  controller: _email,
                   decoration: const InputDecoration(
-                    labelText: 'Username',
+                    labelText: 'Email',
                     labelStyle: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
@@ -90,11 +84,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.black,
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your username!';
+                      return 'Please enter your email!';
+                    }
+                    if (!value.contains('@')) {
+                      return 'Please enter a valid email!';
                     }
                     return null;
                   },
@@ -164,9 +161,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
                 TextFormField(
-                  controller: _semiGroup,
+                  controller: _subgroup,
                   decoration: const InputDecoration(
-                    labelText: 'Semigroup (A or B)',
+                    labelText: 'Subgroup (A or B)',
                     labelStyle: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
@@ -270,29 +267,54 @@ class _RegisterPageState extends State<RegisterPage> {
                     return null;
                   },
                 ),
-                // wrap with context builder
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  child: SizedBox(
-                    width: 163,
-                    height: 41,
-                    child: TextButton(
-                      onPressed: () {
-                        // fill with logic
-                      },
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
+                IsLoadingContainer(
+                  builder: (BuildContext context, bool isLoading) {
+                    if (isLoading) {
+                      return const Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            color: Color.fromRGBO(249, 37, 97, 1),
+                          ),
+                        ),
+                      );
+                    }
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20.0),
+                      child: SizedBox(
+                        width: 163,
+                        height: 41,
+                        child: TextButton(
+                          onPressed: () {
+                            if (!Form.of(context)!.validate()) {
+                              return;
+                            }
+                            StoreProvider.of<AppState>(context).dispatch(Register(
+                                _email.text,
+                                _password.text,
+                                _name.text,
+                                _series.text,
+                                _group.text,
+                                _subgroup.text,
+                                _year.text,
+                                _semester.text,
+                                _onResult));
+                          },
+                          child: const Text(
+                            'Register',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(249, 37, 97, 1)),
+                          ),
                         ),
                       ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(249, 37, 97, 1)),
-                      ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ],
             ),

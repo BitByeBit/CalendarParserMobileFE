@@ -1,5 +1,10 @@
+import 'package:calendar_parser_acs/src/actions/index.dart';
+import 'package:calendar_parser_acs/src/container/is_loading_container.dart';
+import 'package:calendar_parser_acs/src/models/index.dart';
+import 'package:calendar_parser_acs/src/presentation/custom_app_bar.dart';
 import 'package:calendar_parser_acs/src/presentation/navigation_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,37 +14,26 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _username = TextEditingController();
+  final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
-  bool _isLoading = false;
   bool _obscureText = true;
+
+  void _onResult(AppAction action) {
+    if (action is ErrorAction) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${action.error}')));
+    } else {
+      Navigator.pushNamed(context, '/home');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavDrawer(),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Login Page',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: const Color.fromRGBO(249, 37, 97, 1),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.upload,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/uploader');
-            },
-          ),
-        ],
+      appBar: const CustomAppBar(
+        pageTitle: 'Login Page',
+        enableButton: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -48,9 +42,9 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  controller: _username,
+                  controller: _email,
                   decoration: const InputDecoration(
-                    labelText: 'Username',
+                    labelText: 'Email',
                     labelStyle: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
@@ -61,11 +55,14 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.black,
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your username!';
+                      return 'Please enter your email!';
+                    }
+                    if (!value.contains('@')) {
+                      return 'Please enter a valid email!';
                     }
                     return null;
                   },
@@ -108,29 +105,46 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                   },
                 ),
-                // wrap with context builder
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  child: SizedBox(
-                    width: 163,
-                    height: 41,
-                    child: TextButton(
-                      onPressed: () {
-                        // fill with logic
-                      },
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
+                IsLoadingContainer(
+                  builder: (BuildContext context, bool isLoading) {
+                    if (isLoading) {
+                      return const Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            color: Color.fromRGBO(249, 37, 97, 1),
+                          ),
+                        ),
+                      );
+                    }
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20.0),
+                      child: SizedBox(
+                        width: 163,
+                        height: 41,
+                        child: TextButton(
+                          onPressed: () {
+                            if (!Form.of(context)!.validate()) {
+                              return;
+                            }
+                            StoreProvider.of<AppState>(context)
+                                .dispatch(Login(_email.text, _password.text, _onResult));
+                          },
+                          child: const Text(
+                            'Login',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(249, 37, 97, 1)),
+                          ),
                         ),
                       ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(249, 37, 97, 1)),
-                      ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

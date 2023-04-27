@@ -1,27 +1,20 @@
 part of models;
 
 abstract class Calendar implements Built<Calendar, CalendarBuilder> {
-  factory Calendar({required int year, required String series, required int semester, List<Event>? events}) {
-    return _$Calendar((CalendarBuilder b) {
-      b
-        ..year = year
-        ..series = series
-        ..semester = semester
-        ..events = (events ?? List<Event>.empty()) as ListBuilder<Event>?;
-    });
-  }
-
+  factory Calendar([void Function(CalendarBuilder b) updates]) = _$Calendar;
   factory Calendar.fromJson(dynamic json) => serializers.deserializeWith(serializer, json)!;
 
   Calendar._();
 
-  int get year;
+  String get userUid;
+
+  String get year;
 
   String get series;
 
-  int get semester;
+  String get semester;
 
-  BuiltList<Event>? get events;
+  BuiltList<Event> get events;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 
