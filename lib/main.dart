@@ -25,7 +25,7 @@ import 'package:redux_epics/redux_epics.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  const String apiUrl = 'http://10.0.2.2:8080';
+  const String apiUrl = 'http://10.0.2.2:8081';
   final Client client = Client();
   final CalendarApi calendarApi = CalendarApi(apiUrl: apiUrl, client: client);
   final AuthApi authApi =

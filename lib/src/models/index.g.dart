@@ -135,6 +135,9 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
     final result = <Object?>[
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
+      'idToken',
+      serializers.serialize(object.idToken,
+          specifiedType: const FullType(String)),
       'email',
       serializers.serialize(object.email,
           specifiedType: const FullType(String)),
@@ -185,6 +188,10 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       switch (key) {
         case 'uid':
           result.uid = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'idToken':
+          result.idToken = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
         case 'email':
@@ -656,6 +663,8 @@ class _$AppUser extends AppUser {
   @override
   final String uid;
   @override
+  final String idToken;
+  @override
   final String email;
   @override
   final String username;
@@ -681,6 +690,7 @@ class _$AppUser extends AppUser {
 
   _$AppUser._(
       {required this.uid,
+      required this.idToken,
       required this.email,
       required this.username,
       required this.name,
@@ -693,6 +703,7 @@ class _$AppUser extends AppUser {
       required this.hasCalendar})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, r'AppUser', 'uid');
+    BuiltValueNullFieldError.checkNotNull(idToken, r'AppUser', 'idToken');
     BuiltValueNullFieldError.checkNotNull(email, r'AppUser', 'email');
     BuiltValueNullFieldError.checkNotNull(username, r'AppUser', 'username');
     BuiltValueNullFieldError.checkNotNull(name, r'AppUser', 'name');
@@ -717,6 +728,7 @@ class _$AppUser extends AppUser {
     if (identical(other, this)) return true;
     return other is AppUser &&
         uid == other.uid &&
+        idToken == other.idToken &&
         email == other.email &&
         username == other.username &&
         name == other.name &&
@@ -740,7 +752,9 @@ class _$AppUser extends AppUser {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, uid.hashCode),
+                                        $jc(
+                                            $jc($jc(0, uid.hashCode),
+                                                idToken.hashCode),
                                             email.hashCode),
                                         username.hashCode),
                                     name.hashCode),
@@ -757,6 +771,7 @@ class _$AppUser extends AppUser {
   String toString() {
     return (newBuiltValueToStringHelper(r'AppUser')
           ..add('uid', uid)
+          ..add('idToken', idToken)
           ..add('email', email)
           ..add('username', username)
           ..add('name', name)
@@ -777,6 +792,10 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   String? _uid;
   String? get uid => _$this._uid;
   set uid(String? uid) => _$this._uid = uid;
+
+  String? _idToken;
+  String? get idToken => _$this._idToken;
+  set idToken(String? idToken) => _$this._idToken = idToken;
 
   String? _email;
   String? get email => _$this._email;
@@ -824,6 +843,7 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
     final $v = _$v;
     if ($v != null) {
       _uid = $v.uid;
+      _idToken = $v.idToken;
       _email = $v.email;
       _username = $v.username;
       _name = $v.name;
@@ -857,6 +877,8 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
     final _$result = _$v ??
         new _$AppUser._(
             uid: BuiltValueNullFieldError.checkNotNull(uid, r'AppUser', 'uid'),
+            idToken: BuiltValueNullFieldError.checkNotNull(
+                idToken, r'AppUser', 'idToken'),
             email: BuiltValueNullFieldError.checkNotNull(
                 email, r'AppUser', 'email'),
             username: BuiltValueNullFieldError.checkNotNull(
