@@ -21,6 +21,8 @@ class AuthApi {
       return null;
     }
 
+    final String idToken = await user.getIdToken();
+
     final DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore //
         .doc('users/${user.uid}')
         .get();
@@ -29,7 +31,10 @@ class AuthApi {
       return null;
     }
 
-    return AppUser.fromJson(snapshot.data());
+    final AppUser appUser = AppUser.fromJson(snapshot.data());
+    appUser.idToken = idToken;
+
+    return appUser;
   }
 
   Future<AppUser> register(String email, String password, String name, String series, String group, String subgroup,
@@ -56,6 +61,8 @@ class AuthApi {
     await _firestore //
         .doc('users/${user.uid}')
         .set(user.json);
+
+    user.idToken = await result.user!.getIdToken();
 
     return user;
   }
