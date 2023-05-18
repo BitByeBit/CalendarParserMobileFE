@@ -1,8 +1,12 @@
 name: "Flutter CI"
 on:
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    paths:
-      - './**'
+    branches: [master]
+    paths-ignore:
+      - '**/README.md'
+  pull_request:
+    branches: [master]
 
 jobs:
   check-format:
