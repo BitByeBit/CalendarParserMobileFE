@@ -8,7 +8,7 @@ abstract class AppUser implements Built<AppUser, AppUserBuilder> {
 
   String get uid;
 
-  String get idToken;
+  String? get idToken;
 
   String get email;
 

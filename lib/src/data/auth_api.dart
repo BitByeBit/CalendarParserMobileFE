@@ -31,8 +31,8 @@ class AuthApi {
       return null;
     }
 
-    final AppUser appUser = AppUser.fromJson(snapshot.data());
-    appUser.idToken = idToken;
+    AppUser appUser = AppUser.fromJson(snapshot.data());
+    appUser = appUser.rebuild((AppUserBuilder b) => b..idToken = idToken);
 
     return appUser;
   }
@@ -43,7 +43,7 @@ class AuthApi {
 
     result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
 
-    final AppUser user = AppUser((AppUserBuilder b) {
+    AppUser user = AppUser((AppUserBuilder b) {
       b
         ..uid = result.user!.uid
         ..username = email.split('@').first
@@ -62,7 +62,8 @@ class AuthApi {
         .doc('users/${user.uid}')
         .set(user.json);
 
-    user.idToken = await result.user!.getIdToken();
+    final String idToken = await result.user!.getIdToken();
+    user = user.rebuild((AppUserBuilder b) => b..idToken = idToken);
 
     return user;
   }

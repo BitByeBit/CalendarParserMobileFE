@@ -13,34 +13,34 @@ dependencies:
     sdk: flutter
 
 
-  cupertino_icons: ^1.0.4
-  http: ^0.13.4
-  built_value: ^8.3.2
+  cupertino_icons: ^1.0.5
+  http: ^0.13.6
+  built_value: ^8.5.0
   built_collection: ^5.1.1
   redux: ^5.0.0
   flutter_redux: ^0.10.0
   redux_epics: ^0.15.1
-  freezed_annotation: ^2.0.3
-  table_calendar: ^3.0.6
-  firebase_core: ^1.17.1
-  firebase_auth: ^3.3.19
-  cloud_firestore: ^3.1.17
-  firebase_storage: ^10.2.17
-  image_picker: ^0.8.5+3
-  file_picker: ^4.6.0
+  freezed_annotation: ^2.2.0
+  table_calendar: ^3.0.9
+  firebase_core: ^2.12.0
+  firebase_auth: ^4.6.0
+  cloud_firestore: ^4.7.0
+  firebase_storage: ^11.2.0
+  image_picker: ^0.8.7+5
+  file_picker: ^5.3.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  build_runner: ^2.1.11
-  built_value_generator: ^8.3.2
-  freezed: ^2.0.3+1
+  build_runner: ^2.4.4
+  built_value_generator: ^8.5.0
+  freezed: ^2.3.4
 
 dependency_overrides:
-  rxdart: ^0.27.4
-  analyzer: ^4.1.0
-  meta: ^1.8.0
+  rxdart: ^0.27.7
+  analyzer: ^5.12.0
+  meta: ^1.9.1
 
 flutter:
 

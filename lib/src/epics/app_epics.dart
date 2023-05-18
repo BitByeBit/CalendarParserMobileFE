@@ -38,7 +38,7 @@ class AppEpics {
   Stream<AppAction> _addEvent(Stream<AddEventStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((AddEventStart action) => Stream<void>.value(null)
-            .asyncMap((_) => _calendarApi.addEvent(store.state.user!.idToken, store.state.user!.uid, action.name, action.type, action.timeslot,
+            .asyncMap((_) => _calendarApi.addEvent(store.state.user!.idToken!, store.state.user!.uid, action.name, action.type, action.timeslot,
                 action.weekday, action.parity, action.extra, action.tag))
             .map((Event event) => AddEvent.successful(event))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => AddEvent.error(error, stackTrace)));
@@ -47,7 +47,7 @@ class AppEpics {
   Stream<AppAction> _deleteEvent(Stream<DeleteEventStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((DeleteEventStart action) => Stream<void>.value(null)
-            .asyncMap((_) => _calendarApi.deleteEvent(store.state.user!.idToken, store.state.user!.uid, action.id))
+            .asyncMap((_) => _calendarApi.deleteEvent(store.state.user!.idToken!, store.state.user!.uid, action.id))
             .map((int id) => DeleteEvent.successful(id))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => DeleteEvent.error(error, stackTrace)));
   }
@@ -55,7 +55,7 @@ class AppEpics {
   Stream<AppAction> _editEvent(Stream<EditEventStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((EditEventStart action) => Stream<void>.value(null)
-            .asyncMap((_) => _calendarApi.editEvent(store.state.user!.idToken, store.state.user!.uid, action.id, action.name, action.type,
+            .asyncMap((_) => _calendarApi.editEvent(store.state.user!.idToken!, store.state.user!.uid, action.id, action.name, action.type,
                 action.timeslot, action.weekday, action.parity, action.extra, action.tag))
             .map((Event event) => EditEvent.successful(event))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => EditEvent.error(error, stackTrace)));
@@ -64,7 +64,7 @@ class AppEpics {
   Stream<AppAction> _filterCalendar(Stream<FilterCalendarStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((FilterCalendarStart action) => Stream<void>.value(null)
-            .asyncMap((_) => _calendarApi.filterCalendar(store.state.user!.idToken, store.state.user!.uid, action.tag))
+            .asyncMap((_) => _calendarApi.filterCalendar(store.state.user!.idToken!, store.state.user!.uid, action.tag))
             .map((Calendar calendar) => FilterCalendar.successful(calendar))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => FilterCalendar.error(error, stackTrace)));
   }
@@ -72,7 +72,7 @@ class AppEpics {
   Stream<AppAction> _getCalendar(Stream<GetCalendarStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((GetCalendarStart action) => Stream<void>.value(null)
-            .asyncMap((_) => _calendarApi.getCalendar(store.state.user!.idToken, store.state.user!.uid))
+            .asyncMap((_) => _calendarApi.getCalendar(store.state.user!.idToken!, store.state.user!.uid))
             .map((Calendar calendar) => GetCalendar.successful(calendar))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => GetCalendar.error(error, stackTrace)));
   }
@@ -131,7 +131,7 @@ class AppEpics {
   Stream<AppAction> _uploadCalendar(Stream<UploadCalendarStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((UploadCalendarStart action) => Stream<void>.value(null)
-                .asyncMap((_) => _calendarApi.uploadCalendar(store.state.user!.idToken, store.state.user!.uid, action.path,
+                .asyncMap((_) => _calendarApi.uploadCalendar(store.state.user!.idToken!, store.state.user!.uid, action.path,
                     store.state.user!.series, store.state.user!.group, store.state.user!.subgroup))
                 .expand((Calendar calendar) {
               return <AppAction>[UploadCalendar.successful(calendar), const UpdateHasCalendar(true)];
@@ -165,7 +165,7 @@ class AppEpics {
   Stream<AppAction> _shareEvent(Stream<ShareEventStart> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((ShareEventStart action) => Stream<void>.value(null)
-            .asyncMap((_) => _calendarApi.shareEvent(store.state.user!.idToken, store.state.user!.uid, action.uid, action.eventId))
+            .asyncMap((_) => _calendarApi.shareEvent(store.state.user!.idToken!, store.state.user!.uid, action.uid, action.eventId))
             .map((_) => const ShareEvent.successful())
             .onErrorReturnWith((Object error, StackTrace stackTrace) => ShareEvent.error(error, stackTrace)));
   }
