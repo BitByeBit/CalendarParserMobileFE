@@ -14,7 +14,6 @@ class CalendarContainer extends StatelessWidget {
         builder: builder,
         converter: (Store<AppState> store) {
           return store.state.calendar;
-        }
-    );
+        });
   }
 }

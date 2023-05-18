@@ -14,7 +14,6 @@ class ConnectionsContainer extends StatelessWidget {
         builder: builder,
         converter: (Store<AppState> store) {
           return store.state.connections.asMap();
-        }
-    );
+        });
   }
 }

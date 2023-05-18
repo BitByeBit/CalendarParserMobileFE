@@ -98,22 +98,20 @@ class _UploaderPageState extends State<UploaderPage> with TickerProviderStateMix
                   child: Center(
                     child: UserContainer(
                       builder: (BuildContext context, AppUser? user) {
-                        return IsLoadingContainer(
-                          builder: (BuildContext context, bool isLoading) {
-                            if (!isLoading && user!.hasCalendar) {
-                              return const Text(
-                                'Calendar uploaded!',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24.0,
-                                ),
-                              );
-                            }
-                            return const SizedBox(height: 0.0, width: 0.0);
+                        return IsLoadingContainer(builder: (BuildContext context, bool isLoading) {
+                          if (!isLoading && user!.hasCalendar) {
+                            return const Text(
+                              'Calendar uploaded!',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24.0,
+                              ),
+                            );
                           }
-                        );
+                          return const SizedBox(height: 0.0, width: 0.0);
+                        });
                       },
                     ),
                   ),

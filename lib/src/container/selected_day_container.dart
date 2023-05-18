@@ -14,7 +14,6 @@ class SelectedDayContainer extends StatelessWidget {
         builder: builder,
         converter: (Store<AppState> store) {
           return store.state.selectedDay;
-        }
-    );
+        });
   }
 }

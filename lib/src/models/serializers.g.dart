@@ -12,16 +12,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Calendar.serializer)
       ..add(Connection.serializer)
       ..add(Event.serializer)
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Event)]),
-          () => new ListBuilder<Event>())
-      ..addBuilderFactory(
-          const FullType(BuiltMap,
-              const [const FullType(String), const FullType(AppUser)]),
+      ..addBuilderFactory(const FullType(BuiltList, const [const FullType(Event)]), () => new ListBuilder<Event>())
+      ..addBuilderFactory(const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)]),
           () => new MapBuilder<String, AppUser>())
-      ..addBuilderFactory(
-          const FullType(BuiltMap,
-              const [const FullType(String), const FullType(Connection)]),
+      ..addBuilderFactory(const FullType(BuiltMap, const [const FullType(String), const FullType(Connection)]),
           () => new MapBuilder<String, Connection>()))
     .build();
 

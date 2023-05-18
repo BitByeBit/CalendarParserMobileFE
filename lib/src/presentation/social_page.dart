@@ -139,24 +139,23 @@ class _SocialPageState extends State<SocialPage> {
                                             ),
                                           ),
                                         ),
-                                          IconButton(
-                                            icon: Icon(
-                                              event != null ? Icons.share : Icons.delete,
-                                              color: Colors.black,
-                                            ),
-                                            onPressed: () {
-                                              if (event != null) {
-                                                StoreProvider.of<AppState>(context)
-                                                    .dispatch(ShareEvent(connection.friendUid, event.eventId));
-                                                Navigator.pop(context);
-                                              } else {
-                                                StoreProvider.of<AppState>(context)
-                                                    .dispatch(RemoveFriend(connection.friendUid));
-                                                StoreProvider.of<AppState>(context)
-                                                    .dispatch(const GetFriends());
-                                              }
-                                            },
-                                          )
+                                        IconButton(
+                                          icon: Icon(
+                                            event != null ? Icons.share : Icons.delete,
+                                            color: Colors.black,
+                                          ),
+                                          onPressed: () {
+                                            if (event != null) {
+                                              StoreProvider.of<AppState>(context)
+                                                  .dispatch(ShareEvent(connection.friendUid, event.eventId));
+                                              Navigator.pop(context);
+                                            } else {
+                                              StoreProvider.of<AppState>(context)
+                                                  .dispatch(RemoveFriend(connection.friendUid));
+                                              StoreProvider.of<AppState>(context).dispatch(const GetFriends());
+                                            }
+                                          },
+                                        )
                                       ],
                                     ),
                                   ),

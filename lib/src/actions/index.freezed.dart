@@ -64,14 +64,12 @@ mixin _$GetCalendar {
 
 /// @nodoc
 abstract class $GetCalendarCopyWith<$Res> {
-  factory $GetCalendarCopyWith(
-          GetCalendar value, $Res Function(GetCalendar) then) =
+  factory $GetCalendarCopyWith(GetCalendar value, $Res Function(GetCalendar) then) =
       _$GetCalendarCopyWithImpl<$Res, GetCalendar>;
 }
 
 /// @nodoc
-class _$GetCalendarCopyWithImpl<$Res, $Val extends GetCalendar>
-    implements $GetCalendarCopyWith<$Res> {
+class _$GetCalendarCopyWithImpl<$Res, $Val extends GetCalendar> implements $GetCalendarCopyWith<$Res> {
   _$GetCalendarCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,17 +80,14 @@ class _$GetCalendarCopyWithImpl<$Res, $Val extends GetCalendar>
 
 /// @nodoc
 abstract class _$$GetCalendarStartCopyWith<$Res> {
-  factory _$$GetCalendarStartCopyWith(
-          _$GetCalendarStart value, $Res Function(_$GetCalendarStart) then) =
+  factory _$$GetCalendarStartCopyWith(_$GetCalendarStart value, $Res Function(_$GetCalendarStart) then) =
       __$$GetCalendarStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetCalendarStartCopyWithImpl<$Res>
-    extends _$GetCalendarCopyWithImpl<$Res, _$GetCalendarStart>
+class __$$GetCalendarStartCopyWithImpl<$Res> extends _$GetCalendarCopyWithImpl<$Res, _$GetCalendarStart>
     implements _$$GetCalendarStartCopyWith<$Res> {
-  __$$GetCalendarStartCopyWithImpl(
-      _$GetCalendarStart _value, $Res Function(_$GetCalendarStart) _then)
+  __$$GetCalendarStartCopyWithImpl(_$GetCalendarStart _value, $Res Function(_$GetCalendarStart) _then)
       : super(_value, _then);
 }
 
@@ -108,8 +103,7 @@ class _$GetCalendarStart implements GetCalendarStart {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetCalendarStart);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetCalendarStart);
   }
 
   @override
@@ -190,19 +184,16 @@ abstract class GetCalendarStart implements GetCalendar {
 
 /// @nodoc
 abstract class _$$GetCalendarSuccessfulCopyWith<$Res> {
-  factory _$$GetCalendarSuccessfulCopyWith(_$GetCalendarSuccessful value,
-          $Res Function(_$GetCalendarSuccessful) then) =
+  factory _$$GetCalendarSuccessfulCopyWith(_$GetCalendarSuccessful value, $Res Function(_$GetCalendarSuccessful) then) =
       __$$GetCalendarSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({Calendar calendar});
 }
 
 /// @nodoc
-class __$$GetCalendarSuccessfulCopyWithImpl<$Res>
-    extends _$GetCalendarCopyWithImpl<$Res, _$GetCalendarSuccessful>
+class __$$GetCalendarSuccessfulCopyWithImpl<$Res> extends _$GetCalendarCopyWithImpl<$Res, _$GetCalendarSuccessful>
     implements _$$GetCalendarSuccessfulCopyWith<$Res> {
-  __$$GetCalendarSuccessfulCopyWithImpl(_$GetCalendarSuccessful _value,
-      $Res Function(_$GetCalendarSuccessful) _then)
+  __$$GetCalendarSuccessfulCopyWithImpl(_$GetCalendarSuccessful _value, $Res Function(_$GetCalendarSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -237,8 +228,7 @@ class _$GetCalendarSuccessful implements GetCalendarSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetCalendarSuccessful &&
-            (identical(other.calendar, calendar) ||
-                other.calendar == calendar));
+            (identical(other.calendar, calendar) || other.calendar == calendar));
   }
 
   @override
@@ -248,8 +238,7 @@ class _$GetCalendarSuccessful implements GetCalendarSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$GetCalendarSuccessfulCopyWith<_$GetCalendarSuccessful> get copyWith =>
-      __$$GetCalendarSuccessfulCopyWithImpl<_$GetCalendarSuccessful>(
-          this, _$identity);
+      __$$GetCalendarSuccessfulCopyWithImpl<_$GetCalendarSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -321,30 +310,25 @@ class _$GetCalendarSuccessful implements GetCalendarSuccessful {
 }
 
 abstract class GetCalendarSuccessful implements GetCalendar {
-  const factory GetCalendarSuccessful(final Calendar calendar) =
-      _$GetCalendarSuccessful;
+  const factory GetCalendarSuccessful(final Calendar calendar) = _$GetCalendarSuccessful;
 
   Calendar get calendar;
   @JsonKey(ignore: true)
-  _$$GetCalendarSuccessfulCopyWith<_$GetCalendarSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetCalendarSuccessfulCopyWith<_$GetCalendarSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetCalendarErrorCopyWith<$Res> {
-  factory _$$GetCalendarErrorCopyWith(
-          _$GetCalendarError value, $Res Function(_$GetCalendarError) then) =
+  factory _$$GetCalendarErrorCopyWith(_$GetCalendarError value, $Res Function(_$GetCalendarError) then) =
       __$$GetCalendarErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetCalendarErrorCopyWithImpl<$Res>
-    extends _$GetCalendarCopyWithImpl<$Res, _$GetCalendarError>
+class __$$GetCalendarErrorCopyWithImpl<$Res> extends _$GetCalendarCopyWithImpl<$Res, _$GetCalendarError>
     implements _$$GetCalendarErrorCopyWith<$Res> {
-  __$$GetCalendarErrorCopyWithImpl(
-      _$GetCalendarError _value, $Res Function(_$GetCalendarError) _then)
+  __$$GetCalendarErrorCopyWithImpl(_$GetCalendarError _value, $Res Function(_$GetCalendarError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -384,13 +368,11 @@ class _$GetCalendarError implements GetCalendarError {
         (other.runtimeType == runtimeType &&
             other is _$GetCalendarError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -468,14 +450,12 @@ class _$GetCalendarError implements GetCalendarError {
 }
 
 abstract class GetCalendarError implements GetCalendar, ErrorAction {
-  const factory GetCalendarError(
-      final Object error, final StackTrace stackTrace) = _$GetCalendarError;
+  const factory GetCalendarError(final Object error, final StackTrace stackTrace) = _$GetCalendarError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetCalendarErrorCopyWith<_$GetCalendarError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetCalendarErrorCopyWith<_$GetCalendarError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -528,13 +508,11 @@ mixin _$GetUsers {
 
 /// @nodoc
 abstract class $GetUsersCopyWith<$Res> {
-  factory $GetUsersCopyWith(GetUsers value, $Res Function(GetUsers) then) =
-      _$GetUsersCopyWithImpl<$Res, GetUsers>;
+  factory $GetUsersCopyWith(GetUsers value, $Res Function(GetUsers) then) = _$GetUsersCopyWithImpl<$Res, GetUsers>;
 }
 
 /// @nodoc
-class _$GetUsersCopyWithImpl<$Res, $Val extends GetUsers>
-    implements $GetUsersCopyWith<$Res> {
+class _$GetUsersCopyWithImpl<$Res, $Val extends GetUsers> implements $GetUsersCopyWith<$Res> {
   _$GetUsersCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -545,18 +523,14 @@ class _$GetUsersCopyWithImpl<$Res, $Val extends GetUsers>
 
 /// @nodoc
 abstract class _$$GetUsersStartCopyWith<$Res> {
-  factory _$$GetUsersStartCopyWith(
-          _$GetUsersStart value, $Res Function(_$GetUsersStart) then) =
+  factory _$$GetUsersStartCopyWith(_$GetUsersStart value, $Res Function(_$GetUsersStart) then) =
       __$$GetUsersStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUsersStartCopyWithImpl<$Res>
-    extends _$GetUsersCopyWithImpl<$Res, _$GetUsersStart>
+class __$$GetUsersStartCopyWithImpl<$Res> extends _$GetUsersCopyWithImpl<$Res, _$GetUsersStart>
     implements _$$GetUsersStartCopyWith<$Res> {
-  __$$GetUsersStartCopyWithImpl(
-      _$GetUsersStart _value, $Res Function(_$GetUsersStart) _then)
-      : super(_value, _then);
+  __$$GetUsersStartCopyWithImpl(_$GetUsersStart _value, $Res Function(_$GetUsersStart) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -571,8 +545,7 @@ class _$GetUsersStart implements GetUsersStart {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetUsersStart);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetUsersStart);
   }
 
   @override
@@ -653,19 +626,16 @@ abstract class GetUsersStart implements GetUsers {
 
 /// @nodoc
 abstract class _$$GetUsersSuccessfulCopyWith<$Res> {
-  factory _$$GetUsersSuccessfulCopyWith(_$GetUsersSuccessful value,
-          $Res Function(_$GetUsersSuccessful) then) =
+  factory _$$GetUsersSuccessfulCopyWith(_$GetUsersSuccessful value, $Res Function(_$GetUsersSuccessful) then) =
       __$$GetUsersSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AppUser> users});
 }
 
 /// @nodoc
-class __$$GetUsersSuccessfulCopyWithImpl<$Res>
-    extends _$GetUsersCopyWithImpl<$Res, _$GetUsersSuccessful>
+class __$$GetUsersSuccessfulCopyWithImpl<$Res> extends _$GetUsersCopyWithImpl<$Res, _$GetUsersSuccessful>
     implements _$$GetUsersSuccessfulCopyWith<$Res> {
-  __$$GetUsersSuccessfulCopyWithImpl(
-      _$GetUsersSuccessful _value, $Res Function(_$GetUsersSuccessful) _then)
+  __$$GetUsersSuccessfulCopyWithImpl(_$GetUsersSuccessful _value, $Res Function(_$GetUsersSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -709,15 +679,13 @@ class _$GetUsersSuccessful implements GetUsersSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetUsersSuccessfulCopyWith<_$GetUsersSuccessful> get copyWith =>
-      __$$GetUsersSuccessfulCopyWithImpl<_$GetUsersSuccessful>(
-          this, _$identity);
+      __$$GetUsersSuccessfulCopyWithImpl<_$GetUsersSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -789,31 +757,25 @@ class _$GetUsersSuccessful implements GetUsersSuccessful {
 }
 
 abstract class GetUsersSuccessful implements GetUsers {
-  const factory GetUsersSuccessful(final List<AppUser> users) =
-      _$GetUsersSuccessful;
+  const factory GetUsersSuccessful(final List<AppUser> users) = _$GetUsersSuccessful;
 
   List<AppUser> get users;
   @JsonKey(ignore: true)
-  _$$GetUsersSuccessfulCopyWith<_$GetUsersSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetUsersSuccessfulCopyWith<_$GetUsersSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetUsersErrorCopyWith<$Res> {
-  factory _$$GetUsersErrorCopyWith(
-          _$GetUsersError value, $Res Function(_$GetUsersError) then) =
+  factory _$$GetUsersErrorCopyWith(_$GetUsersError value, $Res Function(_$GetUsersError) then) =
       __$$GetUsersErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetUsersErrorCopyWithImpl<$Res>
-    extends _$GetUsersCopyWithImpl<$Res, _$GetUsersError>
+class __$$GetUsersErrorCopyWithImpl<$Res> extends _$GetUsersCopyWithImpl<$Res, _$GetUsersError>
     implements _$$GetUsersErrorCopyWith<$Res> {
-  __$$GetUsersErrorCopyWithImpl(
-      _$GetUsersError _value, $Res Function(_$GetUsersError) _then)
-      : super(_value, _then);
+  __$$GetUsersErrorCopyWithImpl(_$GetUsersError _value, $Res Function(_$GetUsersError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -852,13 +814,11 @@ class _$GetUsersError implements GetUsersError {
         (other.runtimeType == runtimeType &&
             other is _$GetUsersError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -936,14 +896,12 @@ class _$GetUsersError implements GetUsersError {
 }
 
 abstract class GetUsersError implements GetUsers, ErrorAction {
-  const factory GetUsersError(final Object error, final StackTrace stackTrace) =
-      _$GetUsersError;
+  const factory GetUsersError(final Object error, final StackTrace stackTrace) = _$GetUsersError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetUsersErrorCopyWith<_$GetUsersError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetUsersErrorCopyWith<_$GetUsersError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -996,14 +954,12 @@ mixin _$InitializeApp {
 
 /// @nodoc
 abstract class $InitializeAppCopyWith<$Res> {
-  factory $InitializeAppCopyWith(
-          InitializeApp value, $Res Function(InitializeApp) then) =
+  factory $InitializeAppCopyWith(InitializeApp value, $Res Function(InitializeApp) then) =
       _$InitializeAppCopyWithImpl<$Res, InitializeApp>;
 }
 
 /// @nodoc
-class _$InitializeAppCopyWithImpl<$Res, $Val extends InitializeApp>
-    implements $InitializeAppCopyWith<$Res> {
+class _$InitializeAppCopyWithImpl<$Res, $Val extends InitializeApp> implements $InitializeAppCopyWith<$Res> {
   _$InitializeAppCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1014,17 +970,14 @@ class _$InitializeAppCopyWithImpl<$Res, $Val extends InitializeApp>
 
 /// @nodoc
 abstract class _$$InitializeAppStartCopyWith<$Res> {
-  factory _$$InitializeAppStartCopyWith(_$InitializeAppStart value,
-          $Res Function(_$InitializeAppStart) then) =
+  factory _$$InitializeAppStartCopyWith(_$InitializeAppStart value, $Res Function(_$InitializeAppStart) then) =
       __$$InitializeAppStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitializeAppStartCopyWithImpl<$Res>
-    extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppStart>
+class __$$InitializeAppStartCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppStart>
     implements _$$InitializeAppStartCopyWith<$Res> {
-  __$$InitializeAppStartCopyWithImpl(
-      _$InitializeAppStart _value, $Res Function(_$InitializeAppStart) _then)
+  __$$InitializeAppStartCopyWithImpl(_$InitializeAppStart _value, $Res Function(_$InitializeAppStart) _then)
       : super(_value, _then);
 }
 
@@ -1040,8 +993,7 @@ class _$InitializeAppStart implements InitializeAppStart {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitializeAppStart);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitializeAppStart);
   }
 
   @override
@@ -1122,19 +1074,18 @@ abstract class InitializeAppStart implements InitializeApp {
 
 /// @nodoc
 abstract class _$$InitializeAppSuccessfulCopyWith<$Res> {
-  factory _$$InitializeAppSuccessfulCopyWith(_$InitializeAppSuccessful value,
-          $Res Function(_$InitializeAppSuccessful) then) =
+  factory _$$InitializeAppSuccessfulCopyWith(
+          _$InitializeAppSuccessful value, $Res Function(_$InitializeAppSuccessful) then) =
       __$$InitializeAppSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser? user});
 }
 
 /// @nodoc
-class __$$InitializeAppSuccessfulCopyWithImpl<$Res>
-    extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppSuccessful>
+class __$$InitializeAppSuccessfulCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppSuccessful>
     implements _$$InitializeAppSuccessfulCopyWith<$Res> {
-  __$$InitializeAppSuccessfulCopyWithImpl(_$InitializeAppSuccessful _value,
-      $Res Function(_$InitializeAppSuccessful) _then)
+  __$$InitializeAppSuccessfulCopyWithImpl(
+      _$InitializeAppSuccessful _value, $Res Function(_$InitializeAppSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1179,8 +1130,7 @@ class _$InitializeAppSuccessful implements InitializeAppSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$InitializeAppSuccessfulCopyWith<_$InitializeAppSuccessful> get copyWith =>
-      __$$InitializeAppSuccessfulCopyWithImpl<_$InitializeAppSuccessful>(
-          this, _$identity);
+      __$$InitializeAppSuccessfulCopyWithImpl<_$InitializeAppSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1252,30 +1202,25 @@ class _$InitializeAppSuccessful implements InitializeAppSuccessful {
 }
 
 abstract class InitializeAppSuccessful implements InitializeApp {
-  const factory InitializeAppSuccessful(final AppUser? user) =
-      _$InitializeAppSuccessful;
+  const factory InitializeAppSuccessful(final AppUser? user) = _$InitializeAppSuccessful;
 
   AppUser? get user;
   @JsonKey(ignore: true)
-  _$$InitializeAppSuccessfulCopyWith<_$InitializeAppSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitializeAppSuccessfulCopyWith<_$InitializeAppSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$InitializeAppErrorCopyWith<$Res> {
-  factory _$$InitializeAppErrorCopyWith(_$InitializeAppError value,
-          $Res Function(_$InitializeAppError) then) =
+  factory _$$InitializeAppErrorCopyWith(_$InitializeAppError value, $Res Function(_$InitializeAppError) then) =
       __$$InitializeAppErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$InitializeAppErrorCopyWithImpl<$Res>
-    extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppError>
+class __$$InitializeAppErrorCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res, _$InitializeAppError>
     implements _$$InitializeAppErrorCopyWith<$Res> {
-  __$$InitializeAppErrorCopyWithImpl(
-      _$InitializeAppError _value, $Res Function(_$InitializeAppError) _then)
+  __$$InitializeAppErrorCopyWithImpl(_$InitializeAppError _value, $Res Function(_$InitializeAppError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1315,20 +1260,17 @@ class _$InitializeAppError implements InitializeAppError {
         (other.runtimeType == runtimeType &&
             other is _$InitializeAppError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InitializeAppErrorCopyWith<_$InitializeAppError> get copyWith =>
-      __$$InitializeAppErrorCopyWithImpl<_$InitializeAppError>(
-          this, _$identity);
+      __$$InitializeAppErrorCopyWithImpl<_$InitializeAppError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1400,38 +1342,33 @@ class _$InitializeAppError implements InitializeAppError {
 }
 
 abstract class InitializeAppError implements InitializeApp, ErrorAction {
-  const factory InitializeAppError(
-      final Object error, final StackTrace stackTrace) = _$InitializeAppError;
+  const factory InitializeAppError(final Object error, final StackTrace stackTrace) = _$InitializeAppError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$InitializeAppErrorCopyWith<_$InitializeAppError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitializeAppErrorCopyWith<_$InitializeAppError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$Login {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -1463,13 +1400,11 @@ mixin _$Login {
 
 /// @nodoc
 abstract class $LoginCopyWith<$Res> {
-  factory $LoginCopyWith(Login value, $Res Function(Login) then) =
-      _$LoginCopyWithImpl<$Res, Login>;
+  factory $LoginCopyWith(Login value, $Res Function(Login) then) = _$LoginCopyWithImpl<$Res, Login>;
 }
 
 /// @nodoc
-class _$LoginCopyWithImpl<$Res, $Val extends Login>
-    implements $LoginCopyWith<$Res> {
+class _$LoginCopyWithImpl<$Res, $Val extends Login> implements $LoginCopyWith<$Res> {
   _$LoginCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1480,20 +1415,16 @@ class _$LoginCopyWithImpl<$Res, $Val extends Login>
 
 /// @nodoc
 abstract class _$$LoginStartCopyWith<$Res> {
-  factory _$$LoginStartCopyWith(
-          _$LoginStart value, $Res Function(_$LoginStart) then) =
+  factory _$$LoginStartCopyWith(_$LoginStart value, $Res Function(_$LoginStart) then) =
       __$$LoginStartCopyWithImpl<$Res>;
   @useResult
   $Res call({String email, String password, ActionResult result});
 }
 
 /// @nodoc
-class __$$LoginStartCopyWithImpl<$Res>
-    extends _$LoginCopyWithImpl<$Res, _$LoginStart>
+class __$$LoginStartCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res, _$LoginStart>
     implements _$$LoginStartCopyWith<$Res> {
-  __$$LoginStartCopyWithImpl(
-      _$LoginStart _value, $Res Function(_$LoginStart) _then)
-      : super(_value, _then);
+  __$$LoginStartCopyWithImpl(_$LoginStart _value, $Res Function(_$LoginStart) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1542,8 +1473,7 @@ class _$LoginStart implements LoginStart {
         (other.runtimeType == runtimeType &&
             other is _$LoginStart &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
+            (identical(other.password, password) || other.password == password) &&
             (identical(other.result, result) || other.result == result));
   }
 
@@ -1553,14 +1483,12 @@ class _$LoginStart implements LoginStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginStartCopyWith<_$LoginStart> get copyWith =>
-      __$$LoginStartCopyWithImpl<_$LoginStart>(this, _$identity);
+  _$$LoginStartCopyWith<_$LoginStart> get copyWith => __$$LoginStartCopyWithImpl<_$LoginStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -1570,8 +1498,7 @@ class _$LoginStart implements LoginStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -1581,8 +1508,7 @@ class _$LoginStart implements LoginStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -1629,32 +1555,27 @@ class _$LoginStart implements LoginStart {
 }
 
 abstract class LoginStart implements Login {
-  const factory LoginStart(final String email, final String password,
-      final ActionResult result) = _$LoginStart;
+  const factory LoginStart(final String email, final String password, final ActionResult result) = _$LoginStart;
 
   String get email;
   String get password;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$LoginStartCopyWith<_$LoginStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoginStartCopyWith<_$LoginStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoginSuccessfulCopyWith<$Res> {
-  factory _$$LoginSuccessfulCopyWith(
-          _$LoginSuccessful value, $Res Function(_$LoginSuccessful) then) =
+  factory _$$LoginSuccessfulCopyWith(_$LoginSuccessful value, $Res Function(_$LoginSuccessful) then) =
       __$$LoginSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser user});
 }
 
 /// @nodoc
-class __$$LoginSuccessfulCopyWithImpl<$Res>
-    extends _$LoginCopyWithImpl<$Res, _$LoginSuccessful>
+class __$$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res, _$LoginSuccessful>
     implements _$$LoginSuccessfulCopyWith<$Res> {
-  __$$LoginSuccessfulCopyWithImpl(
-      _$LoginSuccessful _value, $Res Function(_$LoginSuccessful) _then)
+  __$$LoginSuccessfulCopyWithImpl(_$LoginSuccessful _value, $Res Function(_$LoginSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1704,8 +1625,7 @@ class _$LoginSuccessful implements LoginSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -1715,8 +1635,7 @@ class _$LoginSuccessful implements LoginSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -1726,8 +1645,7 @@ class _$LoginSuccessful implements LoginSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -1778,26 +1696,21 @@ abstract class LoginSuccessful implements Login {
 
   AppUser get user;
   @JsonKey(ignore: true)
-  _$$LoginSuccessfulCopyWith<_$LoginSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoginSuccessfulCopyWith<_$LoginSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoginErrorCopyWith<$Res> {
-  factory _$$LoginErrorCopyWith(
-          _$LoginError value, $Res Function(_$LoginError) then) =
+  factory _$$LoginErrorCopyWith(_$LoginError value, $Res Function(_$LoginError) then) =
       __$$LoginErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$LoginErrorCopyWithImpl<$Res>
-    extends _$LoginCopyWithImpl<$Res, _$LoginError>
+class __$$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res, _$LoginError>
     implements _$$LoginErrorCopyWith<$Res> {
-  __$$LoginErrorCopyWithImpl(
-      _$LoginError _value, $Res Function(_$LoginError) _then)
-      : super(_value, _then);
+  __$$LoginErrorCopyWithImpl(_$LoginError _value, $Res Function(_$LoginError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1836,25 +1749,21 @@ class _$LoginError implements LoginError {
         (other.runtimeType == runtimeType &&
             other is _$LoginError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginErrorCopyWith<_$LoginError> get copyWith =>
-      __$$LoginErrorCopyWithImpl<_$LoginError>(this, _$identity);
+  _$$LoginErrorCopyWith<_$LoginError> get copyWith => __$$LoginErrorCopyWithImpl<_$LoginError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -1864,8 +1773,7 @@ class _$LoginError implements LoginError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -1875,8 +1783,7 @@ class _$LoginError implements LoginError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -1923,30 +1830,20 @@ class _$LoginError implements LoginError {
 }
 
 abstract class LoginError implements Login, ErrorAction {
-  const factory LoginError(final Object error, final StackTrace stackTrace) =
-      _$LoginError;
+  const factory LoginError(final Object error, final StackTrace stackTrace) = _$LoginError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$LoginErrorCopyWith<_$LoginError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoginErrorCopyWith<_$LoginError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$Register {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -1954,16 +1851,8 @@ mixin _$Register {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult? Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -1971,16 +1860,8 @@ mixin _$Register {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -2013,13 +1894,11 @@ mixin _$Register {
 
 /// @nodoc
 abstract class $RegisterCopyWith<$Res> {
-  factory $RegisterCopyWith(Register value, $Res Function(Register) then) =
-      _$RegisterCopyWithImpl<$Res, Register>;
+  factory $RegisterCopyWith(Register value, $Res Function(Register) then) = _$RegisterCopyWithImpl<$Res, Register>;
 }
 
 /// @nodoc
-class _$RegisterCopyWithImpl<$Res, $Val extends Register>
-    implements $RegisterCopyWith<$Res> {
+class _$RegisterCopyWithImpl<$Res, $Val extends Register> implements $RegisterCopyWith<$Res> {
   _$RegisterCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2030,8 +1909,7 @@ class _$RegisterCopyWithImpl<$Res, $Val extends Register>
 
 /// @nodoc
 abstract class _$$RegisterStartCopyWith<$Res> {
-  factory _$$RegisterStartCopyWith(
-          _$RegisterStart value, $Res Function(_$RegisterStart) then) =
+  factory _$$RegisterStartCopyWith(_$RegisterStart value, $Res Function(_$RegisterStart) then) =
       __$$RegisterStartCopyWithImpl<$Res>;
   @useResult
   $Res call(
@@ -2047,12 +1925,9 @@ abstract class _$$RegisterStartCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$RegisterStartCopyWithImpl<$Res>
-    extends _$RegisterCopyWithImpl<$Res, _$RegisterStart>
+class __$$RegisterStartCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res, _$RegisterStart>
     implements _$$RegisterStartCopyWith<$Res> {
-  __$$RegisterStartCopyWithImpl(
-      _$RegisterStart _value, $Res Function(_$RegisterStart) _then)
-      : super(_value, _then);
+  __$$RegisterStartCopyWithImpl(_$RegisterStart _value, $Res Function(_$RegisterStart) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2111,8 +1986,8 @@ class __$$RegisterStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RegisterStart implements RegisterStart {
-  const _$RegisterStart(this.email, this.password, this.name, this.series,
-      this.group, this.subgroup, this.year, this.semester, this.result);
+  const _$RegisterStart(this.email, this.password, this.name, this.series, this.group, this.subgroup, this.year,
+      this.semester, this.result);
 
   @override
   final String email;
@@ -2144,22 +2019,18 @@ class _$RegisterStart implements RegisterStart {
         (other.runtimeType == runtimeType &&
             other is _$RegisterStart &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
+            (identical(other.password, password) || other.password == password) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.series, series) || other.series == series) &&
             (identical(other.group, group) || other.group == group) &&
-            (identical(other.subgroup, subgroup) ||
-                other.subgroup == subgroup) &&
+            (identical(other.subgroup, subgroup) || other.subgroup == subgroup) &&
             (identical(other.year, year) || other.year == year) &&
-            (identical(other.semester, semester) ||
-                other.semester == semester) &&
+            (identical(other.semester, semester) || other.semester == semester) &&
             (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, name, series,
-      group, subgroup, year, semester, result);
+  int get hashCode => Object.hash(runtimeType, email, password, name, series, group, subgroup, year, semester, result);
 
   @JsonKey(ignore: true)
   @override
@@ -2170,66 +2041,39 @@ class _$RegisterStart implements RegisterStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(
-        email, password, name, series, group, subgroup, year, semester, result);
+    return $default(email, password, name, series, group, subgroup, year, semester, result);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult? Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(
-        email, password, name, series, group, subgroup, year, semester, result);
+    return $default?.call(email, password, name, series, group, subgroup, year, semester, result);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(email, password, name, series, group, subgroup, year,
-          semester, result);
+      return $default(email, password, name, series, group, subgroup, year, semester, result);
     }
     return orElse();
   }
@@ -2291,25 +2135,21 @@ abstract class RegisterStart implements Register {
   String get semester;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$RegisterStartCopyWith<_$RegisterStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegisterStartCopyWith<_$RegisterStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RegisterSuccessfulCopyWith<$Res> {
-  factory _$$RegisterSuccessfulCopyWith(_$RegisterSuccessful value,
-          $Res Function(_$RegisterSuccessful) then) =
+  factory _$$RegisterSuccessfulCopyWith(_$RegisterSuccessful value, $Res Function(_$RegisterSuccessful) then) =
       __$$RegisterSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser user});
 }
 
 /// @nodoc
-class __$$RegisterSuccessfulCopyWithImpl<$Res>
-    extends _$RegisterCopyWithImpl<$Res, _$RegisterSuccessful>
+class __$$RegisterSuccessfulCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res, _$RegisterSuccessful>
     implements _$$RegisterSuccessfulCopyWith<$Res> {
-  __$$RegisterSuccessfulCopyWithImpl(
-      _$RegisterSuccessful _value, $Res Function(_$RegisterSuccessful) _then)
+  __$$RegisterSuccessfulCopyWithImpl(_$RegisterSuccessful _value, $Res Function(_$RegisterSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2354,22 +2194,13 @@ class _$RegisterSuccessful implements RegisterSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$RegisterSuccessfulCopyWith<_$RegisterSuccessful> get copyWith =>
-      __$$RegisterSuccessfulCopyWithImpl<_$RegisterSuccessful>(
-          this, _$identity);
+      __$$RegisterSuccessfulCopyWithImpl<_$RegisterSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -2380,16 +2211,8 @@ class _$RegisterSuccessful implements RegisterSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult? Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -2400,16 +2223,8 @@ class _$RegisterSuccessful implements RegisterSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -2461,26 +2276,21 @@ abstract class RegisterSuccessful implements Register {
 
   AppUser get user;
   @JsonKey(ignore: true)
-  _$$RegisterSuccessfulCopyWith<_$RegisterSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegisterSuccessfulCopyWith<_$RegisterSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RegisterErrorCopyWith<$Res> {
-  factory _$$RegisterErrorCopyWith(
-          _$RegisterError value, $Res Function(_$RegisterError) then) =
+  factory _$$RegisterErrorCopyWith(_$RegisterError value, $Res Function(_$RegisterError) then) =
       __$$RegisterErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$RegisterErrorCopyWithImpl<$Res>
-    extends _$RegisterCopyWithImpl<$Res, _$RegisterError>
+class __$$RegisterErrorCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res, _$RegisterError>
     implements _$$RegisterErrorCopyWith<$Res> {
-  __$$RegisterErrorCopyWithImpl(
-      _$RegisterError _value, $Res Function(_$RegisterError) _then)
-      : super(_value, _then);
+  __$$RegisterErrorCopyWithImpl(_$RegisterError _value, $Res Function(_$RegisterError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2519,13 +2329,11 @@ class _$RegisterError implements RegisterError {
         (other.runtimeType == runtimeType &&
             other is _$RegisterError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -2536,16 +2344,8 @@ class _$RegisterError implements RegisterError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -2556,16 +2356,8 @@ class _$RegisterError implements RegisterError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult? Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -2576,16 +2368,8 @@ class _$RegisterError implements RegisterError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String email,
-            String password,
-            String name,
-            String series,
-            String group,
-            String subgroup,
-            String year,
-            String semester,
-            ActionResult result)?
+    TResult Function(String email, String password, String name, String series, String group, String subgroup,
+            String year, String semester, ActionResult result)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -2633,14 +2417,12 @@ class _$RegisterError implements RegisterError {
 }
 
 abstract class RegisterError implements Register, ErrorAction {
-  const factory RegisterError(final Object error, final StackTrace stackTrace) =
-      _$RegisterError;
+  const factory RegisterError(final Object error, final StackTrace stackTrace) = _$RegisterError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$RegisterErrorCopyWith<_$RegisterError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegisterErrorCopyWith<_$RegisterError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2693,13 +2475,11 @@ mixin _$Logout {
 
 /// @nodoc
 abstract class $LogoutCopyWith<$Res> {
-  factory $LogoutCopyWith(Logout value, $Res Function(Logout) then) =
-      _$LogoutCopyWithImpl<$Res, Logout>;
+  factory $LogoutCopyWith(Logout value, $Res Function(Logout) then) = _$LogoutCopyWithImpl<$Res, Logout>;
 }
 
 /// @nodoc
-class _$LogoutCopyWithImpl<$Res, $Val extends Logout>
-    implements $LogoutCopyWith<$Res> {
+class _$LogoutCopyWithImpl<$Res, $Val extends Logout> implements $LogoutCopyWith<$Res> {
   _$LogoutCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2710,18 +2490,14 @@ class _$LogoutCopyWithImpl<$Res, $Val extends Logout>
 
 /// @nodoc
 abstract class _$$LogoutStartCopyWith<$Res> {
-  factory _$$LogoutStartCopyWith(
-          _$LogoutStart value, $Res Function(_$LogoutStart) then) =
+  factory _$$LogoutStartCopyWith(_$LogoutStart value, $Res Function(_$LogoutStart) then) =
       __$$LogoutStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogoutStartCopyWithImpl<$Res>
-    extends _$LogoutCopyWithImpl<$Res, _$LogoutStart>
+class __$$LogoutStartCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res, _$LogoutStart>
     implements _$$LogoutStartCopyWith<$Res> {
-  __$$LogoutStartCopyWithImpl(
-      _$LogoutStart _value, $Res Function(_$LogoutStart) _then)
-      : super(_value, _then);
+  __$$LogoutStartCopyWithImpl(_$LogoutStart _value, $Res Function(_$LogoutStart) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -2736,8 +2512,7 @@ class _$LogoutStart implements LogoutStart {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogoutStart);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LogoutStart);
   }
 
   @override
@@ -2818,17 +2593,14 @@ abstract class LogoutStart implements Logout {
 
 /// @nodoc
 abstract class _$$LogoutSuccessfulCopyWith<$Res> {
-  factory _$$LogoutSuccessfulCopyWith(
-          _$LogoutSuccessful value, $Res Function(_$LogoutSuccessful) then) =
+  factory _$$LogoutSuccessfulCopyWith(_$LogoutSuccessful value, $Res Function(_$LogoutSuccessful) then) =
       __$$LogoutSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogoutSuccessfulCopyWithImpl<$Res>
-    extends _$LogoutCopyWithImpl<$Res, _$LogoutSuccessful>
+class __$$LogoutSuccessfulCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res, _$LogoutSuccessful>
     implements _$$LogoutSuccessfulCopyWith<$Res> {
-  __$$LogoutSuccessfulCopyWithImpl(
-      _$LogoutSuccessful _value, $Res Function(_$LogoutSuccessful) _then)
+  __$$LogoutSuccessfulCopyWithImpl(_$LogoutSuccessful _value, $Res Function(_$LogoutSuccessful) _then)
       : super(_value, _then);
 }
 
@@ -2844,8 +2616,7 @@ class _$LogoutSuccessful implements LogoutSuccessful {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogoutSuccessful);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LogoutSuccessful);
   }
 
   @override
@@ -2926,20 +2697,16 @@ abstract class LogoutSuccessful implements Logout {
 
 /// @nodoc
 abstract class _$$LogoutErrorCopyWith<$Res> {
-  factory _$$LogoutErrorCopyWith(
-          _$LogoutError value, $Res Function(_$LogoutError) then) =
+  factory _$$LogoutErrorCopyWith(_$LogoutError value, $Res Function(_$LogoutError) then) =
       __$$LogoutErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$LogoutErrorCopyWithImpl<$Res>
-    extends _$LogoutCopyWithImpl<$Res, _$LogoutError>
+class __$$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res, _$LogoutError>
     implements _$$LogoutErrorCopyWith<$Res> {
-  __$$LogoutErrorCopyWithImpl(
-      _$LogoutError _value, $Res Function(_$LogoutError) _then)
-      : super(_value, _then);
+  __$$LogoutErrorCopyWithImpl(_$LogoutError _value, $Res Function(_$LogoutError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2978,19 +2745,16 @@ class _$LogoutError implements LogoutError {
         (other.runtimeType == runtimeType &&
             other is _$LogoutError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith =>
-      __$$LogoutErrorCopyWithImpl<_$LogoutError>(this, _$identity);
+  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith => __$$LogoutErrorCopyWithImpl<_$LogoutError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3062,39 +2826,33 @@ class _$LogoutError implements LogoutError {
 }
 
 abstract class LogoutError implements Logout, ErrorAction {
-  const factory LogoutError(final Object error, final StackTrace stackTrace) =
-      _$LogoutError;
+  const factory LogoutError(final Object error, final StackTrace stackTrace) = _$LogoutError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$UploadCalendar {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup) $default, {
     required TResult Function(Calendar calendar) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String path, String series, String group, String subgroup)?
-        $default, {
+    TResult? Function(String path, String series, String group, String subgroup)? $default, {
     TResult? Function(Calendar calendar)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)?
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup)? $default, {
     TResult Function(Calendar calendar)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -3126,14 +2884,12 @@ mixin _$UploadCalendar {
 
 /// @nodoc
 abstract class $UploadCalendarCopyWith<$Res> {
-  factory $UploadCalendarCopyWith(
-          UploadCalendar value, $Res Function(UploadCalendar) then) =
+  factory $UploadCalendarCopyWith(UploadCalendar value, $Res Function(UploadCalendar) then) =
       _$UploadCalendarCopyWithImpl<$Res, UploadCalendar>;
 }
 
 /// @nodoc
-class _$UploadCalendarCopyWithImpl<$Res, $Val extends UploadCalendar>
-    implements $UploadCalendarCopyWith<$Res> {
+class _$UploadCalendarCopyWithImpl<$Res, $Val extends UploadCalendar> implements $UploadCalendarCopyWith<$Res> {
   _$UploadCalendarCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3144,19 +2900,16 @@ class _$UploadCalendarCopyWithImpl<$Res, $Val extends UploadCalendar>
 
 /// @nodoc
 abstract class _$$UploadCalendarStartCopyWith<$Res> {
-  factory _$$UploadCalendarStartCopyWith(_$UploadCalendarStart value,
-          $Res Function(_$UploadCalendarStart) then) =
+  factory _$$UploadCalendarStartCopyWith(_$UploadCalendarStart value, $Res Function(_$UploadCalendarStart) then) =
       __$$UploadCalendarStartCopyWithImpl<$Res>;
   @useResult
   $Res call({String path, String series, String group, String subgroup});
 }
 
 /// @nodoc
-class __$$UploadCalendarStartCopyWithImpl<$Res>
-    extends _$UploadCalendarCopyWithImpl<$Res, _$UploadCalendarStart>
+class __$$UploadCalendarStartCopyWithImpl<$Res> extends _$UploadCalendarCopyWithImpl<$Res, _$UploadCalendarStart>
     implements _$$UploadCalendarStartCopyWith<$Res> {
-  __$$UploadCalendarStartCopyWithImpl(
-      _$UploadCalendarStart _value, $Res Function(_$UploadCalendarStart) _then)
+  __$$UploadCalendarStartCopyWithImpl(_$UploadCalendarStart _value, $Res Function(_$UploadCalendarStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3191,8 +2944,7 @@ class __$$UploadCalendarStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UploadCalendarStart implements UploadCalendarStart {
-  const _$UploadCalendarStart(
-      this.path, this.series, this.group, this.subgroup);
+  const _$UploadCalendarStart(this.path, this.series, this.group, this.subgroup);
 
   @override
   final String path;
@@ -3216,8 +2968,7 @@ class _$UploadCalendarStart implements UploadCalendarStart {
             (identical(other.path, path) || other.path == path) &&
             (identical(other.series, series) || other.series == series) &&
             (identical(other.group, group) || other.group == group) &&
-            (identical(other.subgroup, subgroup) ||
-                other.subgroup == subgroup));
+            (identical(other.subgroup, subgroup) || other.subgroup == subgroup));
   }
 
   @override
@@ -3227,14 +2978,12 @@ class _$UploadCalendarStart implements UploadCalendarStart {
   @override
   @pragma('vm:prefer-inline')
   _$$UploadCalendarStartCopyWith<_$UploadCalendarStart> get copyWith =>
-      __$$UploadCalendarStartCopyWithImpl<_$UploadCalendarStart>(
-          this, _$identity);
+      __$$UploadCalendarStartCopyWithImpl<_$UploadCalendarStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup) $default, {
     required TResult Function(Calendar calendar) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -3244,9 +2993,7 @@ class _$UploadCalendarStart implements UploadCalendarStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String path, String series, String group, String subgroup)?
-        $default, {
+    TResult? Function(String path, String series, String group, String subgroup)? $default, {
     TResult? Function(Calendar calendar)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -3256,8 +3003,7 @@ class _$UploadCalendarStart implements UploadCalendarStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)?
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup)? $default, {
     TResult Function(Calendar calendar)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -3304,22 +3050,21 @@ class _$UploadCalendarStart implements UploadCalendarStart {
 }
 
 abstract class UploadCalendarStart implements UploadCalendar {
-  const factory UploadCalendarStart(final String path, final String series,
-      final String group, final String subgroup) = _$UploadCalendarStart;
+  const factory UploadCalendarStart(final String path, final String series, final String group, final String subgroup) =
+      _$UploadCalendarStart;
 
   String get path;
   String get series;
   String get group;
   String get subgroup;
   @JsonKey(ignore: true)
-  _$$UploadCalendarStartCopyWith<_$UploadCalendarStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UploadCalendarStartCopyWith<_$UploadCalendarStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UploadCalendarSuccessfulCopyWith<$Res> {
-  factory _$$UploadCalendarSuccessfulCopyWith(_$UploadCalendarSuccessful value,
-          $Res Function(_$UploadCalendarSuccessful) then) =
+  factory _$$UploadCalendarSuccessfulCopyWith(
+          _$UploadCalendarSuccessful value, $Res Function(_$UploadCalendarSuccessful) then) =
       __$$UploadCalendarSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({Calendar calendar});
@@ -3329,8 +3074,8 @@ abstract class _$$UploadCalendarSuccessfulCopyWith<$Res> {
 class __$$UploadCalendarSuccessfulCopyWithImpl<$Res>
     extends _$UploadCalendarCopyWithImpl<$Res, _$UploadCalendarSuccessful>
     implements _$$UploadCalendarSuccessfulCopyWith<$Res> {
-  __$$UploadCalendarSuccessfulCopyWithImpl(_$UploadCalendarSuccessful _value,
-      $Res Function(_$UploadCalendarSuccessful) _then)
+  __$$UploadCalendarSuccessfulCopyWithImpl(
+      _$UploadCalendarSuccessful _value, $Res Function(_$UploadCalendarSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3365,8 +3110,7 @@ class _$UploadCalendarSuccessful implements UploadCalendarSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UploadCalendarSuccessful &&
-            (identical(other.calendar, calendar) ||
-                other.calendar == calendar));
+            (identical(other.calendar, calendar) || other.calendar == calendar));
   }
 
   @override
@@ -3375,16 +3119,13 @@ class _$UploadCalendarSuccessful implements UploadCalendarSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UploadCalendarSuccessfulCopyWith<_$UploadCalendarSuccessful>
-      get copyWith =>
-          __$$UploadCalendarSuccessfulCopyWithImpl<_$UploadCalendarSuccessful>(
-              this, _$identity);
+  _$$UploadCalendarSuccessfulCopyWith<_$UploadCalendarSuccessful> get copyWith =>
+      __$$UploadCalendarSuccessfulCopyWithImpl<_$UploadCalendarSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup) $default, {
     required TResult Function(Calendar calendar) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -3394,9 +3135,7 @@ class _$UploadCalendarSuccessful implements UploadCalendarSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String path, String series, String group, String subgroup)?
-        $default, {
+    TResult? Function(String path, String series, String group, String subgroup)? $default, {
     TResult? Function(Calendar calendar)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -3406,8 +3145,7 @@ class _$UploadCalendarSuccessful implements UploadCalendarSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)?
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup)? $default, {
     TResult Function(Calendar calendar)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -3454,30 +3192,25 @@ class _$UploadCalendarSuccessful implements UploadCalendarSuccessful {
 }
 
 abstract class UploadCalendarSuccessful implements UploadCalendar {
-  const factory UploadCalendarSuccessful(final Calendar calendar) =
-      _$UploadCalendarSuccessful;
+  const factory UploadCalendarSuccessful(final Calendar calendar) = _$UploadCalendarSuccessful;
 
   Calendar get calendar;
   @JsonKey(ignore: true)
-  _$$UploadCalendarSuccessfulCopyWith<_$UploadCalendarSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UploadCalendarSuccessfulCopyWith<_$UploadCalendarSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UploadCalendarErrorCopyWith<$Res> {
-  factory _$$UploadCalendarErrorCopyWith(_$UploadCalendarError value,
-          $Res Function(_$UploadCalendarError) then) =
+  factory _$$UploadCalendarErrorCopyWith(_$UploadCalendarError value, $Res Function(_$UploadCalendarError) then) =
       __$$UploadCalendarErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$UploadCalendarErrorCopyWithImpl<$Res>
-    extends _$UploadCalendarCopyWithImpl<$Res, _$UploadCalendarError>
+class __$$UploadCalendarErrorCopyWithImpl<$Res> extends _$UploadCalendarCopyWithImpl<$Res, _$UploadCalendarError>
     implements _$$UploadCalendarErrorCopyWith<$Res> {
-  __$$UploadCalendarErrorCopyWithImpl(
-      _$UploadCalendarError _value, $Res Function(_$UploadCalendarError) _then)
+  __$$UploadCalendarErrorCopyWithImpl(_$UploadCalendarError _value, $Res Function(_$UploadCalendarError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3517,26 +3250,22 @@ class _$UploadCalendarError implements UploadCalendarError {
         (other.runtimeType == runtimeType &&
             other is _$UploadCalendarError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UploadCalendarErrorCopyWith<_$UploadCalendarError> get copyWith =>
-      __$$UploadCalendarErrorCopyWithImpl<_$UploadCalendarError>(
-          this, _$identity);
+      __$$UploadCalendarErrorCopyWithImpl<_$UploadCalendarError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup) $default, {
     required TResult Function(Calendar calendar) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -3546,9 +3275,7 @@ class _$UploadCalendarError implements UploadCalendarError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String path, String series, String group, String subgroup)?
-        $default, {
+    TResult? Function(String path, String series, String group, String subgroup)? $default, {
     TResult? Function(Calendar calendar)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -3558,8 +3285,7 @@ class _$UploadCalendarError implements UploadCalendarError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String path, String series, String group, String subgroup)?
-        $default, {
+    TResult Function(String path, String series, String group, String subgroup)? $default, {
     TResult Function(Calendar calendar)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -3606,14 +3332,12 @@ class _$UploadCalendarError implements UploadCalendarError {
 }
 
 abstract class UploadCalendarError implements UploadCalendar, ErrorAction {
-  const factory UploadCalendarError(
-      final Object error, final StackTrace stackTrace) = _$UploadCalendarError;
+  const factory UploadCalendarError(final Object error, final StackTrace stackTrace) = _$UploadCalendarError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UploadCalendarErrorCopyWith<_$UploadCalendarError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UploadCalendarErrorCopyWith<_$UploadCalendarError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3666,8 +3390,7 @@ mixin _$UpdateProfilePhoto {
 
 /// @nodoc
 abstract class $UpdateProfilePhotoCopyWith<$Res> {
-  factory $UpdateProfilePhotoCopyWith(
-          UpdateProfilePhoto value, $Res Function(UpdateProfilePhoto) then) =
+  factory $UpdateProfilePhotoCopyWith(UpdateProfilePhoto value, $Res Function(UpdateProfilePhoto) then) =
       _$UpdateProfilePhotoCopyWithImpl<$Res, UpdateProfilePhoto>;
 }
 
@@ -3684,8 +3407,8 @@ class _$UpdateProfilePhotoCopyWithImpl<$Res, $Val extends UpdateProfilePhoto>
 
 /// @nodoc
 abstract class _$$UpdateProfilePhotoStartCopyWith<$Res> {
-  factory _$$UpdateProfilePhotoStartCopyWith(_$UpdateProfilePhotoStart value,
-          $Res Function(_$UpdateProfilePhotoStart) then) =
+  factory _$$UpdateProfilePhotoStartCopyWith(
+          _$UpdateProfilePhotoStart value, $Res Function(_$UpdateProfilePhotoStart) then) =
       __$$UpdateProfilePhotoStartCopyWithImpl<$Res>;
   @useResult
   $Res call({String path});
@@ -3695,8 +3418,8 @@ abstract class _$$UpdateProfilePhotoStartCopyWith<$Res> {
 class __$$UpdateProfilePhotoStartCopyWithImpl<$Res>
     extends _$UpdateProfilePhotoCopyWithImpl<$Res, _$UpdateProfilePhotoStart>
     implements _$$UpdateProfilePhotoStartCopyWith<$Res> {
-  __$$UpdateProfilePhotoStartCopyWithImpl(_$UpdateProfilePhotoStart _value,
-      $Res Function(_$UpdateProfilePhotoStart) _then)
+  __$$UpdateProfilePhotoStartCopyWithImpl(
+      _$UpdateProfilePhotoStart _value, $Res Function(_$UpdateProfilePhotoStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3741,8 +3464,7 @@ class _$UpdateProfilePhotoStart implements UpdateProfilePhotoStart {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateProfilePhotoStartCopyWith<_$UpdateProfilePhotoStart> get copyWith =>
-      __$$UpdateProfilePhotoStartCopyWithImpl<_$UpdateProfilePhotoStart>(
-          this, _$identity);
+      __$$UpdateProfilePhotoStartCopyWithImpl<_$UpdateProfilePhotoStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3814,20 +3536,17 @@ class _$UpdateProfilePhotoStart implements UpdateProfilePhotoStart {
 }
 
 abstract class UpdateProfilePhotoStart implements UpdateProfilePhoto {
-  const factory UpdateProfilePhotoStart(final String path) =
-      _$UpdateProfilePhotoStart;
+  const factory UpdateProfilePhotoStart(final String path) = _$UpdateProfilePhotoStart;
 
   String get path;
   @JsonKey(ignore: true)
-  _$$UpdateProfilePhotoStartCopyWith<_$UpdateProfilePhotoStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateProfilePhotoStartCopyWith<_$UpdateProfilePhotoStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateProfilePhotoSuccessfulCopyWith<$Res> {
   factory _$$UpdateProfilePhotoSuccessfulCopyWith(
-          _$UpdateProfilePhotoSuccessful value,
-          $Res Function(_$UpdateProfilePhotoSuccessful) then) =
+          _$UpdateProfilePhotoSuccessful value, $Res Function(_$UpdateProfilePhotoSuccessful) then) =
       __$$UpdateProfilePhotoSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({String photoUrl});
@@ -3835,12 +3554,10 @@ abstract class _$$UpdateProfilePhotoSuccessfulCopyWith<$Res> {
 
 /// @nodoc
 class __$$UpdateProfilePhotoSuccessfulCopyWithImpl<$Res>
-    extends _$UpdateProfilePhotoCopyWithImpl<$Res,
-        _$UpdateProfilePhotoSuccessful>
+    extends _$UpdateProfilePhotoCopyWithImpl<$Res, _$UpdateProfilePhotoSuccessful>
     implements _$$UpdateProfilePhotoSuccessfulCopyWith<$Res> {
   __$$UpdateProfilePhotoSuccessfulCopyWithImpl(
-      _$UpdateProfilePhotoSuccessful _value,
-      $Res Function(_$UpdateProfilePhotoSuccessful) _then)
+      _$UpdateProfilePhotoSuccessful _value, $Res Function(_$UpdateProfilePhotoSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3875,8 +3592,7 @@ class _$UpdateProfilePhotoSuccessful implements UpdateProfilePhotoSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateProfilePhotoSuccessful &&
-            (identical(other.photoUrl, photoUrl) ||
-                other.photoUrl == photoUrl));
+            (identical(other.photoUrl, photoUrl) || other.photoUrl == photoUrl));
   }
 
   @override
@@ -3885,9 +3601,8 @@ class _$UpdateProfilePhotoSuccessful implements UpdateProfilePhotoSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateProfilePhotoSuccessfulCopyWith<_$UpdateProfilePhotoSuccessful>
-      get copyWith => __$$UpdateProfilePhotoSuccessfulCopyWithImpl<
-          _$UpdateProfilePhotoSuccessful>(this, _$identity);
+  _$$UpdateProfilePhotoSuccessfulCopyWith<_$UpdateProfilePhotoSuccessful> get copyWith =>
+      __$$UpdateProfilePhotoSuccessfulCopyWithImpl<_$UpdateProfilePhotoSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3959,19 +3674,18 @@ class _$UpdateProfilePhotoSuccessful implements UpdateProfilePhotoSuccessful {
 }
 
 abstract class UpdateProfilePhotoSuccessful implements UpdateProfilePhoto {
-  const factory UpdateProfilePhotoSuccessful(final String photoUrl) =
-      _$UpdateProfilePhotoSuccessful;
+  const factory UpdateProfilePhotoSuccessful(final String photoUrl) = _$UpdateProfilePhotoSuccessful;
 
   String get photoUrl;
   @JsonKey(ignore: true)
-  _$$UpdateProfilePhotoSuccessfulCopyWith<_$UpdateProfilePhotoSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateProfilePhotoSuccessfulCopyWith<_$UpdateProfilePhotoSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateProfilePhotoErrorCopyWith<$Res> {
-  factory _$$UpdateProfilePhotoErrorCopyWith(_$UpdateProfilePhotoError value,
-          $Res Function(_$UpdateProfilePhotoError) then) =
+  factory _$$UpdateProfilePhotoErrorCopyWith(
+          _$UpdateProfilePhotoError value, $Res Function(_$UpdateProfilePhotoError) then) =
       __$$UpdateProfilePhotoErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -3981,8 +3695,8 @@ abstract class _$$UpdateProfilePhotoErrorCopyWith<$Res> {
 class __$$UpdateProfilePhotoErrorCopyWithImpl<$Res>
     extends _$UpdateProfilePhotoCopyWithImpl<$Res, _$UpdateProfilePhotoError>
     implements _$$UpdateProfilePhotoErrorCopyWith<$Res> {
-  __$$UpdateProfilePhotoErrorCopyWithImpl(_$UpdateProfilePhotoError _value,
-      $Res Function(_$UpdateProfilePhotoError) _then)
+  __$$UpdateProfilePhotoErrorCopyWithImpl(
+      _$UpdateProfilePhotoError _value, $Res Function(_$UpdateProfilePhotoError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4022,20 +3736,17 @@ class _$UpdateProfilePhotoError implements UpdateProfilePhotoError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateProfilePhotoError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateProfilePhotoErrorCopyWith<_$UpdateProfilePhotoError> get copyWith =>
-      __$$UpdateProfilePhotoErrorCopyWithImpl<_$UpdateProfilePhotoError>(
-          this, _$identity);
+      __$$UpdateProfilePhotoErrorCopyWithImpl<_$UpdateProfilePhotoError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4106,25 +3817,20 @@ class _$UpdateProfilePhotoError implements UpdateProfilePhotoError {
   }
 }
 
-abstract class UpdateProfilePhotoError
-    implements UpdateProfilePhoto, ErrorAction {
-  const factory UpdateProfilePhotoError(
-          final Object error, final StackTrace stackTrace) =
-      _$UpdateProfilePhotoError;
+abstract class UpdateProfilePhotoError implements UpdateProfilePhoto, ErrorAction {
+  const factory UpdateProfilePhotoError(final Object error, final StackTrace stackTrace) = _$UpdateProfilePhotoError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateProfilePhotoErrorCopyWith<_$UpdateProfilePhotoError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateProfilePhotoErrorCopyWith<_$UpdateProfilePhotoError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$AddEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -4132,8 +3838,7 @@ mixin _$AddEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult? Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -4141,8 +3846,7 @@ mixin _$AddEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -4175,13 +3879,11 @@ mixin _$AddEvent {
 
 /// @nodoc
 abstract class $AddEventCopyWith<$Res> {
-  factory $AddEventCopyWith(AddEvent value, $Res Function(AddEvent) then) =
-      _$AddEventCopyWithImpl<$Res, AddEvent>;
+  factory $AddEventCopyWith(AddEvent value, $Res Function(AddEvent) then) = _$AddEventCopyWithImpl<$Res, AddEvent>;
 }
 
 /// @nodoc
-class _$AddEventCopyWithImpl<$Res, $Val extends AddEvent>
-    implements $AddEventCopyWith<$Res> {
+class _$AddEventCopyWithImpl<$Res, $Val extends AddEvent> implements $AddEventCopyWith<$Res> {
   _$AddEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -4192,27 +3894,16 @@ class _$AddEventCopyWithImpl<$Res, $Val extends AddEvent>
 
 /// @nodoc
 abstract class _$$AddEventStartCopyWith<$Res> {
-  factory _$$AddEventStartCopyWith(
-          _$AddEventStart value, $Res Function(_$AddEventStart) then) =
+  factory _$$AddEventStartCopyWith(_$AddEventStart value, $Res Function(_$AddEventStart) then) =
       __$$AddEventStartCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {String name,
-      String type,
-      String timeslot,
-      String weekday,
-      int parity,
-      String extra,
-      String tag});
+  $Res call({String name, String type, String timeslot, String weekday, int parity, String extra, String tag});
 }
 
 /// @nodoc
-class __$$AddEventStartCopyWithImpl<$Res>
-    extends _$AddEventCopyWithImpl<$Res, _$AddEventStart>
+class __$$AddEventStartCopyWithImpl<$Res> extends _$AddEventCopyWithImpl<$Res, _$AddEventStart>
     implements _$$AddEventStartCopyWith<$Res> {
-  __$$AddEventStartCopyWithImpl(
-      _$AddEventStart _value, $Res Function(_$AddEventStart) _then)
-      : super(_value, _then);
+  __$$AddEventStartCopyWithImpl(_$AddEventStart _value, $Res Function(_$AddEventStart) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4261,8 +3952,7 @@ class __$$AddEventStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AddEventStart implements AddEventStart {
-  const _$AddEventStart(this.name, this.type, this.timeslot, this.weekday,
-      this.parity, this.extra, this.tag);
+  const _$AddEventStart(this.name, this.type, this.timeslot, this.weekday, this.parity, this.extra, this.tag);
 
   @override
   final String name;
@@ -4291,8 +3981,7 @@ class _$AddEventStart implements AddEventStart {
             other is _$AddEventStart &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.timeslot, timeslot) ||
-                other.timeslot == timeslot) &&
+            (identical(other.timeslot, timeslot) || other.timeslot == timeslot) &&
             (identical(other.weekday, weekday) || other.weekday == weekday) &&
             (identical(other.parity, parity) || other.parity == parity) &&
             (identical(other.extra, extra) || other.extra == extra) &&
@@ -4300,8 +3989,7 @@ class _$AddEventStart implements AddEventStart {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, name, type, timeslot, weekday, parity, extra, tag);
+  int get hashCode => Object.hash(runtimeType, name, type, timeslot, weekday, parity, extra, tag);
 
   @JsonKey(ignore: true)
   @override
@@ -4312,8 +4000,7 @@ class _$AddEventStart implements AddEventStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -4324,8 +4011,7 @@ class _$AddEventStart implements AddEventStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult? Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -4336,8 +4022,7 @@ class _$AddEventStart implements AddEventStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -4385,14 +4070,8 @@ class _$AddEventStart implements AddEventStart {
 }
 
 abstract class AddEventStart implements AddEvent {
-  const factory AddEventStart(
-      final String name,
-      final String type,
-      final String timeslot,
-      final String weekday,
-      final int parity,
-      final String extra,
-      final String tag) = _$AddEventStart;
+  const factory AddEventStart(final String name, final String type, final String timeslot, final String weekday,
+      final int parity, final String extra, final String tag) = _$AddEventStart;
 
   String get name;
   String get type;
@@ -4402,25 +4081,21 @@ abstract class AddEventStart implements AddEvent {
   String get extra;
   String get tag;
   @JsonKey(ignore: true)
-  _$$AddEventStartCopyWith<_$AddEventStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddEventStartCopyWith<_$AddEventStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddEventSuccessfulCopyWith<$Res> {
-  factory _$$AddEventSuccessfulCopyWith(_$AddEventSuccessful value,
-          $Res Function(_$AddEventSuccessful) then) =
+  factory _$$AddEventSuccessfulCopyWith(_$AddEventSuccessful value, $Res Function(_$AddEventSuccessful) then) =
       __$$AddEventSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({Event event});
 }
 
 /// @nodoc
-class __$$AddEventSuccessfulCopyWithImpl<$Res>
-    extends _$AddEventCopyWithImpl<$Res, _$AddEventSuccessful>
+class __$$AddEventSuccessfulCopyWithImpl<$Res> extends _$AddEventCopyWithImpl<$Res, _$AddEventSuccessful>
     implements _$$AddEventSuccessfulCopyWith<$Res> {
-  __$$AddEventSuccessfulCopyWithImpl(
-      _$AddEventSuccessful _value, $Res Function(_$AddEventSuccessful) _then)
+  __$$AddEventSuccessfulCopyWithImpl(_$AddEventSuccessful _value, $Res Function(_$AddEventSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4465,14 +4140,12 @@ class _$AddEventSuccessful implements AddEventSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$AddEventSuccessfulCopyWith<_$AddEventSuccessful> get copyWith =>
-      __$$AddEventSuccessfulCopyWithImpl<_$AddEventSuccessful>(
-          this, _$identity);
+      __$$AddEventSuccessfulCopyWithImpl<_$AddEventSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -4483,8 +4156,7 @@ class _$AddEventSuccessful implements AddEventSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult? Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -4495,8 +4167,7 @@ class _$AddEventSuccessful implements AddEventSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -4548,26 +4219,21 @@ abstract class AddEventSuccessful implements AddEvent {
 
   Event get event;
   @JsonKey(ignore: true)
-  _$$AddEventSuccessfulCopyWith<_$AddEventSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddEventSuccessfulCopyWith<_$AddEventSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddEventErrorCopyWith<$Res> {
-  factory _$$AddEventErrorCopyWith(
-          _$AddEventError value, $Res Function(_$AddEventError) then) =
+  factory _$$AddEventErrorCopyWith(_$AddEventError value, $Res Function(_$AddEventError) then) =
       __$$AddEventErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddEventErrorCopyWithImpl<$Res>
-    extends _$AddEventCopyWithImpl<$Res, _$AddEventError>
+class __$$AddEventErrorCopyWithImpl<$Res> extends _$AddEventCopyWithImpl<$Res, _$AddEventError>
     implements _$$AddEventErrorCopyWith<$Res> {
-  __$$AddEventErrorCopyWithImpl(
-      _$AddEventError _value, $Res Function(_$AddEventError) _then)
-      : super(_value, _then);
+  __$$AddEventErrorCopyWithImpl(_$AddEventError _value, $Res Function(_$AddEventError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4606,13 +4272,11 @@ class _$AddEventError implements AddEventError {
         (other.runtimeType == runtimeType &&
             other is _$AddEventError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -4623,8 +4287,7 @@ class _$AddEventError implements AddEventError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -4635,8 +4298,7 @@ class _$AddEventError implements AddEventError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult? Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -4647,8 +4309,7 @@ class _$AddEventError implements AddEventError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String name, String type, String timeslot, String weekday,
-            int parity, String extra, String tag)?
+    TResult Function(String name, String type, String timeslot, String weekday, int parity, String extra, String tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -4696,22 +4357,20 @@ class _$AddEventError implements AddEventError {
 }
 
 abstract class AddEventError implements AddEvent, ErrorAction {
-  const factory AddEventError(final Object error, final StackTrace stackTrace) =
-      _$AddEventError;
+  const factory AddEventError(final Object error, final StackTrace stackTrace) = _$AddEventError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddEventErrorCopyWith<_$AddEventError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddEventErrorCopyWith<_$AddEventError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$EditEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -4719,8 +4378,8 @@ mixin _$EditEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult? Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -4728,8 +4387,8 @@ mixin _$EditEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -4762,13 +4421,11 @@ mixin _$EditEvent {
 
 /// @nodoc
 abstract class $EditEventCopyWith<$Res> {
-  factory $EditEventCopyWith(EditEvent value, $Res Function(EditEvent) then) =
-      _$EditEventCopyWithImpl<$Res, EditEvent>;
+  factory $EditEventCopyWith(EditEvent value, $Res Function(EditEvent) then) = _$EditEventCopyWithImpl<$Res, EditEvent>;
 }
 
 /// @nodoc
-class _$EditEventCopyWithImpl<$Res, $Val extends EditEvent>
-    implements $EditEventCopyWith<$Res> {
+class _$EditEventCopyWithImpl<$Res, $Val extends EditEvent> implements $EditEventCopyWith<$Res> {
   _$EditEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -4779,28 +4436,17 @@ class _$EditEventCopyWithImpl<$Res, $Val extends EditEvent>
 
 /// @nodoc
 abstract class _$$EditEventStartCopyWith<$Res> {
-  factory _$$EditEventStartCopyWith(
-          _$EditEventStart value, $Res Function(_$EditEventStart) then) =
+  factory _$$EditEventStartCopyWith(_$EditEventStart value, $Res Function(_$EditEventStart) then) =
       __$$EditEventStartCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {int id,
-      String? name,
-      String? type,
-      String? timeslot,
-      String? weekday,
-      int? parity,
-      String? extra,
-      String? tag});
+      {int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra, String? tag});
 }
 
 /// @nodoc
-class __$$EditEventStartCopyWithImpl<$Res>
-    extends _$EditEventCopyWithImpl<$Res, _$EditEventStart>
+class __$$EditEventStartCopyWithImpl<$Res> extends _$EditEventCopyWithImpl<$Res, _$EditEventStart>
     implements _$$EditEventStartCopyWith<$Res> {
-  __$$EditEventStartCopyWithImpl(
-      _$EditEventStart _value, $Res Function(_$EditEventStart) _then)
-      : super(_value, _then);
+  __$$EditEventStartCopyWithImpl(_$EditEventStart _value, $Res Function(_$EditEventStart) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4854,8 +4500,7 @@ class __$$EditEventStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$EditEventStart implements EditEventStart {
-  const _$EditEventStart(this.id, this.name, this.type, this.timeslot,
-      this.weekday, this.parity, this.extra, this.tag);
+  const _$EditEventStart(this.id, this.name, this.type, this.timeslot, this.weekday, this.parity, this.extra, this.tag);
 
   @override
   final int id;
@@ -4887,8 +4532,7 @@ class _$EditEventStart implements EditEventStart {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.timeslot, timeslot) ||
-                other.timeslot == timeslot) &&
+            (identical(other.timeslot, timeslot) || other.timeslot == timeslot) &&
             (identical(other.weekday, weekday) || other.weekday == weekday) &&
             (identical(other.parity, parity) || other.parity == parity) &&
             (identical(other.extra, extra) || other.extra == extra) &&
@@ -4896,8 +4540,7 @@ class _$EditEventStart implements EditEventStart {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, type, timeslot, weekday, parity, extra, tag);
+  int get hashCode => Object.hash(runtimeType, id, name, type, timeslot, weekday, parity, extra, tag);
 
   @JsonKey(ignore: true)
   @override
@@ -4908,8 +4551,8 @@ class _$EditEventStart implements EditEventStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -4920,21 +4563,20 @@ class _$EditEventStart implements EditEventStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult? Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(
-        id, name, type, timeslot, weekday, parity, extra, tag);
+    return $default?.call(id, name, type, timeslot, weekday, parity, extra, tag);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -4982,15 +4624,8 @@ class _$EditEventStart implements EditEventStart {
 }
 
 abstract class EditEventStart implements EditEvent {
-  const factory EditEventStart(
-      final int id,
-      final String? name,
-      final String? type,
-      final String? timeslot,
-      final String? weekday,
-      final int? parity,
-      final String? extra,
-      final String? tag) = _$EditEventStart;
+  const factory EditEventStart(final int id, final String? name, final String? type, final String? timeslot,
+      final String? weekday, final int? parity, final String? extra, final String? tag) = _$EditEventStart;
 
   int get id;
   String? get name;
@@ -5001,25 +4636,21 @@ abstract class EditEventStart implements EditEvent {
   String? get extra;
   String? get tag;
   @JsonKey(ignore: true)
-  _$$EditEventStartCopyWith<_$EditEventStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EditEventStartCopyWith<_$EditEventStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$EditEventSuccessfulCopyWith<$Res> {
-  factory _$$EditEventSuccessfulCopyWith(_$EditEventSuccessful value,
-          $Res Function(_$EditEventSuccessful) then) =
+  factory _$$EditEventSuccessfulCopyWith(_$EditEventSuccessful value, $Res Function(_$EditEventSuccessful) then) =
       __$$EditEventSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({Event event});
 }
 
 /// @nodoc
-class __$$EditEventSuccessfulCopyWithImpl<$Res>
-    extends _$EditEventCopyWithImpl<$Res, _$EditEventSuccessful>
+class __$$EditEventSuccessfulCopyWithImpl<$Res> extends _$EditEventCopyWithImpl<$Res, _$EditEventSuccessful>
     implements _$$EditEventSuccessfulCopyWith<$Res> {
-  __$$EditEventSuccessfulCopyWithImpl(
-      _$EditEventSuccessful _value, $Res Function(_$EditEventSuccessful) _then)
+  __$$EditEventSuccessfulCopyWithImpl(_$EditEventSuccessful _value, $Res Function(_$EditEventSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5064,14 +4695,13 @@ class _$EditEventSuccessful implements EditEventSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$EditEventSuccessfulCopyWith<_$EditEventSuccessful> get copyWith =>
-      __$$EditEventSuccessfulCopyWithImpl<_$EditEventSuccessful>(
-          this, _$identity);
+      __$$EditEventSuccessfulCopyWithImpl<_$EditEventSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -5082,8 +4712,8 @@ class _$EditEventSuccessful implements EditEventSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult? Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -5094,8 +4724,8 @@ class _$EditEventSuccessful implements EditEventSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -5147,26 +4777,21 @@ abstract class EditEventSuccessful implements EditEvent {
 
   Event get event;
   @JsonKey(ignore: true)
-  _$$EditEventSuccessfulCopyWith<_$EditEventSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EditEventSuccessfulCopyWith<_$EditEventSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$EditEventErrorCopyWith<$Res> {
-  factory _$$EditEventErrorCopyWith(
-          _$EditEventError value, $Res Function(_$EditEventError) then) =
+  factory _$$EditEventErrorCopyWith(_$EditEventError value, $Res Function(_$EditEventError) then) =
       __$$EditEventErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$EditEventErrorCopyWithImpl<$Res>
-    extends _$EditEventCopyWithImpl<$Res, _$EditEventError>
+class __$$EditEventErrorCopyWithImpl<$Res> extends _$EditEventCopyWithImpl<$Res, _$EditEventError>
     implements _$$EditEventErrorCopyWith<$Res> {
-  __$$EditEventErrorCopyWithImpl(
-      _$EditEventError _value, $Res Function(_$EditEventError) _then)
-      : super(_value, _then);
+  __$$EditEventErrorCopyWithImpl(_$EditEventError _value, $Res Function(_$EditEventError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -5205,13 +4830,11 @@ class _$EditEventError implements EditEventError {
         (other.runtimeType == runtimeType &&
             other is _$EditEventError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -5222,8 +4845,8 @@ class _$EditEventError implements EditEventError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)
         $default, {
     required TResult Function(Event event) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
@@ -5234,8 +4857,8 @@ class _$EditEventError implements EditEventError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult? Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult? Function(Event event)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
@@ -5246,8 +4869,8 @@ class _$EditEventError implements EditEventError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int id, String? name, String? type, String? timeslot,
-            String? weekday, int? parity, String? extra, String? tag)?
+    TResult Function(int id, String? name, String? type, String? timeslot, String? weekday, int? parity, String? extra,
+            String? tag)?
         $default, {
     TResult Function(Event event)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
@@ -5295,14 +4918,12 @@ class _$EditEventError implements EditEventError {
 }
 
 abstract class EditEventError implements EditEvent, ErrorAction {
-  const factory EditEventError(
-      final Object error, final StackTrace stackTrace) = _$EditEventError;
+  const factory EditEventError(final Object error, final StackTrace stackTrace) = _$EditEventError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$EditEventErrorCopyWith<_$EditEventError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EditEventErrorCopyWith<_$EditEventError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5355,14 +4976,12 @@ mixin _$DeleteEvent {
 
 /// @nodoc
 abstract class $DeleteEventCopyWith<$Res> {
-  factory $DeleteEventCopyWith(
-          DeleteEvent value, $Res Function(DeleteEvent) then) =
+  factory $DeleteEventCopyWith(DeleteEvent value, $Res Function(DeleteEvent) then) =
       _$DeleteEventCopyWithImpl<$Res, DeleteEvent>;
 }
 
 /// @nodoc
-class _$DeleteEventCopyWithImpl<$Res, $Val extends DeleteEvent>
-    implements $DeleteEventCopyWith<$Res> {
+class _$DeleteEventCopyWithImpl<$Res, $Val extends DeleteEvent> implements $DeleteEventCopyWith<$Res> {
   _$DeleteEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5373,19 +4992,16 @@ class _$DeleteEventCopyWithImpl<$Res, $Val extends DeleteEvent>
 
 /// @nodoc
 abstract class _$$DeleteEventStartCopyWith<$Res> {
-  factory _$$DeleteEventStartCopyWith(
-          _$DeleteEventStart value, $Res Function(_$DeleteEventStart) then) =
+  factory _$$DeleteEventStartCopyWith(_$DeleteEventStart value, $Res Function(_$DeleteEventStart) then) =
       __$$DeleteEventStartCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$DeleteEventStartCopyWithImpl<$Res>
-    extends _$DeleteEventCopyWithImpl<$Res, _$DeleteEventStart>
+class __$$DeleteEventStartCopyWithImpl<$Res> extends _$DeleteEventCopyWithImpl<$Res, _$DeleteEventStart>
     implements _$$DeleteEventStartCopyWith<$Res> {
-  __$$DeleteEventStartCopyWithImpl(
-      _$DeleteEventStart _value, $Res Function(_$DeleteEventStart) _then)
+  __$$DeleteEventStartCopyWithImpl(_$DeleteEventStart _value, $Res Function(_$DeleteEventStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5506,25 +5122,21 @@ abstract class DeleteEventStart implements DeleteEvent {
 
   int get id;
   @JsonKey(ignore: true)
-  _$$DeleteEventStartCopyWith<_$DeleteEventStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteEventStartCopyWith<_$DeleteEventStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DeleteEventSuccessfulCopyWith<$Res> {
-  factory _$$DeleteEventSuccessfulCopyWith(_$DeleteEventSuccessful value,
-          $Res Function(_$DeleteEventSuccessful) then) =
+  factory _$$DeleteEventSuccessfulCopyWith(_$DeleteEventSuccessful value, $Res Function(_$DeleteEventSuccessful) then) =
       __$$DeleteEventSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$DeleteEventSuccessfulCopyWithImpl<$Res>
-    extends _$DeleteEventCopyWithImpl<$Res, _$DeleteEventSuccessful>
+class __$$DeleteEventSuccessfulCopyWithImpl<$Res> extends _$DeleteEventCopyWithImpl<$Res, _$DeleteEventSuccessful>
     implements _$$DeleteEventSuccessfulCopyWith<$Res> {
-  __$$DeleteEventSuccessfulCopyWithImpl(_$DeleteEventSuccessful _value,
-      $Res Function(_$DeleteEventSuccessful) _then)
+  __$$DeleteEventSuccessfulCopyWithImpl(_$DeleteEventSuccessful _value, $Res Function(_$DeleteEventSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5569,8 +5181,7 @@ class _$DeleteEventSuccessful implements DeleteEventSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteEventSuccessfulCopyWith<_$DeleteEventSuccessful> get copyWith =>
-      __$$DeleteEventSuccessfulCopyWithImpl<_$DeleteEventSuccessful>(
-          this, _$identity);
+      __$$DeleteEventSuccessfulCopyWithImpl<_$DeleteEventSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5646,25 +5257,21 @@ abstract class DeleteEventSuccessful implements DeleteEvent {
 
   int get id;
   @JsonKey(ignore: true)
-  _$$DeleteEventSuccessfulCopyWith<_$DeleteEventSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteEventSuccessfulCopyWith<_$DeleteEventSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DeleteEventErrorCopyWith<$Res> {
-  factory _$$DeleteEventErrorCopyWith(
-          _$DeleteEventError value, $Res Function(_$DeleteEventError) then) =
+  factory _$$DeleteEventErrorCopyWith(_$DeleteEventError value, $Res Function(_$DeleteEventError) then) =
       __$$DeleteEventErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$DeleteEventErrorCopyWithImpl<$Res>
-    extends _$DeleteEventCopyWithImpl<$Res, _$DeleteEventError>
+class __$$DeleteEventErrorCopyWithImpl<$Res> extends _$DeleteEventCopyWithImpl<$Res, _$DeleteEventError>
     implements _$$DeleteEventErrorCopyWith<$Res> {
-  __$$DeleteEventErrorCopyWithImpl(
-      _$DeleteEventError _value, $Res Function(_$DeleteEventError) _then)
+  __$$DeleteEventErrorCopyWithImpl(_$DeleteEventError _value, $Res Function(_$DeleteEventError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5704,13 +5311,11 @@ class _$DeleteEventError implements DeleteEventError {
         (other.runtimeType == runtimeType &&
             other is _$DeleteEventError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -5788,14 +5393,12 @@ class _$DeleteEventError implements DeleteEventError {
 }
 
 abstract class DeleteEventError implements DeleteEvent, ErrorAction {
-  const factory DeleteEventError(
-      final Object error, final StackTrace stackTrace) = _$DeleteEventError;
+  const factory DeleteEventError(final Object error, final StackTrace stackTrace) = _$DeleteEventError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$DeleteEventErrorCopyWith<_$DeleteEventError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteEventErrorCopyWith<_$DeleteEventError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5848,14 +5451,12 @@ mixin _$FilterCalendar {
 
 /// @nodoc
 abstract class $FilterCalendarCopyWith<$Res> {
-  factory $FilterCalendarCopyWith(
-          FilterCalendar value, $Res Function(FilterCalendar) then) =
+  factory $FilterCalendarCopyWith(FilterCalendar value, $Res Function(FilterCalendar) then) =
       _$FilterCalendarCopyWithImpl<$Res, FilterCalendar>;
 }
 
 /// @nodoc
-class _$FilterCalendarCopyWithImpl<$Res, $Val extends FilterCalendar>
-    implements $FilterCalendarCopyWith<$Res> {
+class _$FilterCalendarCopyWithImpl<$Res, $Val extends FilterCalendar> implements $FilterCalendarCopyWith<$Res> {
   _$FilterCalendarCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5866,19 +5467,16 @@ class _$FilterCalendarCopyWithImpl<$Res, $Val extends FilterCalendar>
 
 /// @nodoc
 abstract class _$$FilterCalendarStartCopyWith<$Res> {
-  factory _$$FilterCalendarStartCopyWith(_$FilterCalendarStart value,
-          $Res Function(_$FilterCalendarStart) then) =
+  factory _$$FilterCalendarStartCopyWith(_$FilterCalendarStart value, $Res Function(_$FilterCalendarStart) then) =
       __$$FilterCalendarStartCopyWithImpl<$Res>;
   @useResult
   $Res call({String tag});
 }
 
 /// @nodoc
-class __$$FilterCalendarStartCopyWithImpl<$Res>
-    extends _$FilterCalendarCopyWithImpl<$Res, _$FilterCalendarStart>
+class __$$FilterCalendarStartCopyWithImpl<$Res> extends _$FilterCalendarCopyWithImpl<$Res, _$FilterCalendarStart>
     implements _$$FilterCalendarStartCopyWith<$Res> {
-  __$$FilterCalendarStartCopyWithImpl(
-      _$FilterCalendarStart _value, $Res Function(_$FilterCalendarStart) _then)
+  __$$FilterCalendarStartCopyWithImpl(_$FilterCalendarStart _value, $Res Function(_$FilterCalendarStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5923,8 +5521,7 @@ class _$FilterCalendarStart implements FilterCalendarStart {
   @override
   @pragma('vm:prefer-inline')
   _$$FilterCalendarStartCopyWith<_$FilterCalendarStart> get copyWith =>
-      __$$FilterCalendarStartCopyWithImpl<_$FilterCalendarStart>(
-          this, _$identity);
+      __$$FilterCalendarStartCopyWithImpl<_$FilterCalendarStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6000,14 +5597,13 @@ abstract class FilterCalendarStart implements FilterCalendar {
 
   String get tag;
   @JsonKey(ignore: true)
-  _$$FilterCalendarStartCopyWith<_$FilterCalendarStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FilterCalendarStartCopyWith<_$FilterCalendarStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FilterCalendarSuccessfulCopyWith<$Res> {
-  factory _$$FilterCalendarSuccessfulCopyWith(_$FilterCalendarSuccessful value,
-          $Res Function(_$FilterCalendarSuccessful) then) =
+  factory _$$FilterCalendarSuccessfulCopyWith(
+          _$FilterCalendarSuccessful value, $Res Function(_$FilterCalendarSuccessful) then) =
       __$$FilterCalendarSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({Calendar calendar});
@@ -6017,8 +5613,8 @@ abstract class _$$FilterCalendarSuccessfulCopyWith<$Res> {
 class __$$FilterCalendarSuccessfulCopyWithImpl<$Res>
     extends _$FilterCalendarCopyWithImpl<$Res, _$FilterCalendarSuccessful>
     implements _$$FilterCalendarSuccessfulCopyWith<$Res> {
-  __$$FilterCalendarSuccessfulCopyWithImpl(_$FilterCalendarSuccessful _value,
-      $Res Function(_$FilterCalendarSuccessful) _then)
+  __$$FilterCalendarSuccessfulCopyWithImpl(
+      _$FilterCalendarSuccessful _value, $Res Function(_$FilterCalendarSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6053,8 +5649,7 @@ class _$FilterCalendarSuccessful implements FilterCalendarSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FilterCalendarSuccessful &&
-            (identical(other.calendar, calendar) ||
-                other.calendar == calendar));
+            (identical(other.calendar, calendar) || other.calendar == calendar));
   }
 
   @override
@@ -6063,10 +5658,8 @@ class _$FilterCalendarSuccessful implements FilterCalendarSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FilterCalendarSuccessfulCopyWith<_$FilterCalendarSuccessful>
-      get copyWith =>
-          __$$FilterCalendarSuccessfulCopyWithImpl<_$FilterCalendarSuccessful>(
-              this, _$identity);
+  _$$FilterCalendarSuccessfulCopyWith<_$FilterCalendarSuccessful> get copyWith =>
+      __$$FilterCalendarSuccessfulCopyWithImpl<_$FilterCalendarSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6138,30 +5731,25 @@ class _$FilterCalendarSuccessful implements FilterCalendarSuccessful {
 }
 
 abstract class FilterCalendarSuccessful implements FilterCalendar {
-  const factory FilterCalendarSuccessful(final Calendar calendar) =
-      _$FilterCalendarSuccessful;
+  const factory FilterCalendarSuccessful(final Calendar calendar) = _$FilterCalendarSuccessful;
 
   Calendar get calendar;
   @JsonKey(ignore: true)
-  _$$FilterCalendarSuccessfulCopyWith<_$FilterCalendarSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FilterCalendarSuccessfulCopyWith<_$FilterCalendarSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FilterCalendarErrorCopyWith<$Res> {
-  factory _$$FilterCalendarErrorCopyWith(_$FilterCalendarError value,
-          $Res Function(_$FilterCalendarError) then) =
+  factory _$$FilterCalendarErrorCopyWith(_$FilterCalendarError value, $Res Function(_$FilterCalendarError) then) =
       __$$FilterCalendarErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$FilterCalendarErrorCopyWithImpl<$Res>
-    extends _$FilterCalendarCopyWithImpl<$Res, _$FilterCalendarError>
+class __$$FilterCalendarErrorCopyWithImpl<$Res> extends _$FilterCalendarCopyWithImpl<$Res, _$FilterCalendarError>
     implements _$$FilterCalendarErrorCopyWith<$Res> {
-  __$$FilterCalendarErrorCopyWithImpl(
-      _$FilterCalendarError _value, $Res Function(_$FilterCalendarError) _then)
+  __$$FilterCalendarErrorCopyWithImpl(_$FilterCalendarError _value, $Res Function(_$FilterCalendarError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6201,20 +5789,17 @@ class _$FilterCalendarError implements FilterCalendarError {
         (other.runtimeType == runtimeType &&
             other is _$FilterCalendarError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FilterCalendarErrorCopyWith<_$FilterCalendarError> get copyWith =>
-      __$$FilterCalendarErrorCopyWithImpl<_$FilterCalendarError>(
-          this, _$identity);
+      __$$FilterCalendarErrorCopyWithImpl<_$FilterCalendarError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6286,14 +5871,12 @@ class _$FilterCalendarError implements FilterCalendarError {
 }
 
 abstract class FilterCalendarError implements FilterCalendar, ErrorAction {
-  const factory FilterCalendarError(
-      final Object error, final StackTrace stackTrace) = _$FilterCalendarError;
+  const factory FilterCalendarError(final Object error, final StackTrace stackTrace) = _$FilterCalendarError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$FilterCalendarErrorCopyWith<_$FilterCalendarError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FilterCalendarErrorCopyWith<_$FilterCalendarError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6301,22 +5884,19 @@ mixin _$SetSelectedDate {
   DateTime get date => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetSelectedDateCopyWith<SetSelectedDate> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetSelectedDateCopyWith<SetSelectedDate> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetSelectedDateCopyWith<$Res> {
-  factory $SetSelectedDateCopyWith(
-          SetSelectedDate value, $Res Function(SetSelectedDate) then) =
+  factory $SetSelectedDateCopyWith(SetSelectedDate value, $Res Function(SetSelectedDate) then) =
       _$SetSelectedDateCopyWithImpl<$Res, SetSelectedDate>;
   @useResult
   $Res call({DateTime date});
 }
 
 /// @nodoc
-class _$SetSelectedDateCopyWithImpl<$Res, $Val extends SetSelectedDate>
-    implements $SetSelectedDateCopyWith<$Res> {
+class _$SetSelectedDateCopyWithImpl<$Res, $Val extends SetSelectedDate> implements $SetSelectedDateCopyWith<$Res> {
   _$SetSelectedDateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -6339,10 +5919,8 @@ class _$SetSelectedDateCopyWithImpl<$Res, $Val extends SetSelectedDate>
 }
 
 /// @nodoc
-abstract class _$$SetSelectedDate$CopyWith<$Res>
-    implements $SetSelectedDateCopyWith<$Res> {
-  factory _$$SetSelectedDate$CopyWith(
-          _$SetSelectedDate$ value, $Res Function(_$SetSelectedDate$) then) =
+abstract class _$$SetSelectedDate$CopyWith<$Res> implements $SetSelectedDateCopyWith<$Res> {
+  factory _$$SetSelectedDate$CopyWith(_$SetSelectedDate$ value, $Res Function(_$SetSelectedDate$) then) =
       __$$SetSelectedDate$CopyWithImpl<$Res>;
   @override
   @useResult
@@ -6350,11 +5928,9 @@ abstract class _$$SetSelectedDate$CopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SetSelectedDate$CopyWithImpl<$Res>
-    extends _$SetSelectedDateCopyWithImpl<$Res, _$SetSelectedDate$>
+class __$$SetSelectedDate$CopyWithImpl<$Res> extends _$SetSelectedDateCopyWithImpl<$Res, _$SetSelectedDate$>
     implements _$$SetSelectedDate$CopyWith<$Res> {
-  __$$SetSelectedDate$CopyWithImpl(
-      _$SetSelectedDate$ _value, $Res Function(_$SetSelectedDate$) _then)
+  __$$SetSelectedDate$CopyWithImpl(_$SetSelectedDate$ _value, $Res Function(_$SetSelectedDate$) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6409,8 +5985,7 @@ abstract class SetSelectedDate$ implements SetSelectedDate {
   DateTime get date;
   @override
   @JsonKey(ignore: true)
-  _$$SetSelectedDate$CopyWith<_$SetSelectedDate$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SetSelectedDate$CopyWith<_$SetSelectedDate$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6418,22 +5993,19 @@ mixin _$SetSelectedEvent {
   Event? get event => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetSelectedEventCopyWith<SetSelectedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetSelectedEventCopyWith<SetSelectedEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetSelectedEventCopyWith<$Res> {
-  factory $SetSelectedEventCopyWith(
-          SetSelectedEvent value, $Res Function(SetSelectedEvent) then) =
+  factory $SetSelectedEventCopyWith(SetSelectedEvent value, $Res Function(SetSelectedEvent) then) =
       _$SetSelectedEventCopyWithImpl<$Res, SetSelectedEvent>;
   @useResult
   $Res call({Event? event});
 }
 
 /// @nodoc
-class _$SetSelectedEventCopyWithImpl<$Res, $Val extends SetSelectedEvent>
-    implements $SetSelectedEventCopyWith<$Res> {
+class _$SetSelectedEventCopyWithImpl<$Res, $Val extends SetSelectedEvent> implements $SetSelectedEventCopyWith<$Res> {
   _$SetSelectedEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -6456,10 +6028,8 @@ class _$SetSelectedEventCopyWithImpl<$Res, $Val extends SetSelectedEvent>
 }
 
 /// @nodoc
-abstract class _$$SetSelectedEvent$CopyWith<$Res>
-    implements $SetSelectedEventCopyWith<$Res> {
-  factory _$$SetSelectedEvent$CopyWith(
-          _$SetSelectedEvent$ value, $Res Function(_$SetSelectedEvent$) then) =
+abstract class _$$SetSelectedEvent$CopyWith<$Res> implements $SetSelectedEventCopyWith<$Res> {
+  factory _$$SetSelectedEvent$CopyWith(_$SetSelectedEvent$ value, $Res Function(_$SetSelectedEvent$) then) =
       __$$SetSelectedEvent$CopyWithImpl<$Res>;
   @override
   @useResult
@@ -6467,11 +6037,9 @@ abstract class _$$SetSelectedEvent$CopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SetSelectedEvent$CopyWithImpl<$Res>
-    extends _$SetSelectedEventCopyWithImpl<$Res, _$SetSelectedEvent$>
+class __$$SetSelectedEvent$CopyWithImpl<$Res> extends _$SetSelectedEventCopyWithImpl<$Res, _$SetSelectedEvent$>
     implements _$$SetSelectedEvent$CopyWith<$Res> {
-  __$$SetSelectedEvent$CopyWithImpl(
-      _$SetSelectedEvent$ _value, $Res Function(_$SetSelectedEvent$) _then)
+  __$$SetSelectedEvent$CopyWithImpl(_$SetSelectedEvent$ _value, $Res Function(_$SetSelectedEvent$) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6526,8 +6094,7 @@ abstract class SetSelectedEvent$ implements SetSelectedEvent {
   Event? get event;
   @override
   @JsonKey(ignore: true)
-  _$$SetSelectedEvent$CopyWith<_$SetSelectedEvent$> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SetSelectedEvent$CopyWith<_$SetSelectedEvent$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6580,8 +6147,7 @@ mixin _$UpdateHasCalendar {
 
 /// @nodoc
 abstract class $UpdateHasCalendarCopyWith<$Res> {
-  factory $UpdateHasCalendarCopyWith(
-          UpdateHasCalendar value, $Res Function(UpdateHasCalendar) then) =
+  factory $UpdateHasCalendarCopyWith(UpdateHasCalendar value, $Res Function(UpdateHasCalendar) then) =
       _$UpdateHasCalendarCopyWithImpl<$Res, UpdateHasCalendar>;
 }
 
@@ -6598,8 +6164,8 @@ class _$UpdateHasCalendarCopyWithImpl<$Res, $Val extends UpdateHasCalendar>
 
 /// @nodoc
 abstract class _$$UpdateHasCalendarStartCopyWith<$Res> {
-  factory _$$UpdateHasCalendarStartCopyWith(_$UpdateHasCalendarStart value,
-          $Res Function(_$UpdateHasCalendarStart) then) =
+  factory _$$UpdateHasCalendarStartCopyWith(
+          _$UpdateHasCalendarStart value, $Res Function(_$UpdateHasCalendarStart) then) =
       __$$UpdateHasCalendarStartCopyWithImpl<$Res>;
   @useResult
   $Res call({bool hasCalendar});
@@ -6609,8 +6175,7 @@ abstract class _$$UpdateHasCalendarStartCopyWith<$Res> {
 class __$$UpdateHasCalendarStartCopyWithImpl<$Res>
     extends _$UpdateHasCalendarCopyWithImpl<$Res, _$UpdateHasCalendarStart>
     implements _$$UpdateHasCalendarStartCopyWith<$Res> {
-  __$$UpdateHasCalendarStartCopyWithImpl(_$UpdateHasCalendarStart _value,
-      $Res Function(_$UpdateHasCalendarStart) _then)
+  __$$UpdateHasCalendarStartCopyWithImpl(_$UpdateHasCalendarStart _value, $Res Function(_$UpdateHasCalendarStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6645,8 +6210,7 @@ class _$UpdateHasCalendarStart implements UpdateHasCalendarStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateHasCalendarStart &&
-            (identical(other.hasCalendar, hasCalendar) ||
-                other.hasCalendar == hasCalendar));
+            (identical(other.hasCalendar, hasCalendar) || other.hasCalendar == hasCalendar));
   }
 
   @override
@@ -6656,8 +6220,7 @@ class _$UpdateHasCalendarStart implements UpdateHasCalendarStart {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateHasCalendarStartCopyWith<_$UpdateHasCalendarStart> get copyWith =>
-      __$$UpdateHasCalendarStartCopyWithImpl<_$UpdateHasCalendarStart>(
-          this, _$identity);
+      __$$UpdateHasCalendarStartCopyWithImpl<_$UpdateHasCalendarStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6729,20 +6292,17 @@ class _$UpdateHasCalendarStart implements UpdateHasCalendarStart {
 }
 
 abstract class UpdateHasCalendarStart implements UpdateHasCalendar {
-  const factory UpdateHasCalendarStart(final bool hasCalendar) =
-      _$UpdateHasCalendarStart;
+  const factory UpdateHasCalendarStart(final bool hasCalendar) = _$UpdateHasCalendarStart;
 
   bool get hasCalendar;
   @JsonKey(ignore: true)
-  _$$UpdateHasCalendarStartCopyWith<_$UpdateHasCalendarStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateHasCalendarStartCopyWith<_$UpdateHasCalendarStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateHasCalendarSuccessfulCopyWith<$Res> {
   factory _$$UpdateHasCalendarSuccessfulCopyWith(
-          _$UpdateHasCalendarSuccessful value,
-          $Res Function(_$UpdateHasCalendarSuccessful) then) =
+          _$UpdateHasCalendarSuccessful value, $Res Function(_$UpdateHasCalendarSuccessful) then) =
       __$$UpdateHasCalendarSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({bool hasCalendar});
@@ -6753,8 +6313,7 @@ class __$$UpdateHasCalendarSuccessfulCopyWithImpl<$Res>
     extends _$UpdateHasCalendarCopyWithImpl<$Res, _$UpdateHasCalendarSuccessful>
     implements _$$UpdateHasCalendarSuccessfulCopyWith<$Res> {
   __$$UpdateHasCalendarSuccessfulCopyWithImpl(
-      _$UpdateHasCalendarSuccessful _value,
-      $Res Function(_$UpdateHasCalendarSuccessful) _then)
+      _$UpdateHasCalendarSuccessful _value, $Res Function(_$UpdateHasCalendarSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6789,8 +6348,7 @@ class _$UpdateHasCalendarSuccessful implements UpdateHasCalendarSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateHasCalendarSuccessful &&
-            (identical(other.hasCalendar, hasCalendar) ||
-                other.hasCalendar == hasCalendar));
+            (identical(other.hasCalendar, hasCalendar) || other.hasCalendar == hasCalendar));
   }
 
   @override
@@ -6799,9 +6357,8 @@ class _$UpdateHasCalendarSuccessful implements UpdateHasCalendarSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateHasCalendarSuccessfulCopyWith<_$UpdateHasCalendarSuccessful>
-      get copyWith => __$$UpdateHasCalendarSuccessfulCopyWithImpl<
-          _$UpdateHasCalendarSuccessful>(this, _$identity);
+  _$$UpdateHasCalendarSuccessfulCopyWith<_$UpdateHasCalendarSuccessful> get copyWith =>
+      __$$UpdateHasCalendarSuccessfulCopyWithImpl<_$UpdateHasCalendarSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6873,19 +6430,18 @@ class _$UpdateHasCalendarSuccessful implements UpdateHasCalendarSuccessful {
 }
 
 abstract class UpdateHasCalendarSuccessful implements UpdateHasCalendar {
-  const factory UpdateHasCalendarSuccessful(final bool hasCalendar) =
-      _$UpdateHasCalendarSuccessful;
+  const factory UpdateHasCalendarSuccessful(final bool hasCalendar) = _$UpdateHasCalendarSuccessful;
 
   bool get hasCalendar;
   @JsonKey(ignore: true)
-  _$$UpdateHasCalendarSuccessfulCopyWith<_$UpdateHasCalendarSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateHasCalendarSuccessfulCopyWith<_$UpdateHasCalendarSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateHasCalendarErrorCopyWith<$Res> {
-  factory _$$UpdateHasCalendarErrorCopyWith(_$UpdateHasCalendarError value,
-          $Res Function(_$UpdateHasCalendarError) then) =
+  factory _$$UpdateHasCalendarErrorCopyWith(
+          _$UpdateHasCalendarError value, $Res Function(_$UpdateHasCalendarError) then) =
       __$$UpdateHasCalendarErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -6895,8 +6451,7 @@ abstract class _$$UpdateHasCalendarErrorCopyWith<$Res> {
 class __$$UpdateHasCalendarErrorCopyWithImpl<$Res>
     extends _$UpdateHasCalendarCopyWithImpl<$Res, _$UpdateHasCalendarError>
     implements _$$UpdateHasCalendarErrorCopyWith<$Res> {
-  __$$UpdateHasCalendarErrorCopyWithImpl(_$UpdateHasCalendarError _value,
-      $Res Function(_$UpdateHasCalendarError) _then)
+  __$$UpdateHasCalendarErrorCopyWithImpl(_$UpdateHasCalendarError _value, $Res Function(_$UpdateHasCalendarError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6936,20 +6491,17 @@ class _$UpdateHasCalendarError implements UpdateHasCalendarError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateHasCalendarError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateHasCalendarErrorCopyWith<_$UpdateHasCalendarError> get copyWith =>
-      __$$UpdateHasCalendarErrorCopyWithImpl<_$UpdateHasCalendarError>(
-          this, _$identity);
+      __$$UpdateHasCalendarErrorCopyWithImpl<_$UpdateHasCalendarError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7020,17 +6572,13 @@ class _$UpdateHasCalendarError implements UpdateHasCalendarError {
   }
 }
 
-abstract class UpdateHasCalendarError
-    implements UpdateHasCalendar, ErrorAction {
-  const factory UpdateHasCalendarError(
-          final Object error, final StackTrace stackTrace) =
-      _$UpdateHasCalendarError;
+abstract class UpdateHasCalendarError implements UpdateHasCalendar, ErrorAction {
+  const factory UpdateHasCalendarError(final Object error, final StackTrace stackTrace) = _$UpdateHasCalendarError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$UpdateHasCalendarErrorCopyWith<_$UpdateHasCalendarError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateHasCalendarErrorCopyWith<_$UpdateHasCalendarError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -7083,13 +6631,11 @@ mixin _$AddFriend {
 
 /// @nodoc
 abstract class $AddFriendCopyWith<$Res> {
-  factory $AddFriendCopyWith(AddFriend value, $Res Function(AddFriend) then) =
-      _$AddFriendCopyWithImpl<$Res, AddFriend>;
+  factory $AddFriendCopyWith(AddFriend value, $Res Function(AddFriend) then) = _$AddFriendCopyWithImpl<$Res, AddFriend>;
 }
 
 /// @nodoc
-class _$AddFriendCopyWithImpl<$Res, $Val extends AddFriend>
-    implements $AddFriendCopyWith<$Res> {
+class _$AddFriendCopyWithImpl<$Res, $Val extends AddFriend> implements $AddFriendCopyWith<$Res> {
   _$AddFriendCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -7100,20 +6646,16 @@ class _$AddFriendCopyWithImpl<$Res, $Val extends AddFriend>
 
 /// @nodoc
 abstract class _$$AddFriendStartCopyWith<$Res> {
-  factory _$$AddFriendStartCopyWith(
-          _$AddFriendStart value, $Res Function(_$AddFriendStart) then) =
+  factory _$$AddFriendStartCopyWith(_$AddFriendStart value, $Res Function(_$AddFriendStart) then) =
       __$$AddFriendStartCopyWithImpl<$Res>;
   @useResult
   $Res call({String uid});
 }
 
 /// @nodoc
-class __$$AddFriendStartCopyWithImpl<$Res>
-    extends _$AddFriendCopyWithImpl<$Res, _$AddFriendStart>
+class __$$AddFriendStartCopyWithImpl<$Res> extends _$AddFriendCopyWithImpl<$Res, _$AddFriendStart>
     implements _$$AddFriendStartCopyWith<$Res> {
-  __$$AddFriendStartCopyWithImpl(
-      _$AddFriendStart _value, $Res Function(_$AddFriendStart) _then)
-      : super(_value, _then);
+  __$$AddFriendStartCopyWithImpl(_$AddFriendStart _value, $Res Function(_$AddFriendStart) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -7233,25 +6775,21 @@ abstract class AddFriendStart implements AddFriend {
 
   String get uid;
   @JsonKey(ignore: true)
-  _$$AddFriendStartCopyWith<_$AddFriendStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddFriendStartCopyWith<_$AddFriendStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddFriendSuccessfulCopyWith<$Res> {
-  factory _$$AddFriendSuccessfulCopyWith(_$AddFriendSuccessful value,
-          $Res Function(_$AddFriendSuccessful) then) =
+  factory _$$AddFriendSuccessfulCopyWith(_$AddFriendSuccessful value, $Res Function(_$AddFriendSuccessful) then) =
       __$$AddFriendSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({Connection connection});
 }
 
 /// @nodoc
-class __$$AddFriendSuccessfulCopyWithImpl<$Res>
-    extends _$AddFriendCopyWithImpl<$Res, _$AddFriendSuccessful>
+class __$$AddFriendSuccessfulCopyWithImpl<$Res> extends _$AddFriendCopyWithImpl<$Res, _$AddFriendSuccessful>
     implements _$$AddFriendSuccessfulCopyWith<$Res> {
-  __$$AddFriendSuccessfulCopyWithImpl(
-      _$AddFriendSuccessful _value, $Res Function(_$AddFriendSuccessful) _then)
+  __$$AddFriendSuccessfulCopyWithImpl(_$AddFriendSuccessful _value, $Res Function(_$AddFriendSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -7286,8 +6824,7 @@ class _$AddFriendSuccessful implements AddFriendSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddFriendSuccessful &&
-            (identical(other.connection, connection) ||
-                other.connection == connection));
+            (identical(other.connection, connection) || other.connection == connection));
   }
 
   @override
@@ -7297,8 +6834,7 @@ class _$AddFriendSuccessful implements AddFriendSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$AddFriendSuccessfulCopyWith<_$AddFriendSuccessful> get copyWith =>
-      __$$AddFriendSuccessfulCopyWithImpl<_$AddFriendSuccessful>(
-          this, _$identity);
+      __$$AddFriendSuccessfulCopyWithImpl<_$AddFriendSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7370,31 +6906,25 @@ class _$AddFriendSuccessful implements AddFriendSuccessful {
 }
 
 abstract class AddFriendSuccessful implements AddFriend {
-  const factory AddFriendSuccessful(final Connection connection) =
-      _$AddFriendSuccessful;
+  const factory AddFriendSuccessful(final Connection connection) = _$AddFriendSuccessful;
 
   Connection get connection;
   @JsonKey(ignore: true)
-  _$$AddFriendSuccessfulCopyWith<_$AddFriendSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddFriendSuccessfulCopyWith<_$AddFriendSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddFriendErrorCopyWith<$Res> {
-  factory _$$AddFriendErrorCopyWith(
-          _$AddFriendError value, $Res Function(_$AddFriendError) then) =
+  factory _$$AddFriendErrorCopyWith(_$AddFriendError value, $Res Function(_$AddFriendError) then) =
       __$$AddFriendErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddFriendErrorCopyWithImpl<$Res>
-    extends _$AddFriendCopyWithImpl<$Res, _$AddFriendError>
+class __$$AddFriendErrorCopyWithImpl<$Res> extends _$AddFriendCopyWithImpl<$Res, _$AddFriendError>
     implements _$$AddFriendErrorCopyWith<$Res> {
-  __$$AddFriendErrorCopyWithImpl(
-      _$AddFriendError _value, $Res Function(_$AddFriendError) _then)
-      : super(_value, _then);
+  __$$AddFriendErrorCopyWithImpl(_$AddFriendError _value, $Res Function(_$AddFriendError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -7433,13 +6963,11 @@ class _$AddFriendError implements AddFriendError {
         (other.runtimeType == runtimeType &&
             other is _$AddFriendError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -7517,14 +7045,12 @@ class _$AddFriendError implements AddFriendError {
 }
 
 abstract class AddFriendError implements AddFriend, ErrorAction {
-  const factory AddFriendError(
-      final Object error, final StackTrace stackTrace) = _$AddFriendError;
+  const factory AddFriendError(final Object error, final StackTrace stackTrace) = _$AddFriendError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddFriendErrorCopyWith<_$AddFriendError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddFriendErrorCopyWith<_$AddFriendError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -7577,14 +7103,12 @@ mixin _$ShareEvent {
 
 /// @nodoc
 abstract class $ShareEventCopyWith<$Res> {
-  factory $ShareEventCopyWith(
-          ShareEvent value, $Res Function(ShareEvent) then) =
+  factory $ShareEventCopyWith(ShareEvent value, $Res Function(ShareEvent) then) =
       _$ShareEventCopyWithImpl<$Res, ShareEvent>;
 }
 
 /// @nodoc
-class _$ShareEventCopyWithImpl<$Res, $Val extends ShareEvent>
-    implements $ShareEventCopyWith<$Res> {
+class _$ShareEventCopyWithImpl<$Res, $Val extends ShareEvent> implements $ShareEventCopyWith<$Res> {
   _$ShareEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -7595,19 +7119,16 @@ class _$ShareEventCopyWithImpl<$Res, $Val extends ShareEvent>
 
 /// @nodoc
 abstract class _$$ShareEventStartCopyWith<$Res> {
-  factory _$$ShareEventStartCopyWith(
-          _$ShareEventStart value, $Res Function(_$ShareEventStart) then) =
+  factory _$$ShareEventStartCopyWith(_$ShareEventStart value, $Res Function(_$ShareEventStart) then) =
       __$$ShareEventStartCopyWithImpl<$Res>;
   @useResult
   $Res call({String uid, int eventId});
 }
 
 /// @nodoc
-class __$$ShareEventStartCopyWithImpl<$Res>
-    extends _$ShareEventCopyWithImpl<$Res, _$ShareEventStart>
+class __$$ShareEventStartCopyWithImpl<$Res> extends _$ShareEventCopyWithImpl<$Res, _$ShareEventStart>
     implements _$$ShareEventStartCopyWith<$Res> {
-  __$$ShareEventStartCopyWithImpl(
-      _$ShareEventStart _value, $Res Function(_$ShareEventStart) _then)
+  __$$ShareEventStartCopyWithImpl(_$ShareEventStart _value, $Res Function(_$ShareEventStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -7732,29 +7253,24 @@ class _$ShareEventStart implements ShareEventStart {
 }
 
 abstract class ShareEventStart implements ShareEvent {
-  const factory ShareEventStart(final String uid, final int eventId) =
-      _$ShareEventStart;
+  const factory ShareEventStart(final String uid, final int eventId) = _$ShareEventStart;
 
   String get uid;
   int get eventId;
   @JsonKey(ignore: true)
-  _$$ShareEventStartCopyWith<_$ShareEventStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ShareEventStartCopyWith<_$ShareEventStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ShareEventSuccessfulCopyWith<$Res> {
-  factory _$$ShareEventSuccessfulCopyWith(_$ShareEventSuccessful value,
-          $Res Function(_$ShareEventSuccessful) then) =
+  factory _$$ShareEventSuccessfulCopyWith(_$ShareEventSuccessful value, $Res Function(_$ShareEventSuccessful) then) =
       __$$ShareEventSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ShareEventSuccessfulCopyWithImpl<$Res>
-    extends _$ShareEventCopyWithImpl<$Res, _$ShareEventSuccessful>
+class __$$ShareEventSuccessfulCopyWithImpl<$Res> extends _$ShareEventCopyWithImpl<$Res, _$ShareEventSuccessful>
     implements _$$ShareEventSuccessfulCopyWith<$Res> {
-  __$$ShareEventSuccessfulCopyWithImpl(_$ShareEventSuccessful _value,
-      $Res Function(_$ShareEventSuccessful) _then)
+  __$$ShareEventSuccessfulCopyWithImpl(_$ShareEventSuccessful _value, $Res Function(_$ShareEventSuccessful) _then)
       : super(_value, _then);
 }
 
@@ -7770,8 +7286,7 @@ class _$ShareEventSuccessful implements ShareEventSuccessful {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShareEventSuccessful);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ShareEventSuccessful);
   }
 
   @override
@@ -7852,19 +7367,16 @@ abstract class ShareEventSuccessful implements ShareEvent {
 
 /// @nodoc
 abstract class _$$ShareEventErrorCopyWith<$Res> {
-  factory _$$ShareEventErrorCopyWith(
-          _$ShareEventError value, $Res Function(_$ShareEventError) then) =
+  factory _$$ShareEventErrorCopyWith(_$ShareEventError value, $Res Function(_$ShareEventError) then) =
       __$$ShareEventErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$ShareEventErrorCopyWithImpl<$Res>
-    extends _$ShareEventCopyWithImpl<$Res, _$ShareEventError>
+class __$$ShareEventErrorCopyWithImpl<$Res> extends _$ShareEventCopyWithImpl<$Res, _$ShareEventError>
     implements _$$ShareEventErrorCopyWith<$Res> {
-  __$$ShareEventErrorCopyWithImpl(
-      _$ShareEventError _value, $Res Function(_$ShareEventError) _then)
+  __$$ShareEventErrorCopyWithImpl(_$ShareEventError _value, $Res Function(_$ShareEventError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -7904,13 +7416,11 @@ class _$ShareEventError implements ShareEventError {
         (other.runtimeType == runtimeType &&
             other is _$ShareEventError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -7988,14 +7498,12 @@ class _$ShareEventError implements ShareEventError {
 }
 
 abstract class ShareEventError implements ShareEvent, ErrorAction {
-  const factory ShareEventError(
-      final Object error, final StackTrace stackTrace) = _$ShareEventError;
+  const factory ShareEventError(final Object error, final StackTrace stackTrace) = _$ShareEventError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$ShareEventErrorCopyWith<_$ShareEventError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ShareEventErrorCopyWith<_$ShareEventError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -8048,14 +7556,12 @@ mixin _$GetFriends {
 
 /// @nodoc
 abstract class $GetFriendsCopyWith<$Res> {
-  factory $GetFriendsCopyWith(
-          GetFriends value, $Res Function(GetFriends) then) =
+  factory $GetFriendsCopyWith(GetFriends value, $Res Function(GetFriends) then) =
       _$GetFriendsCopyWithImpl<$Res, GetFriends>;
 }
 
 /// @nodoc
-class _$GetFriendsCopyWithImpl<$Res, $Val extends GetFriends>
-    implements $GetFriendsCopyWith<$Res> {
+class _$GetFriendsCopyWithImpl<$Res, $Val extends GetFriends> implements $GetFriendsCopyWith<$Res> {
   _$GetFriendsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -8066,17 +7572,14 @@ class _$GetFriendsCopyWithImpl<$Res, $Val extends GetFriends>
 
 /// @nodoc
 abstract class _$$GetFriendsStartCopyWith<$Res> {
-  factory _$$GetFriendsStartCopyWith(
-          _$GetFriendsStart value, $Res Function(_$GetFriendsStart) then) =
+  factory _$$GetFriendsStartCopyWith(_$GetFriendsStart value, $Res Function(_$GetFriendsStart) then) =
       __$$GetFriendsStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetFriendsStartCopyWithImpl<$Res>
-    extends _$GetFriendsCopyWithImpl<$Res, _$GetFriendsStart>
+class __$$GetFriendsStartCopyWithImpl<$Res> extends _$GetFriendsCopyWithImpl<$Res, _$GetFriendsStart>
     implements _$$GetFriendsStartCopyWith<$Res> {
-  __$$GetFriendsStartCopyWithImpl(
-      _$GetFriendsStart _value, $Res Function(_$GetFriendsStart) _then)
+  __$$GetFriendsStartCopyWithImpl(_$GetFriendsStart _value, $Res Function(_$GetFriendsStart) _then)
       : super(_value, _then);
 }
 
@@ -8092,8 +7595,7 @@ class _$GetFriendsStart implements GetFriendsStart {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetFriendsStart);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetFriendsStart);
   }
 
   @override
@@ -8174,19 +7676,16 @@ abstract class GetFriendsStart implements GetFriends {
 
 /// @nodoc
 abstract class _$$GetFriendsSuccessfulCopyWith<$Res> {
-  factory _$$GetFriendsSuccessfulCopyWith(_$GetFriendsSuccessful value,
-          $Res Function(_$GetFriendsSuccessful) then) =
+  factory _$$GetFriendsSuccessfulCopyWith(_$GetFriendsSuccessful value, $Res Function(_$GetFriendsSuccessful) then) =
       __$$GetFriendsSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Connection> connections});
 }
 
 /// @nodoc
-class __$$GetFriendsSuccessfulCopyWithImpl<$Res>
-    extends _$GetFriendsCopyWithImpl<$Res, _$GetFriendsSuccessful>
+class __$$GetFriendsSuccessfulCopyWithImpl<$Res> extends _$GetFriendsCopyWithImpl<$Res, _$GetFriendsSuccessful>
     implements _$$GetFriendsSuccessfulCopyWith<$Res> {
-  __$$GetFriendsSuccessfulCopyWithImpl(_$GetFriendsSuccessful _value,
-      $Res Function(_$GetFriendsSuccessful) _then)
+  __$$GetFriendsSuccessfulCopyWithImpl(_$GetFriendsSuccessful _value, $Res Function(_$GetFriendsSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -8206,8 +7705,7 @@ class __$$GetFriendsSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetFriendsSuccessful implements GetFriendsSuccessful {
-  const _$GetFriendsSuccessful(final List<Connection> connections)
-      : _connections = connections;
+  const _$GetFriendsSuccessful(final List<Connection> connections) : _connections = connections;
 
   final List<Connection> _connections;
   @override
@@ -8227,20 +7725,17 @@ class _$GetFriendsSuccessful implements GetFriendsSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetFriendsSuccessful &&
-            const DeepCollectionEquality()
-                .equals(other._connections, _connections));
+            const DeepCollectionEquality().equals(other._connections, _connections));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_connections));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_connections));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetFriendsSuccessfulCopyWith<_$GetFriendsSuccessful> get copyWith =>
-      __$$GetFriendsSuccessfulCopyWithImpl<_$GetFriendsSuccessful>(
-          this, _$identity);
+      __$$GetFriendsSuccessfulCopyWithImpl<_$GetFriendsSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -8312,30 +7807,25 @@ class _$GetFriendsSuccessful implements GetFriendsSuccessful {
 }
 
 abstract class GetFriendsSuccessful implements GetFriends {
-  const factory GetFriendsSuccessful(final List<Connection> connections) =
-      _$GetFriendsSuccessful;
+  const factory GetFriendsSuccessful(final List<Connection> connections) = _$GetFriendsSuccessful;
 
   List<Connection> get connections;
   @JsonKey(ignore: true)
-  _$$GetFriendsSuccessfulCopyWith<_$GetFriendsSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetFriendsSuccessfulCopyWith<_$GetFriendsSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetFriendsErrorCopyWith<$Res> {
-  factory _$$GetFriendsErrorCopyWith(
-          _$GetFriendsError value, $Res Function(_$GetFriendsError) then) =
+  factory _$$GetFriendsErrorCopyWith(_$GetFriendsError value, $Res Function(_$GetFriendsError) then) =
       __$$GetFriendsErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetFriendsErrorCopyWithImpl<$Res>
-    extends _$GetFriendsCopyWithImpl<$Res, _$GetFriendsError>
+class __$$GetFriendsErrorCopyWithImpl<$Res> extends _$GetFriendsCopyWithImpl<$Res, _$GetFriendsError>
     implements _$$GetFriendsErrorCopyWith<$Res> {
-  __$$GetFriendsErrorCopyWithImpl(
-      _$GetFriendsError _value, $Res Function(_$GetFriendsError) _then)
+  __$$GetFriendsErrorCopyWithImpl(_$GetFriendsError _value, $Res Function(_$GetFriendsError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -8375,13 +7865,11 @@ class _$GetFriendsError implements GetFriendsError {
         (other.runtimeType == runtimeType &&
             other is _$GetFriendsError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -8459,14 +7947,12 @@ class _$GetFriendsError implements GetFriendsError {
 }
 
 abstract class GetFriendsError implements GetFriends, ErrorAction {
-  const factory GetFriendsError(
-      final Object error, final StackTrace stackTrace) = _$GetFriendsError;
+  const factory GetFriendsError(final Object error, final StackTrace stackTrace) = _$GetFriendsError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetFriendsErrorCopyWith<_$GetFriendsError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetFriendsErrorCopyWith<_$GetFriendsError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -8519,14 +8005,12 @@ mixin _$RemoveFriend {
 
 /// @nodoc
 abstract class $RemoveFriendCopyWith<$Res> {
-  factory $RemoveFriendCopyWith(
-          RemoveFriend value, $Res Function(RemoveFriend) then) =
+  factory $RemoveFriendCopyWith(RemoveFriend value, $Res Function(RemoveFriend) then) =
       _$RemoveFriendCopyWithImpl<$Res, RemoveFriend>;
 }
 
 /// @nodoc
-class _$RemoveFriendCopyWithImpl<$Res, $Val extends RemoveFriend>
-    implements $RemoveFriendCopyWith<$Res> {
+class _$RemoveFriendCopyWithImpl<$Res, $Val extends RemoveFriend> implements $RemoveFriendCopyWith<$Res> {
   _$RemoveFriendCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -8537,19 +8021,16 @@ class _$RemoveFriendCopyWithImpl<$Res, $Val extends RemoveFriend>
 
 /// @nodoc
 abstract class _$$RemoveFriendStartCopyWith<$Res> {
-  factory _$$RemoveFriendStartCopyWith(
-          _$RemoveFriendStart value, $Res Function(_$RemoveFriendStart) then) =
+  factory _$$RemoveFriendStartCopyWith(_$RemoveFriendStart value, $Res Function(_$RemoveFriendStart) then) =
       __$$RemoveFriendStartCopyWithImpl<$Res>;
   @useResult
   $Res call({String uid});
 }
 
 /// @nodoc
-class __$$RemoveFriendStartCopyWithImpl<$Res>
-    extends _$RemoveFriendCopyWithImpl<$Res, _$RemoveFriendStart>
+class __$$RemoveFriendStartCopyWithImpl<$Res> extends _$RemoveFriendCopyWithImpl<$Res, _$RemoveFriendStart>
     implements _$$RemoveFriendStartCopyWith<$Res> {
-  __$$RemoveFriendStartCopyWithImpl(
-      _$RemoveFriendStart _value, $Res Function(_$RemoveFriendStart) _then)
+  __$$RemoveFriendStartCopyWithImpl(_$RemoveFriendStart _value, $Res Function(_$RemoveFriendStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -8670,23 +8151,20 @@ abstract class RemoveFriendStart implements RemoveFriend {
 
   String get uid;
   @JsonKey(ignore: true)
-  _$$RemoveFriendStartCopyWith<_$RemoveFriendStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveFriendStartCopyWith<_$RemoveFriendStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RemoveFriendSuccessfulCopyWith<$Res> {
-  factory _$$RemoveFriendSuccessfulCopyWith(_$RemoveFriendSuccessful value,
-          $Res Function(_$RemoveFriendSuccessful) then) =
+  factory _$$RemoveFriendSuccessfulCopyWith(
+          _$RemoveFriendSuccessful value, $Res Function(_$RemoveFriendSuccessful) then) =
       __$$RemoveFriendSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RemoveFriendSuccessfulCopyWithImpl<$Res>
-    extends _$RemoveFriendCopyWithImpl<$Res, _$RemoveFriendSuccessful>
+class __$$RemoveFriendSuccessfulCopyWithImpl<$Res> extends _$RemoveFriendCopyWithImpl<$Res, _$RemoveFriendSuccessful>
     implements _$$RemoveFriendSuccessfulCopyWith<$Res> {
-  __$$RemoveFriendSuccessfulCopyWithImpl(_$RemoveFriendSuccessful _value,
-      $Res Function(_$RemoveFriendSuccessful) _then)
+  __$$RemoveFriendSuccessfulCopyWithImpl(_$RemoveFriendSuccessful _value, $Res Function(_$RemoveFriendSuccessful) _then)
       : super(_value, _then);
 }
 
@@ -8702,8 +8180,7 @@ class _$RemoveFriendSuccessful implements RemoveFriendSuccessful {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RemoveFriendSuccessful);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$RemoveFriendSuccessful);
   }
 
   @override
@@ -8784,19 +8261,16 @@ abstract class RemoveFriendSuccessful implements RemoveFriend {
 
 /// @nodoc
 abstract class _$$RemoveFriendErrorCopyWith<$Res> {
-  factory _$$RemoveFriendErrorCopyWith(
-          _$RemoveFriendError value, $Res Function(_$RemoveFriendError) then) =
+  factory _$$RemoveFriendErrorCopyWith(_$RemoveFriendError value, $Res Function(_$RemoveFriendError) then) =
       __$$RemoveFriendErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$RemoveFriendErrorCopyWithImpl<$Res>
-    extends _$RemoveFriendCopyWithImpl<$Res, _$RemoveFriendError>
+class __$$RemoveFriendErrorCopyWithImpl<$Res> extends _$RemoveFriendCopyWithImpl<$Res, _$RemoveFriendError>
     implements _$$RemoveFriendErrorCopyWith<$Res> {
-  __$$RemoveFriendErrorCopyWithImpl(
-      _$RemoveFriendError _value, $Res Function(_$RemoveFriendError) _then)
+  __$$RemoveFriendErrorCopyWithImpl(_$RemoveFriendError _value, $Res Function(_$RemoveFriendError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -8836,13 +8310,11 @@ class _$RemoveFriendError implements RemoveFriendError {
         (other.runtimeType == runtimeType &&
             other is _$RemoveFriendError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -8920,12 +8392,10 @@ class _$RemoveFriendError implements RemoveFriendError {
 }
 
 abstract class RemoveFriendError implements RemoveFriend, ErrorAction {
-  const factory RemoveFriendError(
-      final Object error, final StackTrace stackTrace) = _$RemoveFriendError;
+  const factory RemoveFriendError(final Object error, final StackTrace stackTrace) = _$RemoveFriendError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$RemoveFriendErrorCopyWith<_$RemoveFriendError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveFriendErrorCopyWith<_$RemoveFriendError> get copyWith => throw _privateConstructorUsedError;
 }

@@ -68,7 +68,11 @@ class _HomePageState extends State<HomePage> {
                         }
                       },
                       child: Text(
-                        user == null ? 'Log In' : user.hasCalendar ? 'View Calendar' : 'Upload Calendar',
+                        user == null
+                            ? 'Log In'
+                            : user.hasCalendar
+                                ? 'View Calendar'
+                                : 'Upload Calendar',
                         style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

@@ -124,11 +124,10 @@ class _LoginPageState extends State<LoginPage> {
                         height: 41,
                         child: TextButton(
                           onPressed: () {
-                            if (!Form.of(context)!.validate()) {
+                            if (!Form.of(context).validate()) {
                               return;
                             }
-                            StoreProvider.of<AppState>(context)
-                                .dispatch(Login(_email.text, _password.text, _onResult));
+                            StoreProvider.of<AppState>(context).dispatch(Login(_email.text, _password.text, _onResult));
                           },
                           child: const Text(
                             'Login',

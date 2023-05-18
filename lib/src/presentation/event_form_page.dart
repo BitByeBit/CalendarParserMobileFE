@@ -226,7 +226,7 @@ class _EventFormPageState extends State<EventFormPage> {
                               height: 41,
                               child: TextButton(
                                 onPressed: () {
-                                  if (!Form.of(context)!.validate()) {
+                                  if (!Form.of(context).validate()) {
                                     return;
                                   }
                                   StoreProvider.of<AppState>(context).dispatch(AddEvent(_name.text, _type.text,
@@ -454,7 +454,7 @@ class _EventFormPageState extends State<EventFormPage> {
                             height: 41,
                             child: TextButton(
                               onPressed: () {
-                                if (!Form.of(context)!.validate()) {
+                                if (!Form.of(context).validate()) {
                                   return;
                                 }
                                 StoreProvider.of<AppState>(context).dispatch(EditEvent(
