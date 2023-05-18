@@ -26,7 +26,7 @@ jobs:
         run: flutter pub get
       - name: "Check Format"
         working-directory: ./
-        run: flutter format -l 120 --set-exit-if-changed .
+        run: dart format -l 120 --set-exit-if-changed .
   analyze-code:
     runs-on: ubuntu-latest
     steps:
