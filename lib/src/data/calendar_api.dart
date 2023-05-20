@@ -12,7 +12,7 @@ class CalendarApi {
   final Client _client;
 
   Future<Calendar> getCalendar(String userToken, String userUid) async {
-    final Uri uri = Uri.parse('$_apiUrl/getCalendar?user_uid=$userUid');
+    final Uri uri = Uri.parse('$_apiUrl/calendar?user_uid=$userUid');
     final Response response = await _client.get(uri, headers: <String, String>{'Authorization': 'Bearer $userToken'});
 
     if (response.statusCode >= 300) {
@@ -29,7 +29,7 @@ class CalendarApi {
     final MultipartRequest request = MultipartRequest(
         'POST',
         Uri.parse(
-            '$_apiUrl/uploadCalendar?user_uid=$userUid&series=$series&group=${int.parse(group)}&subgroup=$subgroup'));
+            '$_apiUrl/upload?user_uid=$userUid&series=$series&group=${int.parse(group)}&subgroup=$subgroup'));
     request.headers.addAll(<String, String>{'Authorization': 'Bearer $userToken'});
     request.files.add(await MultipartFile.fromPath('file', path));
     final StreamedResponse streamedResponse = await request.send();
@@ -46,7 +46,7 @@ class CalendarApi {
 
   Future<Event> addEvent(String userToken, String userUid, String name, String type, String timeslot, String weekday,
       int parity, String extra, String tag) async {
-    final Uri uri = Uri.parse('$_apiUrl/addEvent?user_uid=$userUid');
+    final Uri uri = Uri.parse('$_apiUrl/add-event?user_uid=$userUid');
     final Map<String, dynamic> reqBody = <String, dynamic>{
       'name': name,
       'type': type,
@@ -71,7 +71,7 @@ class CalendarApi {
 
   Future<Event> editEvent(String userToken, String userUid, int id, String? name, String? type, String? timeslot,
       String? weekday, int? parity, String? extra, String? tag) async {
-    final Uri uri = Uri.parse('$_apiUrl/editEvent?user_uid=$userUid');
+    final Uri uri = Uri.parse('$_apiUrl/edit-event?user_uid=$userUid');
     final Map<String, dynamic> reqBody = <String, dynamic>{
       'eventId': id,
       'name': name,
@@ -96,7 +96,7 @@ class CalendarApi {
   }
 
   Future<int> deleteEvent(String userToken, String userUid, int id) async {
-    final Uri uri = Uri.parse('$_apiUrl/deleteEvent?user_uid=$userUid');
+    final Uri uri = Uri.parse('$_apiUrl/delete-event?user_uid=$userUid');
     final Response response = await _client.delete(uri,
         body: jsonEncode(id),
         headers: <String, String>{'Content-Type': 'application/json', 'Authorization': 'Bearer $userToken'});
@@ -109,7 +109,7 @@ class CalendarApi {
   }
 
   Future<Calendar> filterCalendar(String userToken, String userUid, String tag) async {
-    final Uri uri = Uri.parse('$_apiUrl/filterCalendar?user_uid=$userUid&tag=$tag');
+    final Uri uri = Uri.parse('$_apiUrl/filter-calendar?user_uid=$userUid&tag=$tag');
     final Response response = await _client.get(uri, headers: <String, String>{'Authorization': 'Bearer $userToken'});
 
     if (response.statusCode >= 300) {
@@ -122,7 +122,7 @@ class CalendarApi {
   }
 
   Future<void> shareEvent(String userToken, String srcUid, String dstUid, int eventId) async {
-    final Uri uri = Uri.parse('$_apiUrl/shareEvent');
+    final Uri uri = Uri.parse('$_apiUrl/share-event');
     final Map<String, dynamic> reqBody = <String, dynamic>{
       'srcUid': srcUid,
       'dstUid': dstUid,
