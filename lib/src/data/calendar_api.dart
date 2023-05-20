@@ -26,10 +26,8 @@ class CalendarApi {
 
   Future<Calendar> uploadCalendar(
       String userToken, String userUid, String path, String series, String group, String subgroup) async {
-    final MultipartRequest request = MultipartRequest(
-        'POST',
-        Uri.parse(
-            '$_apiUrl/upload?user_uid=$userUid&series=$series&group=${int.parse(group)}&subgroup=$subgroup'));
+    final MultipartRequest request = MultipartRequest('POST',
+        Uri.parse('$_apiUrl/upload?user_uid=$userUid&series=$series&group=${int.parse(group)}&subgroup=$subgroup'));
     request.headers.addAll(<String, String>{'Authorization': 'Bearer $userToken'});
     request.files.add(await MultipartFile.fromPath('file', path));
     final StreamedResponse streamedResponse = await request.send();
